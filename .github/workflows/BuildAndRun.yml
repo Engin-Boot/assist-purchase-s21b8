@@ -9,11 +9,7 @@ jobs:
     runs-on: windows-latest
     
     env:
-<<<<<<< HEAD
       Solution_Name: AssistPurchaseBackend.sln
-=======
-      Solution_Name: AssistPurchaseBackend/AssistPurchaseBackend.sln
->>>>>>> eb1352b2dcda4101ba76963b24320a4c3f3614a2
         
     steps:
     - name: Checkout
