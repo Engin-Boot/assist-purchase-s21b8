@@ -1,0 +1,17 @@
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\bin\Debug\netcoreapp2.1\AssistPurchaseWebAPI.deps.json
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\bin\Debug\netcoreapp2.1\AssistPurchaseWebAPI.runtimeconfig.json
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\bin\Debug\netcoreapp2.1\AssistPurchaseWebAPI.runtimeconfig.dev.json
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\bin\Debug\netcoreapp2.1\AssistPurchaseWebAPI.dll
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\bin\Debug\netcoreapp2.1\AssistPurchaseWebAPI.pdb
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\obj\Debug\netcoreapp2.1\AssistPurchaseWebAPI.AssemblyInfoInputs.cache
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\obj\Debug\netcoreapp2.1\AssistPurchaseWebAPI.AssemblyInfo.cs
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\obj\Debug\netcoreapp2.1\AssistPurchaseWebAPI.csproj.CoreCompileInputs.cache
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\obj\Debug\netcoreapp2.1\AssistPurchaseWebAPI.RazorAssemblyInfo.cache
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\obj\Debug\netcoreapp2.1\AssistPurchaseWebAPI.RazorAssemblyInfo.cs
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\obj\Debug\netcoreapp2.1\AssistPurchaseWebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\obj\Debug\netcoreapp2.1\AssistPurchaseWebAPI.dll
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\obj\Debug\netcoreapp2.1\AssistPurchaseWebAPI.pdb
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\DatabaseTrial\obj\Debug\netcoreapp2.1\AssistPurchaseWebAPI.genruntimeconfig.cache
