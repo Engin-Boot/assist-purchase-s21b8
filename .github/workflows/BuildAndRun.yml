@@ -2,14 +2,14 @@ name: Build and Run
  
 on: 
     push:
-        branches: [master]
+        branches: [main]
  
 jobs:
   build:
     runs-on: windows-latest
     
     env:
-      Solution_Name: EnvironmentMonitoringDataSource.sln
+      Solution_Name: AssistPurchase.sln
         
     steps:
     - name: Checkout
