@@ -11800,11 +11800,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\320087992\\Documents\\Bootcamp\\case-study-II\\assist-purchase-s21b8\\AssistPurchaseBackend\\AssistPurchaseBackend\\AssistPurchaseBackend.csproj",
+      "projectUniqueName": "C:\\Users\\320087992\\Documents\\Bootcamp\\case-study-II\\assist-purchase-s21b8\\AssistPurchaseBackend\\AssistPurchaseBackend.csproj",
       "projectName": "AssistPurchaseBackend",
-      "projectPath": "C:\\Users\\320087992\\Documents\\Bootcamp\\case-study-II\\assist-purchase-s21b8\\AssistPurchaseBackend\\AssistPurchaseBackend\\AssistPurchaseBackend.csproj",
+      "projectPath": "C:\\Users\\320087992\\Documents\\Bootcamp\\case-study-II\\assist-purchase-s21b8\\AssistPurchaseBackend\\AssistPurchaseBackend.csproj",
       "packagesPath": "C:\\Users\\320087992\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\320087992\\Documents\\Bootcamp\\case-study-II\\assist-purchase-s21b8\\AssistPurchaseBackend\\AssistPurchaseBackend\\obj\\",
+      "outputPath": "C:\\Users\\320087992\\Documents\\Bootcamp\\case-study-II\\assist-purchase-s21b8\\AssistPurchaseBackend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
