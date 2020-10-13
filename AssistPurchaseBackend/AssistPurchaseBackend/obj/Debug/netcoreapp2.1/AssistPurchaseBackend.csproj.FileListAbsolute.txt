@@ -1,0 +1,14 @@
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\AssistPurchaseBackend.deps.json
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\AssistPurchaseBackend.runtimeconfig.json
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\AssistPurchaseBackend.runtimeconfig.dev.json
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\AssistPurchaseBackend.dll
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\AssistPurchaseBackend.pdb
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.csprojAssemblyReference.cache
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.csproj.CoreCompileInputs.cache
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.RazorAssemblyInfo.cache
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.RazorAssemblyInfo.cs
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.AssemblyInfoInputs.cache
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.AssemblyInfo.cs
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.RazorTargetAssemblyInfo.cache
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.dll
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.pdb
