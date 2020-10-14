@@ -1,34 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace AssistPurchaseBackend
 {
     public class UtilityFunctions
     {
-        public List<MonitoringDevice> monitoringDevices = new List<MonitoringDevice>();
+        private List<MonitoringDevice> monitoringDevices = new List<MonitoringDevice>();
         public void AddDevice(MonitoringDevice newMonitoringDevice)
         {
             monitoringDevices.Add(newMonitoringDevice);
         }
-        public void RemoveDevice(string DeviceName)
+        public void RemoveDevice(string deviceName)
         {
             foreach (var device in monitoringDevices)
             {
-                if (device.DeviceName == DeviceName)
+                if (device.DeviceName == deviceName)
                 {
                     //delete from list
                 }
             }
         }
-        public MonitoringDevice ReadDevice(string DeviceName)
+        public MonitoringDevice ReadDevice(string deviceName)
         {
             MonitoringDevice foundDevice = new MonitoringDevice();
             foreach (var device in monitoringDevices)
             {
-                if (device.DeviceName == DeviceName)
+                if (device.DeviceName == deviceName)
                 {
                     foundDevice = device;
                 }
