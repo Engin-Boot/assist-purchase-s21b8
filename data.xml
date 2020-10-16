@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <MonitoringDevice>
     <DeviceName>IntelliVue X3</DeviceName>
@@ -12,7 +12,7 @@
     <St>NO</St>
     <Qt>NO</Qt>
     <BatteryLife>5</BatteryLife>
-    <SupportedScreenOrientations>0° / 90° / 180°</SupportedScreenOrientations>
+    <SupportedScreenOrientations>YES</SupportedScreenOrientations>
     <Size>249 x 97 x 111 mm</Size>
     <MobileOrStatic>STATIC</MobileOrStatic>
     <AntiMicrobialGlass>YES</AntiMicrobialGlass>
@@ -138,7 +138,7 @@
     <St>YES</St>
     <Qt>YES</Qt>
     <BatteryLife>5</BatteryLife>
-    <SupportedScreenOrientations>0° / 90° / 180°</SupportedScreenOrientations>
+    <SupportedScreenOrientations>YES</SupportedScreenOrientations>
     <Size>6.1 in</Size>
     <MobileOrStatic>MOBILE</MobileOrStatic>
     <AntiMicrobialGlass>YES</AntiMicrobialGlass>
@@ -156,7 +156,7 @@
     <St>YES</St>
     <Qt>YES</Qt>
     <BatteryLife>5</BatteryLife>
-    <SupportedScreenOrientations>0° / 90° / 180°</SupportedScreenOrientations>
+    <SupportedScreenOrientations>YES</SupportedScreenOrientations>
     <Size>10.1 in</Size>
     <MobileOrStatic>MOBILE</MobileOrStatic>
     <AntiMicrobialGlass>YES</AntiMicrobialGlass>

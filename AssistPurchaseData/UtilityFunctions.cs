@@ -13,12 +13,12 @@ namespace AssistPurchaseData
 
         // Give path of data.xml
         private readonly string _path =
-            @"C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\data.xml";
+            @"C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\data.xml";
 
 
         public UtilityFunctions()
         {
-            //ReadDevice("Efficia CM Series");
+            GetList();
         }
         public void AddDevice(MonitoringDevice newMonitoringDevice)
         {

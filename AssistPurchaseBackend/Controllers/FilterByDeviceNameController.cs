@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AssistPurchaseBackend.Services;
+using AssistPurchaseData;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,74 +13,93 @@ namespace AssistPurchaseBackend.Controllers
     [ApiController]
     public class FilterByDeviceNameController : ControllerBase
     {
-        readonly Services.IFilter _filter;
-
-        public FilterByDeviceNameController(Services.IFilter filter)
+        FilterDeviceName filter=new FilterDeviceName();
+       
+        [HttpGet("Cardiac")]
+        public List<MonitoringDevice> GetCardiac()
         {
-            this._filter = filter;
+            List<MonitoringDevice> NameFilteredList = new List<MonitoringDevice>();
+
+            NameFilteredList = filter.Cardiac();
+
+            //NameFilteredList=filterDevice.Filter1(FilterByBatteryLife);
+            return NameFilteredList;
+
+        }
+        [HttpGet("Pneumonia")]
+        public List<MonitoringDevice> GetPneumonia()
+        {
+            List<MonitoringDevice> NameFilteredList = new List<MonitoringDevice>();
+
+            NameFilteredList = filter.Pneumonia();
+
+            //NameFilteredList=filterDevice.Filter1(FilterByBatteryLife);
+            return NameFilteredList;
+
+        }
+        [HttpGet("Covid19")]
+        public List<MonitoringDevice> GetCovid19()
+        {
+            List<MonitoringDevice> NameFilteredList = new List<MonitoringDevice>();
+
+            NameFilteredList = filter.Covid19();
+
+            //NameFilteredList=filterDevice.Filter1(FilterByBatteryLife);
+            return NameFilteredList;
+
         }
 
-        // GET: api/FilterByDeviceName/5
-        [HttpGet("{id}", Name = "Get")]
-        public IEnumerable<AssistPurchaseData.MonitoringDevice> Get(String id)
+        [HttpGet("HighBP")]
+        public List<MonitoringDevice> Get()
         {
-            return _filter.Filter(id);
+            List<MonitoringDevice> NameFilteredList = new List<MonitoringDevice>();
+
+            NameFilteredList = filter.HighBP();
+
+            //NameFilteredList=filterDevice.Filter1(FilterByBatteryLife);
+            return NameFilteredList;
         }
-        //FilterDeviceName filterDevice=new FilterDeviceName();
-        
-        //Services.IFilter filter;
-        //Services.IFilter filter1;
+        [HttpGet("BatteryLife/{value}")]
+        public List<MonitoringDevice> GetBatteryLife(string value)
+        {
+            List<MonitoringDevice> NameFilteredList = new List<MonitoringDevice>();
+
+            NameFilteredList = filter.BatteryLife(value);
+
+            //NameFilteredList=filterDevice.Filter1(FilterByBatteryLife);
+            return NameFilteredList;
+        }
+        [HttpGet("Display/{value}")]
+        public List<MonitoringDevice> GetDisplay(string value)
+        {
+            List<MonitoringDevice> NameFilteredList = new List<MonitoringDevice>();
+
+            NameFilteredList = filter.Display(value);
+
+            //NameFilteredList=filterDevice.Filter1(FilterByBatteryLife);
+            return NameFilteredList;
+        }
+        [HttpGet("MobileorStatic/{value}")]
+        public List<MonitoringDevice> GetMobileorStatic(string value)
+        {
+            List<MonitoringDevice> NameFilteredList = new List<MonitoringDevice>();
+
+            NameFilteredList = filter.MobileorStatic(value);
+
+            //NameFilteredList=filterDevice.Filter1(FilterByBatteryLife);
+            return NameFilteredList;
+        }
+        [HttpGet("AdvancedFeatures/{value}")]
+        public List<MonitoringDevice> GetAdvancedFeatures()
+        {
+            List<MonitoringDevice> NameFilteredList = new List<MonitoringDevice>();
+
+            NameFilteredList = filter.AdvancedFeatures();
+
+            //NameFilteredList=filterDevice.Filter1(FilterByBatteryLife);
+            return NameFilteredList;
+        }
 
 
-        //public List<MonitoringDevice> Get(string FilterByName , string FilterByBatteryLife)
-        //{
-        //    List<MonitoringDevice> NameFilteredList=new List<MonitoringDevice>();
-
-        //    NameFilteredList=filterDevice.Filter(FilterByName,FilterByBatteryLife);
-
-        //     //NameFilteredList=filterDevice.Filter1(FilterByBatteryLife);
-        //     return NameFilteredList;
-
-        //}
-       // GET: api/FilterByDeviceName
-       //[HttpGet]
-       // public IEnumerable<MonitoringDevice> Get()
-       // {
-       //     retu
-       // }
-
-        //GET: api/FilterByDeviceName/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public IEnumerable<> Get(string id)
-        //{
-        //    return _filter.Filter(id);
-        //}
-
-        //// POST: api/FilterByDeviceName
-        //[HttpPost]
-        //public void Post([FromBody] Services.IFilter filter)
-        //{
-        //    try
-        //    {
-        //        this.filter = filter;
-        //        this.filter1 = filter;
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        Console.WriteLine(ex);
-        //    }
-        //}
-
-        //// PUT: api/FilterByDeviceName/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE: api/ApiWithActions/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }
