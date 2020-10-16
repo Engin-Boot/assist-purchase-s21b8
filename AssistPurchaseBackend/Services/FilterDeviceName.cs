@@ -114,7 +114,7 @@ namespace AssistPurchaseBackend.Services
 
             foreach (var device in _monitoringDevices)
             {
-                if (device.PatientLocation=="YES"||device.PhysiologicalAlarming=="YES"||device.Qt=="YES")
+                if (device.PatientLocation=="YES"&&device.PhysiologicalAlarming=="YES"&&device.AntiMicrobialGlass=="YES")
                     _filteredList.Add(device);
             }
             return _filteredList;
@@ -127,7 +127,7 @@ namespace AssistPurchaseBackend.Services
 
             foreach (var device in _monitoringDevices)
             {
-                if (device.Size == value || device.SupportedScreenOrientations == "YES" || device.AntiMicrobialGlass== "YES")
+                if (device.Size == value || device.SupportedScreenOrientations == "YES")
                     _filteredList.Add(device);
             }
             return _filteredList;
