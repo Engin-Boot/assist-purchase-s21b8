@@ -20,7 +20,7 @@ jobs:
         run: dotnet test --collect:"XPlat Code Coverage"
       
       - name: Check Sender Coverage
-        run: powershell ./coverage.ps1 -linerate 0.7 -project Sender.Tests
+        run: powershell ./coverage.ps1 -linerate 0.7 -project FunctionLogic.Tests
       
       - name: Check Receiver Coverage
         run: powershell ./coverage.ps1 -linerate 0.45 -project Reciever.Tests
