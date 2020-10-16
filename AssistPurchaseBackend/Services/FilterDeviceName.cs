@@ -114,8 +114,7 @@ namespace AssistPurchaseBackend.Services
 
             foreach (var device in _monitoringDevices)
             {
-                if (device.PatientLocation=="YES"&&device.PhysiologicalAlarming=="YES")
-                    if(device.AntiMicrobialGlass=="YES")
+                if (device.PatientLocation=="YES" && device.PhysiologicalAlarming=="YES" && device.AntiMicrobialGlass=="YES")
                      _filteredList.Add(device);
             }
             return _filteredList;
