@@ -46,7 +46,7 @@ namespace AssistPurchaseBackend.Services
 
             foreach (var device in _monitoringDevices)
             {
-                if (device.Respiration == "YES" && device.BloodPressure== "YES"&& device.St=="YES")
+                if (device.Respiration == "YES" && device.BloodPressure== "YES")
                     _filteredList.Add(device);
             }
             return _filteredList;
@@ -114,8 +114,9 @@ namespace AssistPurchaseBackend.Services
 
             foreach (var device in _monitoringDevices)
             {
-                if (device.PatientLocation=="YES"&&device.PhysiologicalAlarming=="YES"&&device.AntiMicrobialGlass=="YES")
-                    _filteredList.Add(device);
+                if (device.PatientLocation=="YES"&&device.PhysiologicalAlarming=="YES")
+                    if(device.AntiMicrobialGlass=="YES")
+                     _filteredList.Add(device);
             }
             return _filteredList;
         }
