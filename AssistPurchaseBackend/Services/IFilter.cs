@@ -15,5 +15,6 @@ namespace AssistPurchaseBackend.Services
         List<MonitoringDevice> MobileorStatic(string value);
         List<MonitoringDevice> AdvancedFeatures();
         List<MonitoringDevice> Display(string value);
+        List<MonitoringDevice> Alaraming();
     }
 }

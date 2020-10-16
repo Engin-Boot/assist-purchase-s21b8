@@ -119,6 +119,19 @@ namespace AssistPurchaseBackend.Services
             }
             return _filteredList;
         }
+        public List<MonitoringDevice> Alaraming()
+        {
+            _filteredList = new List<MonitoringDevice>();
+            _utilityFunctions = new UtilityFunctions();
+            _monitoringDevices = _utilityFunctions.GetList();
+
+            foreach (var device in _monitoringDevices)
+            {
+                if (device.PhysiologicalAlarming == "YES")
+                    _filteredList.Add(device);
+            }
+            return _filteredList;
+        }
         public List<MonitoringDevice> Display(string value)
         {
             _filteredList = new List<MonitoringDevice>();

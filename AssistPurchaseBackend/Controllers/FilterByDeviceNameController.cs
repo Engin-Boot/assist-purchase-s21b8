@@ -99,6 +99,16 @@ namespace AssistPurchaseBackend.Controllers
             //NameFilteredList=filterDevice.Filter1(FilterByBatteryLife);
             return NameFilteredList;
         }
+        [HttpGet("Alaraming/{value}")]
+        public List<MonitoringDevice> GetPhysiologicalAlaram()
+        {
+            List<MonitoringDevice> NameFilteredList = new List<MonitoringDevice>();
+
+            NameFilteredList = filter.Alaraming();
+
+            //NameFilteredList=filterDevice.Filter1(FilterByBatteryLife);
+            return NameFilteredList;
+        }
 
 
     }
