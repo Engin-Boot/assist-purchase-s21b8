@@ -1,4 +1,4 @@
-﻿namespace AssistPurchaseBackend
+﻿namespace AssistPurchaseData
 {
     public class MonitoringDevice
     {

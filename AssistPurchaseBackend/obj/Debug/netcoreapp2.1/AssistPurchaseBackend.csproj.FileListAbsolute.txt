@@ -44,3 +44,7 @@ C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\Ass
 C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.RazorAssemblyInfo.cs
 C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.RazorTargetAssemblyInfo.cache
 C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.genruntimeconfig.cache
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\AssistPurchaseData.exe
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\AssistPurchaseData.pdb
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\AssistPurchaseData.exe.config
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.csproj.CopyComplete

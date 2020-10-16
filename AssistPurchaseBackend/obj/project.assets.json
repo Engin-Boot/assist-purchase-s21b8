@@ -4615,6 +4615,15 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "AssistPurchaseData/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/AssistPurchaseData.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AssistPurchaseData.dll": {}
+        }
       }
     }
   },
@@ -8218,7 +8227,7 @@
       ]
     },
     "System.Collections.Immutable/1.5.0": {
-      "sha512": "RGxi2aQoXgZ5ge0zxrKqI4PU9LrYYoLC+cnEnWXKsSduCOUhE1GEAAoTexUVT8RZOILQyy1B27HC8Xw/XLGzdQ==",
+      "sha512": "EXKiDFsChZW0RjrZ4FYHu9aW6+P4MCgEDCklsVseRfhoO0F+dXeMSsMRAlVXIo06kGJ/zv+2w1a2uc2+kxxSaQ==",
       "type": "package",
       "path": "system.collections.immutable/1.5.0",
       "files": [
@@ -12521,34 +12530,41 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "AssistPurchaseData/1.0.0": {
+      "type": "project",
+      "path": "../AssistPurchaseData/AssistPurchaseData.csproj",
+      "msbuildProject": "../AssistPurchaseData/AssistPurchaseData.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "AssistPurchaseData >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
+      "Microsoft.VisualStudio.Web.CodeGeneration >= 2.1.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\320087877\\.nuget\\packages\\": {},
+    "C:\\Users\\320087992\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\320087877\\OneDrive - Philips\\Documents\\GitHub\\assist-purchase-s21b8\\AssistPurchaseBackend\\AssistPurchaseBackend.csproj",
+      "projectUniqueName": "C:\\Users\\320087992\\Documents\\Bootcamp\\case-study-II\\assist-purchase-s21b8\\AssistPurchaseBackend\\AssistPurchaseBackend.csproj",
       "projectName": "AssistPurchaseBackend",
-      "projectPath": "C:\\Users\\320087877\\OneDrive - Philips\\Documents\\GitHub\\assist-purchase-s21b8\\AssistPurchaseBackend\\AssistPurchaseBackend.csproj",
-      "packagesPath": "C:\\Users\\320087877\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\320087877\\OneDrive - Philips\\Documents\\GitHub\\assist-purchase-s21b8\\AssistPurchaseBackend\\obj\\",
+      "projectPath": "C:\\Users\\320087992\\Documents\\Bootcamp\\case-study-II\\assist-purchase-s21b8\\AssistPurchaseBackend\\AssistPurchaseBackend.csproj",
+      "packagesPath": "C:\\Users\\320087992\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\320087992\\Documents\\Bootcamp\\case-study-II\\assist-purchase-s21b8\\AssistPurchaseBackend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\320087877\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\320087992\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12556,12 +12572,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://artifactory.pic.philips.com:8443/artifactory/api/nuget/ct-local-nuget": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\320087992\\Documents\\Bootcamp\\case-study-II\\assist-purchase-s21b8\\AssistPurchaseData\\AssistPurchaseData.csproj": {
+              "projectPath": "C:\\Users\\320087992\\Documents\\Bootcamp\\case-study-II\\assist-purchase-s21b8\\AssistPurchaseData\\AssistPurchaseData.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -12585,10 +12604,13 @@
             "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "Microsoft.VisualStudio.Web.CodeGeneration": {
+            "target": "Package",
+            "version": "[2.1.1, )"
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
@@ -12596,16 +12618,10 @@
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }

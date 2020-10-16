@@ -1,37 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using AssistPurchaseData;
 
 namespace AssistPurchaseBackend.Services
 {
     public class FilterDeviceName : IFilter
     {
-        private UtilityFunctions utilityFunctions = new UtilityFunctions();
-        List<MonitoringDevice> FilteredList = new List<MonitoringDevice>();
-        public List<MonitoringDevice> Filter(string value,string value1)
+        private UtilityFunctions _utilityFunctions;
+        private List<MonitoringDevice> _filteredList;
+        private List<MonitoringDevice> _monitoringDevices;
+        public List<MonitoringDevice> Filter(string value)
         {
-            List<MonitoringDevice> monitoringDevices = utilityFunctions.GetList();
-            foreach (var device in monitoringDevices)
-            {
-                if (device.DeviceName.Equals(value)&& device.BatteryLife.Equals(value1))
-                    FilteredList.Add(device);
+            _filteredList = new List<MonitoringDevice>();
+            _utilityFunctions = new UtilityFunctions();
+            _monitoringDevices = _utilityFunctions.GetList();
 
+            foreach (var device in _monitoringDevices)
+            {
+                if (device.DeviceName.Equals(value))
+                    _filteredList.Add(device);
             }
-            return FilteredList;
+            return _filteredList;
 
         }
-        public List<MonitoringDevice> Filter1(string value)
-        {
-            List<MonitoringDevice> monitoringDevices = utilityFunctions.GetList();
-            foreach (var device in monitoringDevices)
-            {
-                if (device.BatteryLife.Equals(value))
-                    FilteredList.Add(device);
 
-            }
-            return FilteredList;
-
-        }
     }
 }
