@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using AssistPurchaseData;
-
+using System.IO;
 namespace AssistPurchaseBackend.Services
 {
-    public class FilterDeviceName : IFilter
+    public class FilterMonitoringDevices : IFilter
     {
         private UtilityFunctions _utilityFunctions;
         private List<MonitoringDevice> _filteredList;
@@ -124,7 +124,7 @@ namespace AssistPurchaseBackend.Services
             _filteredList = new List<MonitoringDevice>();
             _utilityFunctions = new UtilityFunctions();
             _monitoringDevices = _utilityFunctions.GetList();
-
+            
             foreach (var device in _monitoringDevices)
             {
                 if (device.PhysiologicalAlarming == "YES")

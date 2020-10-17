@@ -25,7 +25,7 @@ namespace AssistPurchaseBackend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<Services.IFilter, Services.FilterDeviceName>();
+            services.AddSingleton<Services.IFilter, Services.FilterMonitoringDevices>();
 
         }
 
