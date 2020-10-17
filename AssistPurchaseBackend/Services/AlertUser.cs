@@ -8,7 +8,7 @@ namespace AssistPurchaseBackend.Services
 {
     public class AlertUser
     {
-        List<IAlertUser> UserDetails=new List<IAlertUser>();
+        List<IAlertUser> _userDetails=new List<IAlertUser>();
         private IAlertUser user;
 
         public void UserRegistration()

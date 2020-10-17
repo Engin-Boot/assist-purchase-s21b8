@@ -14,75 +14,48 @@ namespace AssistPurchaseBackend.Controllers
         [HttpGet("Cardiac")]
         public List<MonitoringDevice> GetCategoryCardiacTypeDevices()
         {
-            var nameFilteredList = _filter.Cardiac();
-
-
-            return nameFilteredList;
+            return _filter.GetCardiacType();
         }
         [HttpGet("Pneumonia")]
         public List<MonitoringDevice> GetCategoryPneumoniaTypeDevices()
         {
-            var nameFilteredList = _filter.Pneumonia();
-
-
-            return nameFilteredList;
+             return _filter.GetPneumoniaType();
         }
         [HttpGet("Covid19")]
         public List<MonitoringDevice> GetCategoryCovid19TypeDevices()
         {
-            var nameFilteredList = _filter.Covid19();
-
-            //NameFilteredList=filterDevice.Filter1(FilterByBatteryLife);
-            return nameFilteredList;
+            return _filter.GetCovid19Type();
         }
 
         [HttpGet("HighBP")]
         public List<MonitoringDevice> GetCategoryHighBpTypeDevices()
         {
-            var nameFilteredList = _filter.HighBP();
-
-
-            return nameFilteredList;
+           return _filter.GetHighBPType();
         }
         [HttpGet("BatteryLife/{value}")]
         public List<MonitoringDevice> GetCatergoryBatteryLifeOfDevices(string value)
         {
-            var nameFilteredList = _filter.BatteryLife(value);
-
-
-            return nameFilteredList;
+            return _filter.GetBatteryLifeType(value);
         }
         [HttpGet("Display/{value}")]
         public List<MonitoringDevice> GetCategoryDisplayofDevices(string value)
         {
-            var nameFilteredList = _filter.Display(value);
-
-
-            return nameFilteredList;
+            return _filter.GetDisplay(value);
         }
         [HttpGet("MobileorStatic/{value}")]
         public List<MonitoringDevice> GetCategoryMobileorStaticDevices(string value)
         {
-            var nameFilteredList = _filter.MobileorStatic(value);
-
-
-            return nameFilteredList;
+            return _filter.GetMobileorStaticType(value);
         }
         [HttpGet("AdvancedFeatures/{value}")]
         public List<MonitoringDevice> GetCategoryAdvancedFeaturedDevices()
         {
-            var nameFilteredList = _filter.AdvancedFeatures();
-
-
-            return nameFilteredList;
+            return _filter.GetAdvancedFeaturesType();
         }
         [HttpGet("Alaraming/{value}")]
         public List<MonitoringDevice> GetCateDevicesgoryPhysiologicalAlaramedDevices()
         {
-            var nameFilteredList = _filter.Alaraming();
-
-
-            return nameFilteredList;
+            return _filter.GetAlaramingType();
         }
 
 

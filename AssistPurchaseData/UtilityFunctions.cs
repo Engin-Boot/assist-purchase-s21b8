@@ -7,7 +7,7 @@ namespace AssistPurchaseData
 {
     public class UtilityFunctions
     {
-        public readonly List<MonitoringDevice> _monitoringDevices = new List<MonitoringDevice>();
+        public readonly List<MonitoringDevice> MonitoringDevices = new List<MonitoringDevice>();
         private readonly List<MonitoringDevice> _deserializedMonitoringDevices = new List<MonitoringDevice>();
 
         // Give path of data.xml
@@ -24,13 +24,13 @@ namespace AssistPurchaseData
         {
             /* When a new device is to be added, it is first appended to the list and then the list is written to data.XML*/
 
-            _monitoringDevices.Add(newMonitoringDevice);
+            MonitoringDevices.Add(newMonitoringDevice);
             WriteToXml();
         }
 
         public void RemoveDevice(string deviceName)
         {
-            foreach (var device in _monitoringDevices)
+            foreach (var device in MonitoringDevices)
             {
                 if (device.DeviceName == deviceName)
                 {
@@ -66,17 +66,17 @@ namespace AssistPurchaseData
         public void WriteToXml()
         {
 
-            var serializer = new XmlSerializer(_monitoringDevices.GetType(), new XmlRootAttribute("DeviceList"));
+            var serializer = new XmlSerializer(MonitoringDevices.GetType(), new XmlRootAttribute("DeviceList"));
 
             var writer = new StreamWriter(_path);
-            serializer.Serialize(writer.BaseStream, _monitoringDevices);
+            serializer.Serialize(writer.BaseStream, MonitoringDevices);
             writer.Close();
 
         }
 
         public List<MonitoringDevice> ReadFromXml()
         {
-            var serializer = new XmlSerializer(_monitoringDevices.GetType(), new XmlRootAttribute("DeviceList"));
+            var serializer = new XmlSerializer(MonitoringDevices.GetType(), new XmlRootAttribute("DeviceList"));
 
             if (File.Exists(_path))
             {

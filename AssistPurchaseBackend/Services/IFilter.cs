@@ -6,15 +6,15 @@ namespace AssistPurchaseBackend.Services
     public interface IFilter
     {
 
-        List<MonitoringDevice> Cardiac();
-        List<MonitoringDevice> Pneumonia();
-        List<MonitoringDevice> Covid19();
-        List<MonitoringDevice> HighBP();
-        List<MonitoringDevice> NumberofMeasurmentParams(string value);
-        List<MonitoringDevice> BatteryLife(string value);
-        List<MonitoringDevice> MobileorStatic(string value);
-        List<MonitoringDevice> AdvancedFeatures();
-        List<MonitoringDevice> Display(string value);
-        List<MonitoringDevice> Alaraming();
+        List<MonitoringDevice> GetCardiacType();
+        List<MonitoringDevice> GetPneumoniaType();
+        List<MonitoringDevice> GetCovid19Type();
+        List<MonitoringDevice> GetHighBPType();
+        List<MonitoringDevice> GetNumberofMeasurmentParams(string value);
+        List<MonitoringDevice> GetBatteryLifeType(string value);
+        List<MonitoringDevice> GetMobileorStaticType(string value);
+        List<MonitoringDevice> GetAdvancedFeaturesType();
+        List<MonitoringDevice> GetDisplay(string value);
+        List<MonitoringDevice> GetAlaramingType();
     }
 }

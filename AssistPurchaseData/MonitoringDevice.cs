@@ -8,13 +8,11 @@
         public string Spo2 { get; set; }
         public string Respiration { get; set; }
         public string NumberOfMeasurementWaves { get; set; }
-        public string Hr { get; set; } // is it HeatRate?
+        public string Hr { get; set; } 
         public string PhysiologicalAlarming { get; set; }
         public string BloodPressure { get; set; }
         public string St { get; set; }
         public string Qt { get; set; }
-
-
 
         // Physical Requirements
 

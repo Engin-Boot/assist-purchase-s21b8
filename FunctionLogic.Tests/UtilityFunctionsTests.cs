@@ -34,7 +34,7 @@ namespace FunctionsLogic.Tests
         public void AddDevice_ShouldAddNewDevice()
         {
             _utility.AddDevice(_dummDevice);
-            List<MonitoringDevice> deviceList = _utility._monitoringDevices;
+            List<MonitoringDevice> deviceList = _utility.MonitoringDevices;
             int indexOfLastDevice = deviceList.Count() - 1;
             Assert.True(deviceList[indexOfLastDevice].DeviceName == _dummDevice.DeviceName);
         }

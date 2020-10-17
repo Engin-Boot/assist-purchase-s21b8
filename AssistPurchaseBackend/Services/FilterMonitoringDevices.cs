@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using AssistPurchaseData;
-using System.IO;
 namespace AssistPurchaseBackend.Services
 {
     public class FilterMonitoringDevices : IFilter
@@ -9,8 +7,8 @@ namespace AssistPurchaseBackend.Services
         private UtilityFunctions _utilityFunctions;
         private List<MonitoringDevice> _filteredList;
         private List<MonitoringDevice> _monitoringDevices;
-        
-        public List<MonitoringDevice> Cardiac()
+  
+        public List<MonitoringDevice> GetCardiacType()
         {
             _filteredList = new List<MonitoringDevice>();
             _utilityFunctions = new UtilityFunctions();
@@ -18,14 +16,16 @@ namespace AssistPurchaseBackend.Services
 
             foreach (var device in _monitoringDevices)
             {
-                if (device.Ecg=="YES"&&device.Hr=="YES")
+                if (device.Ecg == "YES" && device.Hr == "YES")
                     _filteredList.Add(device);
             }
             return _filteredList;
 
         }
-        public List<MonitoringDevice> Pneumonia()
+
+        public List<MonitoringDevice> GetPneumoniaType()
         {
+
             _filteredList = new List<MonitoringDevice>();
             _utilityFunctions = new UtilityFunctions();
             _monitoringDevices = _utilityFunctions.GetList();
@@ -38,7 +38,8 @@ namespace AssistPurchaseBackend.Services
             return _filteredList;
 
         }
-        public List<MonitoringDevice> Covid19()
+
+        public List<MonitoringDevice> GetCovid19Type()
         {
             _filteredList = new List<MonitoringDevice>();
             _utilityFunctions = new UtilityFunctions();
@@ -46,13 +47,13 @@ namespace AssistPurchaseBackend.Services
 
             foreach (var device in _monitoringDevices)
             {
-                if (device.Respiration == "YES" && device.BloodPressure== "YES")
+                if (device.Respiration == "YES" && device.BloodPressure == "YES")
                     _filteredList.Add(device);
             }
             return _filteredList;
-
         }
-        public List<MonitoringDevice> HighBP()
+
+        public List<MonitoringDevice> GetHighBPType()
         {
             _filteredList = new List<MonitoringDevice>();
             _utilityFunctions = new UtilityFunctions();
@@ -64,10 +65,9 @@ namespace AssistPurchaseBackend.Services
                     _filteredList.Add(device);
             }
             return _filteredList;
-
         }
 
-        public List<MonitoringDevice> NumberofMeasurmentParams(string value)
+        public List<MonitoringDevice> GetNumberofMeasurmentParams(string value)
         {
             _filteredList = new List<MonitoringDevice>();
             _utilityFunctions = new UtilityFunctions();
@@ -80,7 +80,8 @@ namespace AssistPurchaseBackend.Services
             }
             return _filteredList;
         }
-        public List<MonitoringDevice> BatteryLife(string value)
+
+        public List<MonitoringDevice> GetBatteryLifeType(string value)
         {
             _filteredList = new List<MonitoringDevice>();
             _utilityFunctions = new UtilityFunctions();
@@ -93,8 +94,10 @@ namespace AssistPurchaseBackend.Services
             }
             return _filteredList;
         }
-        public List<MonitoringDevice> MobileorStatic(string value)
+
+        public List<MonitoringDevice> GetMobileorStaticType(string value)
         {
+
             _filteredList = new List<MonitoringDevice>();
             _utilityFunctions = new UtilityFunctions();
             _monitoringDevices = _utilityFunctions.GetList();
@@ -106,7 +109,8 @@ namespace AssistPurchaseBackend.Services
             }
             return _filteredList;
         }
-        public List<MonitoringDevice> AdvancedFeatures()
+
+        public List<MonitoringDevice> GetAdvancedFeaturesType()
         {
             _filteredList = new List<MonitoringDevice>();
             _utilityFunctions = new UtilityFunctions();
@@ -114,25 +118,13 @@ namespace AssistPurchaseBackend.Services
 
             foreach (var device in _monitoringDevices)
             {
-                if (device.PatientLocation=="YES" && device.AntiMicrobialGlass=="YES")
-                     _filteredList.Add(device);
-            }
-            return _filteredList;
-        }
-        public List<MonitoringDevice> Alaraming()
-        {
-            _filteredList = new List<MonitoringDevice>();
-            _utilityFunctions = new UtilityFunctions();
-            _monitoringDevices = _utilityFunctions.GetList();
-            
-            foreach (var device in _monitoringDevices)
-            {
-                if (device.PhysiologicalAlarming == "YES")
+                if (device.PatientLocation == "YES" && device.AntiMicrobialGlass == "YES")
                     _filteredList.Add(device);
             }
             return _filteredList;
         }
-        public List<MonitoringDevice> Display(string value)
+
+        public List<MonitoringDevice> GetDisplay(string value)
         {
             _filteredList = new List<MonitoringDevice>();
             _utilityFunctions = new UtilityFunctions();
@@ -146,6 +138,18 @@ namespace AssistPurchaseBackend.Services
             return _filteredList;
         }
 
+        public List<MonitoringDevice> GetAlaramingType()
+        {
+            _filteredList = new List<MonitoringDevice>();
+            _utilityFunctions = new UtilityFunctions();
+            _monitoringDevices = _utilityFunctions.GetList();
 
+            foreach (var device in _monitoringDevices)
+            {
+                if (device.PhysiologicalAlarming == "YES")
+                    _filteredList.Add(device);
+            }
+            return _filteredList;
+        }
     }
 }
