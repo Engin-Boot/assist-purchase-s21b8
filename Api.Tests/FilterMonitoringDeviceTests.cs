@@ -6,7 +6,7 @@ namespace Api.Tests
 {
     public class FilterMonitoringDeviceTests
     {
-        private FilterMonitoringDevices _filterMonitoringDevice = new FilterMonitoringDevices();
+        private readonly FilterMonitoringDevices _filterMonitoringDevice = new FilterMonitoringDevices();
 
         [Fact]
         void GetCardiacType_ShouldReturnCardiacTypeObjects()
