@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using AssistPurchaseBackend.Services;
 using AssistPurchaseData;
 using Microsoft.AspNetCore.Mvc;
+using Services;
 
 namespace AssistPurchaseBackend.Controllers
 {
@@ -30,7 +30,7 @@ namespace AssistPurchaseBackend.Controllers
         [HttpGet("HighBP")]
         public List<MonitoringDevice> GetCategoryHighBpTypeDevices()
         {
-           return _filter.GetHighBPType();
+           return _filter.GetHighBpType();
         }
         [HttpGet("BatteryLife/{value}")]
         public List<MonitoringDevice> GetCatergoryBatteryLifeOfDevices(string value)

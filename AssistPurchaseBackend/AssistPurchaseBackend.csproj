@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AssistPurchaseData\AssistPurchaseData.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 
 </Project>

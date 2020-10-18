@@ -3,7 +3,7 @@ using System.Linq;
 using AssistPurchaseData;
 using Xunit;
 
-namespace FunctionsLogic.Tests
+namespace FunctionLogic.Tests
 {
     public class UtilityFunctionsTests
     {

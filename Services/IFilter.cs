@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using AssistPurchaseData;
 
-namespace AssistPurchaseBackend.Services
+namespace Services
 {
     public interface IFilter
     {
@@ -9,7 +9,7 @@ namespace AssistPurchaseBackend.Services
         List<MonitoringDevice> GetCardiacType();
         List<MonitoringDevice> GetPneumoniaType();
         List<MonitoringDevice> GetCovid19Type();
-        List<MonitoringDevice> GetHighBPType();
+        List<MonitoringDevice> GetHighBpType();
         List<MonitoringDevice> GetNumberofMeasurmentParams(string value);
         List<MonitoringDevice> GetBatteryLifeType(string value);
         List<MonitoringDevice> GetMobileorStaticType(string value);

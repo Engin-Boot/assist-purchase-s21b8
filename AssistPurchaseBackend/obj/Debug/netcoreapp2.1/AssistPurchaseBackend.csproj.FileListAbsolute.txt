@@ -52,3 +52,5 @@ C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\Assist
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.csproj.CopyComplete
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.pdb
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\Services.dll
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\Services.pdb

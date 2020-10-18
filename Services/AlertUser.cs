@@ -1,31 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.IdentityModel.Tokens;
-
-namespace AssistPurchaseBackend.Services
+﻿using System.Collections.Generic;
+namespace Services
 {
     public class AlertUser
     {
-        private string message;
-        List<UserDetails> _userDetails = new List<UserDetails>();
+        private string _message;
+        readonly List<UserDetails> _userDetails = new List<UserDetails>();
 
-        UserDetails user = new UserDetails();
+        private UserDetails _user = new UserDetails();
 
         public List<UserDetails> UserRegistration(string username, string usermailid, string bookedproduct,
-            int UserPhoneNo)
+            int userPhoneNo)
         {
             _userDetails.Add(
                 new UserDetails
                 {
                     UserName = username,
-                    UserEmailID = usermailid,
+                    UserEmailId = usermailid,
                     ProductsBooked = bookedproduct,
-                    UserContactNo = UserPhoneNo
+                    UserContactNo = userPhoneNo
 
                 });
             return _userDetails;
@@ -36,14 +28,14 @@ namespace AssistPurchaseBackend.Services
            
             if (_userDetails != null)
             {
-                message = "A new Model has arrived!!!!!";
+                _message = "A new Model has arrived!!!!!";
             }
             else
             {
-                message = "No users registered to alert";
+                _message = "No users registered to alert";
             }
 
-            return message;
+            return _message;
         }
 
         public string UserCallBackRequest(string registeredusername, int phoneno)
@@ -53,17 +45,17 @@ namespace AssistPurchaseBackend.Services
             {
                 if (registeredusername == userdetailslist.UserName && phoneno == userdetailslist.UserContactNo)
                 {
-                    message = "One of our Philips Personnel will reach you out soon..Thank You!!!";
+                    _message = "One of our Philips Personnel will reach you out soon..Thank You!!!";
                 }
                 else
                 {
-                    message = "User not registered or registered phone no doesnot match";
+                    _message = "User not registered or registered phone no doesnot match";
                 }
             }
 
 
 
-            return message;
+            return _message;
         }
 
         public string OrderConfirmationEmailAlert(string registereduser, string confirmproductbooking)
@@ -75,16 +67,16 @@ namespace AssistPurchaseBackend.Services
                 if (registereduser == userdetailslist.UserName &&
                     confirmproductbooking == userdetailslist.ProductsBooked)
                 {
-                    message = $"{registereduser} has booked the following product {confirmproductbooking} ";
+                    _message = $"{registereduser} has booked the following product {confirmproductbooking} ";
                 }
                 else
                 {
-                    message = "User not registered or device name doesnot match";
+                    _message = "User not registered or device name doesnot match";
                 }
 
                
             }
-            return message;
+            return _message;
         }
     }
 }

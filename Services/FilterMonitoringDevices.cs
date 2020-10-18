@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using AssistPurchaseData;
-namespace AssistPurchaseBackend.Services
+namespace Services
 {
     public class FilterMonitoringDevices : IFilter
     {
         private UtilityFunctions _utilityFunctions;
         private List<MonitoringDevice> _filteredList;
         private List<MonitoringDevice> _monitoringDevices;
-  
+
+        #region Returns Devices of Cardiac Type
         public List<MonitoringDevice> GetCardiacType()
         {
             _filteredList = new List<MonitoringDevice>();
@@ -22,7 +23,9 @@ namespace AssistPurchaseBackend.Services
             return _filteredList;
 
         }
+        #endregion
 
+        #region Returns Devices of Pneumonia Type
         public List<MonitoringDevice> GetPneumoniaType()
         {
 
@@ -39,6 +42,9 @@ namespace AssistPurchaseBackend.Services
 
         }
 
+        #endregion
+
+        #region Gets Covid19 Type devices
         public List<MonitoringDevice> GetCovid19Type()
         {
             _filteredList = new List<MonitoringDevice>();
@@ -52,8 +58,10 @@ namespace AssistPurchaseBackend.Services
             }
             return _filteredList;
         }
+        #endregion
 
-        public List<MonitoringDevice> GetHighBPType()
+        #region Returns Devices of HighBP type
+        public List<MonitoringDevice> GetHighBpType()
         {
             _filteredList = new List<MonitoringDevice>();
             _utilityFunctions = new UtilityFunctions();
@@ -67,6 +75,10 @@ namespace AssistPurchaseBackend.Services
             return _filteredList;
         }
 
+
+        #endregion
+
+        #region Returns Devices of with given number of measurement waves
         public List<MonitoringDevice> GetNumberofMeasurmentParams(string value)
         {
             _filteredList = new List<MonitoringDevice>();
@@ -81,6 +93,12 @@ namespace AssistPurchaseBackend.Services
             return _filteredList;
         }
 
+
+        #endregion
+
+
+        #region Returns devices with a specified battery life
+
         public List<MonitoringDevice> GetBatteryLifeType(string value)
         {
             _filteredList = new List<MonitoringDevice>();
@@ -94,6 +112,10 @@ namespace AssistPurchaseBackend.Services
             }
             return _filteredList;
         }
+
+        #endregion
+
+        #region Returns devices based on whether they are Mobile or static
 
         public List<MonitoringDevice> GetMobileorStaticType(string value)
         {
@@ -110,6 +132,9 @@ namespace AssistPurchaseBackend.Services
             return _filteredList;
         }
 
+        #endregion
+
+        #region Returns devices having advanced features
         public List<MonitoringDevice> GetAdvancedFeaturesType()
         {
             _filteredList = new List<MonitoringDevice>();
@@ -123,6 +148,12 @@ namespace AssistPurchaseBackend.Services
             }
             return _filteredList;
         }
+
+
+        #endregion
+
+
+        #region Returns devices with the given display size
 
         public List<MonitoringDevice> GetDisplay(string value)
         {
@@ -138,6 +169,9 @@ namespace AssistPurchaseBackend.Services
             return _filteredList;
         }
 
+        #endregion
+
+        #region Returns devices that have the capability of alarming
         public List<MonitoringDevice> GetAlaramingType()
         {
             _filteredList = new List<MonitoringDevice>();
@@ -151,5 +185,7 @@ namespace AssistPurchaseBackend.Services
             }
             return _filteredList;
         }
+        #endregion
+
     }
 }
