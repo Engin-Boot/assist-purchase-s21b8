@@ -97,7 +97,7 @@ namespace Services
             }
             return _message;
         }
-        public void WriteToXml()
+        private void WriteToXml()
         {
 
             var serializer = new XmlSerializer(_userDetails.GetType(), new XmlRootAttribute("UserDetailsList"));
@@ -107,7 +107,7 @@ namespace Services
             writer.Close();
 
         }
-        public List<UserDetails> ReadFromXml()
+        private List<UserDetails> ReadFromXml()
         {
             var serializer = new XmlSerializer(_userDetails.GetType(), new XmlRootAttribute("UserDetailsList"));
 
