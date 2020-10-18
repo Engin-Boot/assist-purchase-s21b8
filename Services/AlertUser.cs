@@ -1,13 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
+
 namespace Services
 {
-    public class AlertUser
+    public class AlertUser 
     {
         private string _message;
-         List<UserDetails> _userDetails = new List<UserDetails>();
+        public UserDetails User { get; }
+        List<UserDetails> _userDetails = new List<UserDetails>();
+        List<UserDetails> _deserializedMonitoringDevices = new List<UserDetails>();
+        string _path = @"C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\UserDetails.xml";
 
-        private UserDetails _user = new UserDetails();
+        public AlertUser(UserDetails user)
+        {
+            User = user;
+        }
+
+        public AlertUser()
+        {
+        }
 
         public List<UserDetails> UserRegistration(string username, string usermailid, string bookedproduct,
             int userPhoneNo)
@@ -21,6 +34,7 @@ namespace Services
                     UserContactNo = userPhoneNo
 
                 });
+            WriteToXml();
             return _userDetails;
         }
 
@@ -41,8 +55,8 @@ namespace Services
 
         public string UserCallBackRequest(string registeredusername, int phoneno)
         {
-            
-            foreach (var userdetailslist in _userDetails)
+            var user = ReadFromXml();
+            foreach (var userdetailslist in user)
             {
                 if (registeredusername == userdetailslist.UserName && phoneno == userdetailslist.UserContactNo)
                 {
@@ -61,9 +75,9 @@ namespace Services
 
         public string OrderConfirmationEmailAlert(string registereduser, string confirmproductbooking)
         {
-            Console.WriteLine(_userDetails);
 
-            foreach (var userdetailslist in this._userDetails)
+            var user = ReadFromXml();
+            foreach (var userdetailslist in user)
             {
                
                 if (registereduser == userdetailslist.UserName &&
@@ -83,5 +97,39 @@ namespace Services
             }
             return _message;
         }
+        public void WriteToXml()
+        {
+
+            var serializer = new XmlSerializer(_userDetails.GetType(), new XmlRootAttribute("UserDetailsList"));
+
+            var writer = new StreamWriter(_path);
+            serializer.Serialize(writer.BaseStream, _userDetails);
+            writer.Close();
+
+        }
+        public List<UserDetails> ReadFromXml()
+        {
+            var serializer = new XmlSerializer(_userDetails.GetType(), new XmlRootAttribute("UserDetailsList"));
+
+            if (File.Exists(_path))
+            {
+                StreamReader reader = new StreamReader(_path);
+                List<UserDetails> userDetails = (List<UserDetails>)serializer.Deserialize(reader);
+                reader.Close();
+
+                foreach (var details in userDetails)
+                {
+                    _deserializedMonitoringDevices.Add(details);
+                }
+            }
+            else
+            {
+                Console.WriteLine("File not found.");
+                //var doc = new XDocument(new XElement("Use-Cases"));
+                //doc.Save(path);
+            }
+            return _deserializedMonitoringDevices;
+        }
+
     }
 }

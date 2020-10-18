@@ -10,10 +10,10 @@ namespace AssistPurchaseBackend.Controllers
     {
         private AlertUser user = new AlertUser();
 
-        [HttpGet("Registration/{username}/{usermaildid}/{productbooked}/{UserCallid}")]
-        public List<UserDetails> AddUserDetailsforRegistration(string username,string usermaildid,string productbooked,int UserCallid)
+        [HttpGet("Registration/{username}/{usermaildid}/{productbooked}/{userCallid}")]
+        public List<UserDetails> AddUserDetailsforRegistration(string username,string usermaildid,string productbooked,int userCallid)
         {
-            return user.UserRegistration(username,usermaildid,productbooked,UserCallid);
+            return user.UserRegistration(username,usermaildid,productbooked,userCallid);
         }
         [HttpPost("NewModelAlert")]
         public string NewModelEmailAlerttoUser()
@@ -27,11 +27,11 @@ namespace AssistPurchaseBackend.Controllers
 
             return user.OrderConfirmationEmailAlert(registeredname,productsbooked);
         }
-        [HttpPost("CallBack/{registeredname}/{RegisteredUserphoneno}")]
-        public string CallBackRequestFromRegisteredUser(string registeredname, int RegisteredUserphoneno)
+        [HttpPost("CallBack/{registeredname}/{registeredUserphoneno}")]
+        public string CallBackRequestFromRegisteredUser(string registeredname, int registeredUserphoneno)
         {
 
-            return user.UserCallBackRequest(registeredname,RegisteredUserphoneno);
+            return user.UserCallBackRequest(registeredname,registeredUserphoneno);
         }
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<UserDetailsList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UserDetails>
+    <UserName>john</UserName>
+    <UserEmailId>jake</UserEmailId>
+    <ProductsBooked>IntelliVue</ProductsBooked>
+    <UserContactNo>1234</UserContactNo>
+  </UserDetails>
+</UserDetailsList>
