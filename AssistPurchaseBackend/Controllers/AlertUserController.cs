@@ -27,7 +27,7 @@ namespace AssistPurchaseBackend.Controllers
 
             return user.OrderConfirmationEmailAlert(registeredname,productsbooked);
         }
-        [HttpPost("OrderConfirmation/{registeredname}/{RegisteredUserphoneno}")]
+        [HttpPost("CallBack/{registeredname}/{RegisteredUserphoneno}")]
         public string CallBackRequestFromRegisteredUser(string registeredname, int RegisteredUserphoneno)
         {
 

@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 namespace Services
 {
     public class AlertUser
     {
         private string _message;
-        readonly List<UserDetails> _userDetails = new List<UserDetails>();
+         List<UserDetails> _userDetails = new List<UserDetails>();
 
         private UserDetails _user = new UserDetails();
 
@@ -60,18 +61,22 @@ namespace Services
 
         public string OrderConfirmationEmailAlert(string registereduser, string confirmproductbooking)
         {
+            Console.WriteLine(_userDetails);
 
-            foreach (var userdetailslist in _userDetails)
+            foreach (var userdetailslist in this._userDetails)
             {
                
                 if (registereduser == userdetailslist.UserName &&
                     confirmproductbooking == userdetailslist.ProductsBooked)
                 {
                     _message = $"{registereduser} has booked the following product {confirmproductbooking} ";
+                    break;
+                    
                 }
                 else
                 {
                     _message = "User not registered or device name doesnot match";
+                    break;
                 }
 
                
