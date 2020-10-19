@@ -234,6 +234,7 @@ C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\Fun
 C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\FunctionLogic.Tests\obj\Debug\FunctionLogic.Tests.csproj.CopyComplete
 C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\FunctionLogic.Tests\obj\Debug\FunctionLogic.Tests.dll
 C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\FunctionLogic.Tests\obj\Debug\FunctionLogic.Tests.pdb
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\xunit.abstractions.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\xunit.runner.visualstudio.testadapter.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\xunit.runner.reporters.net452.dll
@@ -350,6 +351,7 @@ C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\Functi
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.CodeAnalysis.Workspaces.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.VisualStudio.Web.CodeGeneration.dll
@@ -358,6 +360,7 @@ C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\Functi
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Newtonsoft.Json.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\NuGet.Frameworks.dll
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Services.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\System.Buffers.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\System.Collections.Immutable.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\System.Composition.AttributedModel.dll
@@ -377,6 +380,7 @@ C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\Functi
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\xunit.execution.desktop.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\AssistPurchaseData.pdb
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\AssistPurchaseData.exe.config
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Services.pdb
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.AspNetCore.Html.Abstractions.xml
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.AspNetCore.Razor.xml
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.AspNetCore.Razor.Language.xml
@@ -470,4 +474,3 @@ C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\Functi
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\obj\Debug\FunctionLogic.Tests.csproj.CopyComplete
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\obj\Debug\FunctionLogic.Tests.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\obj\Debug\FunctionLogic.Tests.pdb
-C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Microsoft.VisualStudio.CodeCoverage.Shim.dll

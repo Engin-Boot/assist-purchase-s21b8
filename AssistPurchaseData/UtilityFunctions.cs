@@ -10,10 +10,10 @@ namespace AssistPurchaseData
         public readonly List<MonitoringDevice> MonitoringDevices = new List<MonitoringDevice>();
         private readonly List<MonitoringDevice> _deserializedMonitoringDevices = new List<MonitoringDevice>();
 
-        // Give path of data.xml
-        //private readonly string _path = @"C:\Users\320087992\source\repos\assist-latest\assist-purchase-s21b8\data.xml";
-        private readonly string _path =
-            @"D:\a\assist-purchase-s21b8\assist-purchase-s21b8\data.xml";
+        //Give path of data.xml
+        private readonly string _path = @"C:\Users\320087992\source\repos\assist-latest\assist-purchase-s21b8\data.xml";
+        //private readonly string _path =
+        //    @"D:\a\assist-purchase-s21b8\assist-purchase-s21b8\data.xml";
 
         public UtilityFunctions()
         {
