@@ -7,7 +7,7 @@
         public string Ecg { get; set; }
         public string Spo2 { get; set; }
         public string Respiration { get; set; }
-        public string NumberOfMeasurementWaves { get; set; }
+        //public string NumberOfMeasurementWaves { get; set; }
         public string Hr { get; set; } 
         public string PhysiologicalAlarming { get; set; }
         public string BloodPressure { get; set; }
