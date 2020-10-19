@@ -28,10 +28,18 @@ namespace Services
             return _userDetails;
         }
 
-        public string NewModelEmailAlert()
+        public string NewModelEmailAlert(string usermailid)
         {
-
-            _ = _userDetails != null ? _message.Equals("A new Model has arrived!!!!!") : _message.Equals("No users registered to alert");
+            var user = ReadFromXml();
+            foreach (var userdetailslist in user)
+            {
+                if (userdetailslist != null && usermailid == userdetailslist.UserEmailId)
+                  
+                        _message="A new Model has arrived!!!!!";
+                else
+                        _message="No users registered to alert";
+               
+            }
             return _message;
         }
 
@@ -63,7 +71,7 @@ namespace Services
             {
                
                 if (registereduser == userdetailslist.UserName &&
-                    confirmproductbooking == userdetailslist.UserEmailId)
+                    confirmproductbooking == userdetailslist.ProductsBooked)
                 {
                     _message = $"{registereduser} has booked the following product {confirmproductbooking} ";
                     break;

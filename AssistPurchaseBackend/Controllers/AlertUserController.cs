@@ -15,11 +15,11 @@ namespace AssistPurchaseBackend.Controllers
         {
             return _user.UserRegistration(username,usermaildid,productbooked,userCallid);
         }
-        [HttpPost("NewModelAlert")]
-        public string NewModelEmailAlerttoUser()
+        [HttpPost("NewModelAlert/{registeredemailid}")]
+        public string NewModelEmailAlerttoUser(string registeredemailid)
         {
 
-            return _user.NewModelEmailAlert();
+            return _user.NewModelEmailAlert(registeredemailid);
         }
         [HttpPost("OrderConfirmation/{registeredname}/{productsbooked}")]
         public string OrderConfirmationEmailAlerttoRegisteredUsers(string registeredname,string productsbooked)
