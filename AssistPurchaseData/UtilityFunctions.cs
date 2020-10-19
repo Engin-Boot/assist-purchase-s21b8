@@ -14,12 +14,6 @@ namespace AssistPurchaseData
         //private readonly string _path = @"C:\Users\320087992\source\repos\assist-latest\assist-purchase-s21b8\data.xml";
         private readonly string _path =@"D:\a\assist-purchase-s21b8\assist-purchase-s21b8\data.xml";
 
-        public UtilityFunctions()
-        {
-            //PopulateExistingDevices();
-            //WriteToXml();
-        }
-
         public void AddDevice(MonitoringDevice newMonitoringDevice)
         {
             /* When a new device is to be added, it is first appended to the list and then the list is written to data.XML*/

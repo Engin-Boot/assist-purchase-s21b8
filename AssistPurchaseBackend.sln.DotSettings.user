@@ -2,5 +2,6 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=99c0844d_002Db710_002D4136_002Dacce_002Db5a08c481f7a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetList_ShouldReturnListOfAllDevices" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::A98A5B1A-C42E-4845-A003-F1A518B9131E::.NETFramework,Version=v4.6.1::FunctionLogic.Tests.UtilityFunctionsTests.GetList_ShouldReturnListOfAllDevices&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::A98A5B1A-C42E-4845-A003-F1A518B9131E::.NETFramework,Version=v4.6.1::Api.Tests.FilterMonitoringDeviceTests.GetCardiacType_ShouldReturnCardiacTypeObjects&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

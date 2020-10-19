@@ -474,3 +474,5 @@ C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\Functi
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\obj\Debug\FunctionLogic.Tests.csproj.CopyComplete
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\obj\Debug\FunctionLogic.Tests.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\FunctionLogic.Tests\obj\Debug\FunctionLogic.Tests.pdb
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Services.dll
+C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\FunctionLogic.Tests\bin\Debug\Services.pdb

@@ -1,8 +1,7 @@
 ﻿using Services;
 using Xunit;
 
-
-namespace Api.Tests
+namespace FunctionLogic.Tests
 {
     public class FilterMonitoringDeviceTests
     {
