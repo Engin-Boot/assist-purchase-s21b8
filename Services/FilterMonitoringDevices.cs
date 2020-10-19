@@ -79,19 +79,19 @@ namespace Services
         #endregion
 
         #region Returns Devices of with given number of measurement waves
-        public List<MonitoringDevice> GetNumberofMeasurmentParams(string value)
-        {
-            _filteredList = new List<MonitoringDevice>();
-            _utilityFunctions = new UtilityFunctions();
-            _monitoringDevices = _utilityFunctions.GetList();
+        //public List<MonitoringDevice> GetNumberofMeasurmentParams(string value)
+        //{
+        //    _filteredList = new List<MonitoringDevice>();
+        //    _utilityFunctions = new UtilityFunctions();
+        //    _monitoringDevices = _utilityFunctions.GetList();
 
-            foreach (var device in _monitoringDevices)
-            {
-                if (device.NumberOfMeasurementWaves == value)
-                    _filteredList.Add(device);
-            }
-            return _filteredList;
-        }
+        //    foreach (var device in _monitoringDevices)
+        //    {
+        //        if (device.NumberOfMeasurementWaves == value)
+        //            _filteredList.Add(device);
+        //    }
+        //    return _filteredList;
+        //}
 
 
         #endregion

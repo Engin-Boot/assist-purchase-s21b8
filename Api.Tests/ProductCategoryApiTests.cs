@@ -10,18 +10,17 @@ namespace Api.Tests
     public class ProductCategoryApiTests
     {
         string baseUrl = "http://localhost:5000/api/productcategory/";
-        private RestClient _client;
-        private RestRequest _request;
-        
+        private  static RestClient _client;
+        private  static RestRequest _request;
 
+        private static readonly JsonDeserializer Deserialize = new JsonDeserializer();
+        private static readonly IRestResponse Response = _client.Execute(_request);
+        List<MonitoringDevice> resultList = Deserialize.Deserialize<List<MonitoringDevice>>(Response);
         [TestMethod]
         public void Test_CardiacType()
         {
             _client = new RestClient(baseUrl);
             _request = new RestRequest("cardiac", Method.GET) { RequestFormat = DataFormat.Json };
-            var deserialize = new JsonDeserializer();
-            var response = _client.Execute(_request);
-            List<MonitoringDevice> resultList = deserialize.Deserialize<List<MonitoringDevice>>(response);
             foreach (var device in resultList)
             {
                 Assert.IsTrue(device.Ecg == "YES" && device.Hr == "YES");
@@ -32,10 +31,6 @@ namespace Api.Tests
         {
             _client = new RestClient(baseUrl);
             _request = new RestRequest("pneumonia", Method.GET) { RequestFormat = DataFormat.Json };
-
-            var response = _client.Execute(_request);
-            var deserialize = new JsonDeserializer();
-            List<MonitoringDevice> resultList = deserialize.Deserialize<List<MonitoringDevice>>(response);
             foreach (var device in resultList)
             {
                 Assert.IsTrue(device.Respiration == "YES" && device.Spo2 == "YES");
@@ -47,10 +42,6 @@ namespace Api.Tests
         {
             _client = new RestClient(baseUrl);
             _request = new RestRequest("covid19", Method.GET) { RequestFormat = DataFormat.Json };
-            var deserialize = new JsonDeserializer();
-            var response = _client.Execute(_request);
-
-            List<MonitoringDevice> resultList = deserialize.Deserialize<List<MonitoringDevice>>(response);
             foreach (var device in resultList)
             {
                 Assert.IsTrue(device.Respiration == "YES" && device.BloodPressure == "YES");
@@ -62,10 +53,6 @@ namespace Api.Tests
         {
             _client = new RestClient(baseUrl);
             _request = new RestRequest("highbp", Method.GET) { RequestFormat = DataFormat.Json };
-
-            var response = _client.Execute(_request);
-            var deserialize = new JsonDeserializer();
-            List<MonitoringDevice> resultList = deserialize.Deserialize<List<MonitoringDevice>>(response);
             foreach (var device in resultList)
             {
                 Assert.IsTrue(device.BloodPressure == "YES");
@@ -81,10 +68,6 @@ namespace Api.Tests
             _request = new RestRequest("batterylife/{batterylife}", Method.GET) { RequestFormat = DataFormat.Json };
             _request.AddUrlSegment("batterylife", batteryLife);
 
-            var deserialize = new JsonDeserializer();
-            var response = _client.Execute(_request);
-
-            List<MonitoringDevice> resultList = deserialize.Deserialize<List<MonitoringDevice>>(response);
             foreach (var device in resultList)
             {
                 Assert.IsTrue(device.BatteryLife == batteryLife.ToString());
@@ -99,11 +82,6 @@ namespace Api.Tests
             _client = new RestClient(baseUrl);
             _request = new RestRequest("display/{displaysize}", Method.GET) { RequestFormat = DataFormat.Json };
             _request.AddUrlSegment("displaysize", displaysize);
-
-            var response = _client.Execute(_request);
-            var deserialize = new JsonDeserializer();
-            List<MonitoringDevice> resultList = deserialize.Deserialize<List<MonitoringDevice>>(response);
-
             foreach (var device in resultList)
             {
                 Assert.IsTrue(device.Size == displaysize || device.SupportedScreenOrientations == "YES");
@@ -115,13 +93,8 @@ namespace Api.Tests
         {
             string value = "TRUE";
             _client = new RestClient(baseUrl);
-            _request = new RestRequest("advancedfeatures/{value}", Method.GET) { RequestFormat = DataFormat.Json };
-            _request.AddUrlSegment("value", value);
-
-            var response = _client.Execute(_request);
-            var deserialize = new JsonDeserializer();
-
-            List<MonitoringDevice> resultList = deserialize.Deserialize<List<MonitoringDevice>>(response);
+            _request = new RestRequest("advancedfeatures/{featurevalues}", Method.GET) { RequestFormat = DataFormat.Json };
+            _request.AddUrlSegment("featurevalues", value);
             foreach (var device in resultList)
             {
                 Assert.IsTrue(device.PatientLocation == "YES" && device.AntiMicrobialGlass == "YES");
@@ -133,13 +106,8 @@ namespace Api.Tests
         {
             string value = "MOBILE";
             _client = new RestClient(baseUrl);
-            _request = new RestRequest("mobileorstatic/{value}", Method.GET) { RequestFormat = DataFormat.Json };
-            _request.AddUrlSegment("value", value);
-
-            var response = _client.Execute(_request);
-            var deserialize = new JsonDeserializer();
-
-            List<MonitoringDevice> resultList = deserialize.Deserialize<List<MonitoringDevice>>(response);
+            _request = new RestRequest("mobileorstatic/{staticormobile}", Method.GET) { RequestFormat = DataFormat.Json };
+            _request.AddUrlSegment("staticormobile", value);
             foreach (var device in resultList)
             {
                 Assert.IsTrue(device.MobileOrStatic == value);
@@ -151,13 +119,8 @@ namespace Api.Tests
         {
             string value = "TRUE";
             _client = new RestClient(baseUrl);
-            _request = new RestRequest("alaraming/{value}", Method.GET) { RequestFormat = DataFormat.Json };
-            _request.AddUrlSegment("value", value);
-
-            var response = _client.Execute(_request);
-            var deserialize = new JsonDeserializer();
-
-            List<MonitoringDevice> resultList = deserialize.Deserialize<List<MonitoringDevice>>(response);
+            _request = new RestRequest("alaraming/{physiologicalalaram}", Method.GET) { RequestFormat = DataFormat.Json };
+            _request.AddUrlSegment("physiologicalalaram", value);
             foreach (var device in resultList)
             {
                 Assert.IsTrue(device.PhysiologicalAlarming == "YES");
