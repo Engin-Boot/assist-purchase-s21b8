@@ -13,7 +13,7 @@ namespace AssistPurchaseData
         // Give path of data.xml
         //private readonly string _path = @"C:\Users\320087992\source\repos\assist-latest\assist-purchase-s21b8\data.xml";
         private readonly string _path =
-            @"D:\a\assist-purchase-s21b8\assist-purchase-s21b8\data.xml\data.xml";
+            @"D:\a\assist-purchase-s21b8\assist-purchase-s21b8\data.xml";
 
         public UtilityFunctions()
         {
