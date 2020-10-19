@@ -167,6 +167,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FilterMonitoringDeviceTests.cs" />
     <Compile Include="UtilityFunctionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -183,6 +184,10 @@
     <ProjectReference Include="..\AssistPurchaseData\AssistPurchaseData.csproj">
       <Project>{dfaab4a7-e9ff-40bd-bab7-e1093620b59c}</Project>
       <Name>AssistPurchaseData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{41A2FC9F-5C4E-4E6E-BE14-716AA4CD41FC}</Project>
+      <Name>Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
