@@ -152,6 +152,7 @@
     <Compile Include="MonitoringDevice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDetails.cs" />
     <Compile Include="UtilityFunctions.cs" />
   </ItemGroup>
   <ItemGroup>

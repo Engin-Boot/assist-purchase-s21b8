@@ -44,7 +44,6 @@
     <Compile Include="AlertUser.cs" />
     <Compile Include="FilterMonitoringDevices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AssistPurchaseData\AssistPurchaseData.csproj">

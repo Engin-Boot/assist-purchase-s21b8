@@ -438,6 +438,7 @@ C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\Assist
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseData\bin\Debug\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseData\bin\Debug\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseData\bin\Debug\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseData\obj\Debug\AssistPurchaseData.csprojAssemblyReference.cache
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseData\obj\Debug\AssistPurchaseData.exe.config
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseData\obj\Debug\AssistPurchaseData.csproj.CoreCompileInputs.cache
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseData\obj\Debug\AssistPurchaseData.csproj.CopyComplete

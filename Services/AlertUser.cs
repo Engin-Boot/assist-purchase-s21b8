@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AssistPurchaseData;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
@@ -7,75 +8,67 @@ namespace Services
 {
     public class AlertUser
     {
-
         private string _message;
-        readonly List<UserDetails> _userDetails = new List<UserDetails>();
-        readonly List<UserDetails> _deserializedMonitoringDevices = new List<UserDetails>();
-        string _path = @"C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\UserDetails.xml";
-        public List<UserDetails> UserRegistration(string username, string usermailid, string bookedproduct,
-            int userPhoneNo)
-        {
-            _userDetails.Add(
-                new UserDetails
-                {
-                    UserName = username,
-                    UserEmailId = usermailid,
-                    ProductsBooked = bookedproduct,
-                    UserContactNo = userPhoneNo
 
-                });
+        List<UserDetails> _userDetails = new List<UserDetails>();
+        List<UserDetails> _deserializedMonitoringDevices = new List<UserDetails>();
+        string _path = @"D:\a\assist-purchase-s21b8\assist-purchase-s21b8\UserDetails.xml";
+
+        public List<UserDetails> UserRegistration(UserDetails user)
+        {
+            _userDetails.Add(user);
             WriteToXml();
             return _userDetails;
         }
 
-        public string NewModelEmailAlert(string usermailid)
+        public string NewModelEmailAlert()
         {
-            var user = ReadFromXml();
-            foreach (var userdetailslist in user)
+            _userDetails = ReadFromXml();
+            if (_userDetails != null)
             {
-                if (userdetailslist != null && usermailid == userdetailslist.UserEmailId)
-                  
-                        _message="A new Model has arrived!!!!!";
-                else
-                        _message="No users registered to alert";
-               
+                _message = "A new Model has arrived!!!!!";
             }
+            else
+            {
+                _message = "No users registered to alert";
+            }
+
             return _message;
         }
 
-        public string UserCallBackRequest(string registeredusername, int phoneno)
+        public string UserCallBackRequest(UserDetails userDetails)
         {
-            var user = ReadFromXml();
-            foreach (var userdetailslist in user)
+            var userdetailslist = ReadFromXml();
+            foreach (var user in userdetailslist)
             {
-                if (registeredusername == userdetailslist.UserName && phoneno == userdetailslist.UserContactNo)
+                if (userDetails.UserName == user.UserName && userDetails.UserContactNo == user.UserContactNo)
                 {
                     _message = "One of our Philips Personnel will reach you out soon..Thank You!!!";
+                    break;
                 }
                 else
                 {
-                    _message = "User not registered or registered phone no doesnot match";
+                    _message = "User not registered or registered phone no does not match";
+                    break;
                 }
             }
-
-
 
             return _message;
         }
 
-        public string OrderConfirmationEmailAlert(string registereduser, string confirmproductbooking)
+        public string OrderConfirmationEmailAlert(UserDetails userDetails)
         {
 
-            var user = ReadFromXml();
-            foreach (var userdetailslist in user)
+            var userdetailslist = ReadFromXml();
+            foreach (var user in userdetailslist)
             {
-               
-                if (registereduser == userdetailslist.UserName &&
-                    confirmproductbooking == userdetailslist.ProductsBooked)
+
+                if (user.UserName == user.UserName &&
+                    user.ProductsBooked == user.ProductsBooked)
                 {
-                    _message = $"{registereduser} has booked the following product {confirmproductbooking} ";
+                    _message = $"{userDetails.UserName} has booked the following product {userDetails.ProductsBooked} ";
                     break;
-                    
+
                 }
                 else
                 {
@@ -83,7 +76,7 @@ namespace Services
                     break;
                 }
 
-               
+
             }
             return _message;
         }

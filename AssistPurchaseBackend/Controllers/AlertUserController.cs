@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AssistPurchaseData;
 using Microsoft.AspNetCore.Mvc;
 using Services;
 
@@ -8,30 +9,27 @@ namespace AssistPurchaseBackend.Controllers
     [ApiController]
     public class AlertUserController : ControllerBase
     {
-        private readonly  AlertUser _user = new AlertUser();
+        private AlertUser user = new AlertUser();
 
-        [HttpGet("Registration/{username}/{usermaildid}/{productbooked}/{userCallid}")]
-        public List<UserDetails> AddUserDetailsforRegistration(string username,string usermaildid,string productbooked,int userCallid)
+        [HttpPost("Registration")]
+        public List<UserDetails> AddUserDetailsforRegistration([FromBody] UserDetails userDetails)
         {
-            return _user.UserRegistration(username,usermaildid,productbooked,userCallid);
+            return user.UserRegistration(userDetails);
         }
-        [HttpPost("NewModelAlert/{registeredemailid}")]
-        public string NewModelEmailAlerttoUser(string registeredemailid)
+        [HttpPut("NewModelAlert")]
+        public IActionResult NewModelEmailAlerttoUser()
         {
-
-            return _user.NewModelEmailAlert(registeredemailid);
+            return Ok(user.NewModelEmailAlert());
         }
-        [HttpPost("OrderConfirmation/{registeredname}/{productsbooked}")]
-        public string OrderConfirmationEmailAlerttoRegisteredUsers(string registeredname,string productsbooked)
+        [HttpPost("OrderConfirmation")]
+        public IActionResult OrderConfirmationEmailAlerttoRegisteredUsers(UserDetails userDetails)
         {
-
-            return _user.OrderConfirmationEmailAlert(registeredname,productsbooked);
+            return Ok(user.OrderConfirmationEmailAlert(userDetails));
         }
-        [HttpPost("CallBack/{registeredname}/{registeredUserphoneno}")]
-        public string CallBackRequestFromRegisteredUser(string registeredname, int registeredUserphoneno)
+        [HttpPost("{CallBack}")]
+        public IActionResult CallBackRequestFromRegisteredUser(UserDetails userDetails)
         {
-
-            return _user.UserCallBackRequest(registeredname,registeredUserphoneno);
+            return Ok(user.UserCallBackRequest(userDetails));
         }
     }
 }

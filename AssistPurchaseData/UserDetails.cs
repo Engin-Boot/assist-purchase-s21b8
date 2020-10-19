@@ -1,4 +1,4 @@
-﻿namespace Services
+﻿namespace AssistPurchaseData
 {
     public class UserDetails
     {
