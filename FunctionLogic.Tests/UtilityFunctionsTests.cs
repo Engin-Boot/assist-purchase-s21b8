@@ -48,13 +48,13 @@ namespace FunctionLogic.Tests
             Assert.True(allDeviceList.Count == 1);
         }
 
-        [Fact]
-        public void ReadFromXml_ShouldReadFromXmlFileAndReturnAListOfObjects()
-        {
-            _utility.AddDevice(_dummDevice);
-            List<MonitoringDevice> deviceList = _utility.ReadFromXml();
-            Assert.True(deviceList.Count > 0);
-        }
+        //[Fact]
+        //public void ReadFromXml_ShouldReadFromXmlFileAndReturnAListOfObjects()
+        //{
+        //    _utility.AddDevice(_dummDevice);
+        //    List<MonitoringDevice> deviceList = _utility.ReadFromXml();
+        //    Assert.True(deviceList.Count > 0);
+        //}
 
         [Fact]
         public void WriteToXml_ShouldWriteListOfDevicesToFile()
