@@ -7,8 +7,8 @@ namespace FunctionLogic.Tests
 {
     public class UtilityFunctionsTests
     {
-        private UtilityFunctions _utility = new UtilityFunctions();
-        private MonitoringDevice _dummDevice = new MonitoringDevice()
+        private readonly UtilityFunctions _utility = new UtilityFunctions();
+        private readonly MonitoringDevice _dummDevice = new MonitoringDevice()
         {
             DeviceName = "IntelliVue v3",
             Ecg = "YES",
@@ -18,8 +18,6 @@ namespace FunctionLogic.Tests
             Hr = "YES",
             PhysiologicalAlarming = "NO",
             BloodPressure = "NO",
-            St = "NO",
-            Qt = "NO",
             BatteryLife = "5 in",
             SupportedScreenOrientations = "0° / 90° / 180°",
             Size = "249 x 97 x 111 mm",
@@ -27,9 +25,6 @@ namespace FunctionLogic.Tests
             AntiMicrobialGlass = "YES",
             PatientLocation = "NO"
         };
-
-
-
         [Fact]
         public void AddDevice_ShouldAddNewDevice()
         {
@@ -38,7 +33,6 @@ namespace FunctionLogic.Tests
             int indexOfLastDevice = deviceList.Count() - 1;
             Assert.True(deviceList[indexOfLastDevice].DeviceName == _dummDevice.DeviceName);
         }
-
         [Fact]
         public void ReadDevice_ShouldReadADeviceWhenDeviceNameIsGiven()
         {

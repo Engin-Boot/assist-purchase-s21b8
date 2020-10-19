@@ -11,8 +11,7 @@
         public string Hr { get; set; } 
         public string PhysiologicalAlarming { get; set; }
         public string BloodPressure { get; set; }
-        public string St { get; set; }
-        public string Qt { get; set; }
+       
 
         // Physical Requirements
 

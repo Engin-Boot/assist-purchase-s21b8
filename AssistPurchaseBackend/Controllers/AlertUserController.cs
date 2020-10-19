@@ -8,30 +8,30 @@ namespace AssistPurchaseBackend.Controllers
     [ApiController]
     public class AlertUserController : ControllerBase
     {
-        private AlertUser user = new AlertUser();
+        private readonly  AlertUser _user = new AlertUser();
 
         [HttpGet("Registration/{username}/{usermaildid}/{productbooked}/{userCallid}")]
         public List<UserDetails> AddUserDetailsforRegistration(string username,string usermaildid,string productbooked,int userCallid)
         {
-            return user.UserRegistration(username,usermaildid,productbooked,userCallid);
+            return _user.UserRegistration(username,usermaildid,productbooked,userCallid);
         }
         [HttpPost("NewModelAlert")]
         public string NewModelEmailAlerttoUser()
         {
 
-            return user.NewModelEmailAlert();
+            return _user.NewModelEmailAlert();
         }
         [HttpPost("OrderConfirmation/{registeredname}/{productsbooked}")]
         public string OrderConfirmationEmailAlerttoRegisteredUsers(string registeredname,string productsbooked)
         {
 
-            return user.OrderConfirmationEmailAlert(registeredname,productsbooked);
+            return _user.OrderConfirmationEmailAlert(registeredname,productsbooked);
         }
         [HttpPost("CallBack/{registeredname}/{registeredUserphoneno}")]
         public string CallBackRequestFromRegisteredUser(string registeredname, int registeredUserphoneno)
         {
 
-            return user.UserCallBackRequest(registeredname,registeredUserphoneno);
+            return _user.UserCallBackRequest(registeredname,registeredUserphoneno);
         }
     }
 }

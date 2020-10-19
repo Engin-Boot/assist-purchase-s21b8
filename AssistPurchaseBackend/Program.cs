@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace AssistPurchaseBackend
 {
-    public class Program
+    public abstract class Program
     {
-        public static void Main(string[] args)
+        private static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
         }

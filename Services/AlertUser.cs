@@ -7,10 +7,10 @@ namespace Services
 {
     public class AlertUser 
     {
-        private string _message;
         public UserDetails User { get; }
-        List<UserDetails> _userDetails = new List<UserDetails>();
-        List<UserDetails> _deserializedMonitoringDevices = new List<UserDetails>();
+        private string _message;
+        readonly List<UserDetails> _userDetails = new List<UserDetails>();
+        readonly List<UserDetails> _deserializedMonitoringDevices = new List<UserDetails>();
         string _path = @"C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\UserDetails.xml";
 
         public AlertUser(UserDetails user)
@@ -40,16 +40,8 @@ namespace Services
 
         public string NewModelEmailAlert()
         {
-           
-            if (_userDetails != null)
-            {
-                _message = "A new Model has arrived!!!!!";
-            }
-            else
-            {
-                _message = "No users registered to alert";
-            }
 
+            _ = _userDetails != null ? _message.Equals("A new Model has arrived!!!!!") : _message.Equals("No users registered to alert");
             return _message;
         }
 
