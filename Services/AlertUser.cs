@@ -63,7 +63,7 @@ namespace Services
             {
                
                 if (registereduser == userdetailslist.UserName &&
-                    confirmproductbooking == userdetailslist.ProductsBooked)
+                    confirmproductbooking == userdetailslist.UserEmailId)
                 {
                     _message = $"{registereduser} has booked the following product {confirmproductbooking} ";
                     break;
