@@ -2,7 +2,7 @@
 using AssistPurchaseData;
 namespace Services
 {
-    public class FilterMonitoringDevices : IFilter
+    public class FilterMonitoringDevices 
     {
         private UtilityFunctions _utilityFunctions;
         private List<MonitoringDevice> _filteredList;

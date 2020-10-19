@@ -5,23 +5,13 @@ using System.Xml.Serialization;
 
 namespace Services
 {
-    public class AlertUser 
+    public class AlertUser
     {
-        public UserDetails User { get; }
+
         private string _message;
         readonly List<UserDetails> _userDetails = new List<UserDetails>();
         readonly List<UserDetails> _deserializedMonitoringDevices = new List<UserDetails>();
         string _path = @"C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\UserDetails.xml";
-
-        public AlertUser(UserDetails user)
-        {
-            User = user;
-        }
-
-        public AlertUser()
-        {
-        }
-
         public List<UserDetails> UserRegistration(string username, string usermailid, string bookedproduct,
             int userPhoneNo)
         {

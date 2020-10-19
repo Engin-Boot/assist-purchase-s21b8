@@ -8,18 +8,18 @@ namespace AssistPurchaseBackend
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
-        private IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<Services.IFilter, Services.FilterMonitoringDevices>();
+            services.AddSingleton<Services.FilterMonitoringDevices, Services.FilterMonitoringDevices>();
 
         }
 

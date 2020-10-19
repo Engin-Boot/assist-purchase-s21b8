@@ -30,7 +30,7 @@ namespace FunctionLogic.Tests
         {
             _utility.AddDevice(_dummDevice);
             List<MonitoringDevice> deviceList = _utility.MonitoringDevices;
-            int indexOfLastDevice = deviceList.Count() - 1;
+            var indexOfLastDevice =deviceList.Count() - 1;
             Assert.True(deviceList[indexOfLastDevice].DeviceName == _dummDevice.DeviceName);
         }
         [Fact]
