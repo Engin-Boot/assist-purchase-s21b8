@@ -13,7 +13,6 @@ namespace FunctionLogic.Tests
             Ecg = "YES",
             Spo2 = "YES",
             Respiration = "YES",
-            NumberOfMeasurementWaves = "5",
             Hr = "YES",
             PhysiologicalAlarming = "NO",
             BloodPressure = "NO",
