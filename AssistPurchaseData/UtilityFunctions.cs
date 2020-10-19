@@ -13,13 +13,13 @@ namespace AssistPurchaseData
         // Give path of data.xml
         //private readonly string _path = @"C:\Users\320087992\source\repos\assist-latest\assist-purchase-s21b8\data.xml";
         private readonly string _path =
-            @"C:\Users\320087877\OneDrive - Philips\Documents\GitHub\assist-purchase-s21b8\data.xml";
+            @"D:\a\assist-purchase-s21b8\assist-purchase-s21b8\data.xml\data.xml";
 
-        //public UtilityFunctions()
-        //{
-        //    PopulateExistingDevices();
-        //    WriteToXml();
-        //}
+        public UtilityFunctions()
+        {
+            //PopulateExistingDevices();
+            WriteToXml();
+        }
 
         public void AddDevice(MonitoringDevice newMonitoringDevice)
         {
@@ -112,7 +112,7 @@ namespace AssistPurchaseData
         //        Hr = "YES",
         //        PhysiologicalAlarming = "NO",
         //        BloodPressure = "NO",
-                
+
         //        BatteryLife = "5 in",
         //        SupportedScreenOrientations = "0° / 90° / 180°",
         //        Size = "249 x 97 x 111 mm",
@@ -131,7 +131,7 @@ namespace AssistPurchaseData
         //        Hr = "YES",
         //        PhysiologicalAlarming = "YES",
         //        BloodPressure = "NO",
-                
+
         //        BatteryLife = "9 in",
         //        SupportedScreenOrientations = "NO",
         //        Size = "NULL",
@@ -152,7 +152,7 @@ namespace AssistPurchaseData
         //        NumberOfMeasurementWaves = "12",
         //        PhysiologicalAlarming = "YES",
         //        BloodPressure = "YES",
-               
+
         //        BatteryLife = "5",
         //        SupportedScreenOrientations = "NO",
         //        AntiMicrobialGlass = "NO",
@@ -171,7 +171,7 @@ namespace AssistPurchaseData
         //        NumberOfMeasurementWaves = "NULL",
         //        PhysiologicalAlarming = "NO",
         //        BloodPressure = "NO",
-               
+
         //        BatteryLife = "6",
         //        SupportedScreenOrientations = "NO",
         //        AntiMicrobialGlass = "NO",
@@ -190,7 +190,7 @@ namespace AssistPurchaseData
         //        NumberOfMeasurementWaves = "NULL",
         //        PhysiologicalAlarming = "NO",
         //        BloodPressure = "NO",
-                
+
         //        BatteryLife = "NULL",
         //        SupportedScreenOrientations = "NO",
         //        AntiMicrobialGlass = "NO",
@@ -209,7 +209,7 @@ namespace AssistPurchaseData
         //        NumberOfMeasurementWaves = "NULL",
         //        PhysiologicalAlarming = "NO",
         //        BloodPressure = "NO",
-               
+
         //        BatteryLife = "NULL",
         //        SupportedScreenOrientations = "NO",
         //        AntiMicrobialGlass = "NO",
@@ -228,7 +228,7 @@ namespace AssistPurchaseData
         //        NumberOfMeasurementWaves = "NULL",
         //        PhysiologicalAlarming = "YES",
         //        BloodPressure = "NO",
-                
+
         //        BatteryLife = "NULL",
         //        SupportedScreenOrientations = "NO",
         //        AntiMicrobialGlass = "NO",
@@ -247,7 +247,7 @@ namespace AssistPurchaseData
         //        NumberOfMeasurementWaves = "NULL",
         //        PhysiologicalAlarming = "NO",
         //        BloodPressure = "YES",
-               
+
         //        BatteryLife = "6",
         //        SupportedScreenOrientations = "NO",
         //        AntiMicrobialGlass = "NO",
@@ -266,7 +266,7 @@ namespace AssistPurchaseData
         //        NumberOfMeasurementWaves = "NULL",
         //        PhysiologicalAlarming = "NO",
         //        BloodPressure = "NO",
-               
+
         //        BatteryLife = "NULL",
         //        SupportedScreenOrientations = "NO",
         //        AntiMicrobialGlass = "NO",
@@ -285,7 +285,7 @@ namespace AssistPurchaseData
         //        NumberOfMeasurementWaves = "0",
         //        PhysiologicalAlarming = "NO",
         //        BloodPressure = "YES",
-                
+
         //        BatteryLife = "5",
         //        SupportedScreenOrientations = "NO",
         //        AntiMicrobialGlass = "NO",
@@ -304,7 +304,7 @@ namespace AssistPurchaseData
         //        NumberOfMeasurementWaves = "5",
         //        PhysiologicalAlarming = "NO",
         //        BloodPressure = "YES",
-               
+
         //        BatteryLife = "6",
         //        SupportedScreenOrientations = "NO",
         //        AntiMicrobialGlass = "NO",
@@ -317,7 +317,7 @@ namespace AssistPurchaseData
         //        Ecg = "YES",
         //        Spo2 = "YES",
         //        Hr = "YES",
-              
+
         //        Respiration = "YES",
         //        MobileOrStatic = "MOBILE",
         //        Size = "15 in",
@@ -336,7 +336,7 @@ namespace AssistPurchaseData
         //        Ecg = "YES",
         //        Spo2 = "YES",
         //        Hr = "YES",
-               
+
         //        Respiration = "YES",
         //        MobileOrStatic = "STATIC",
         //        Size = "13 in",
@@ -355,7 +355,7 @@ namespace AssistPurchaseData
         //        Ecg = "YES",
         //        Spo2 = "YES",
         //        Hr = "YES",
-                
+
         //        Respiration = "YES",
         //        MobileOrStatic = "STATIC",
         //        Size = "8.4 in",
@@ -374,7 +374,7 @@ namespace AssistPurchaseData
         //        Ecg = "YES",
         //        Spo2 = "YES",
         //        Hr = "YES",
-               
+
         //        Respiration = "YES",
         //        MobileOrStatic = "MOBILE",
         //        Size = "6.1 in",
@@ -393,7 +393,7 @@ namespace AssistPurchaseData
         //        Ecg = "YES",
         //        Spo2 = "YES",
         //        Hr = "YES",
-               
+
         //        Respiration = "YES",
         //        MobileOrStatic = "MOBILE",
         //        Size = "10.1 in",
@@ -412,7 +412,7 @@ namespace AssistPurchaseData
         //        Ecg = "YES",
         //        Spo2 = "YES",
         //        Hr = "YES",
-               
+
         //        Respiration = "YES",
         //        MobileOrStatic = "STATIC",
         //        Size = "12.1 in",

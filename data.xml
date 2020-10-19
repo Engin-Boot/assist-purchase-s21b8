@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<DeviceList xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <MonitoringDevice>
     <DeviceName>IntelliVue v3</DeviceName>
     <Ecg>YES</Ecg>
@@ -9,8 +9,6 @@
     <Hr>YES</Hr>
     <PhysiologicalAlarming>NO</PhysiologicalAlarming>
     <BloodPressure>NO</BloodPressure>
-    <St>NO</St>
-    <Qt>NO</Qt>
     <BatteryLife>5 in</BatteryLife>
     <SupportedScreenOrientations>0° / 90° / 180°</SupportedScreenOrientations>
     <Size>249 x 97 x 111 mm</Size>
