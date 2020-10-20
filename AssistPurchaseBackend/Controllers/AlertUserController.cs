@@ -9,7 +9,7 @@ namespace AssistPurchaseBackend.Controllers
     [ApiController]
     public class AlertUserController : ControllerBase
     {
-        private AlertUser user = new AlertUser();
+        private readonly AlertUser user = new AlertUser();
 
         [HttpPost("Registration")]
         public List<UserDetails> AddUserDetailsforRegistration([FromBody] UserDetails userDetails)

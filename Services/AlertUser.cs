@@ -24,15 +24,7 @@ namespace Services
         public string NewModelEmailAlert()
         {
             _userDetails = ReadFromXml();
-            if (_userDetails != null)
-            {
-                _message = "A new Model has arrived!!!!!";
-            }
-            else
-            {
-                _message = "No users registered to alert";
-            }
-
+            _message = _userDetails.Count > 0 ? "A new Model has arrived!!!!!" : "No users registered to alert";
             return _message;
         }
 
@@ -41,6 +33,7 @@ namespace Services
             var userdetailslist = ReadFromXml();
             foreach (var user in userdetailslist)
             {
+
                 if (userDetails.UserName == user.UserName && userDetails.UserContactNo == user.UserContactNo)
                 {
                     _message = "One of our Philips Personnel will reach you out soon..Thank You!!!";
