@@ -52,3 +52,7 @@ C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\Assist
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.csproj.CopyComplete
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.dll
 C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.pdb
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.genruntimeconfig.cache
