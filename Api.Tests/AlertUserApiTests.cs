@@ -12,13 +12,13 @@ namespace Api.Tests
         string baseUrl = "http://localhost:5000/api/alertuser/";
         private static RestClient _client;
         private static RestRequest _request;
-        readonly UserDetails user = new UserDetails() { UserName = "john", UserEmailId = "john12", ProductsBooked = "IntelliVue", UserContactNo = 23432 };
-        JsonDeserializer deserialize = new JsonDeserializer();
-        static IRestResponse response;
+        readonly private UserDetails _user = new UserDetails() { UserName = "john", UserEmailId = "john12", ProductsBooked = "IntelliVue", UserContactNo = 23432 };
+        readonly JsonDeserializer deserialize = new JsonDeserializer();
+        static private IRestResponse _response;
 
         private List<UserDetails> _userDetails;
-        private static object Execute;
-        string output;
+        
+        private string _output;
         
 
         [TestMethod]
@@ -26,10 +26,10 @@ namespace Api.Tests
         {
             _client = new RestClient(baseUrl);
             _request = new RestRequest("registration", Method.POST) { RequestFormat = DataFormat.Json };
-            _request.AddJsonBody(user);
+            _request.AddJsonBody(_user);
 
-            response = _client.Execute(_request);
-            _userDetails = deserialize.Deserialize<List<UserDetails>>(response);
+            _response = _client.Execute(_request);
+            _userDetails = deserialize.Deserialize<List<UserDetails>>(_response);
             foreach (var details in _userDetails)
             {
                 Assert.IsTrue(details.UserName == "john");
@@ -40,9 +40,9 @@ namespace Api.Tests
         {
             _client = new RestClient(baseUrl);
             _request = new RestRequest("newmodelalert", Method.PUT) { RequestFormat = DataFormat.Json };
-            response = _client.Execute(_request);
-            output = deserialize.Deserialize<string>(response);
-            Assert.AreEqual(output, "A new Model has arrived!!!!!");
+            _response = _client.Execute(_request);
+            _output = deserialize.Deserialize<string>(_response);
+            Assert.AreEqual(_output, "A new Model has arrived!!!!!");
 
         }
         [TestMethod]
@@ -50,10 +50,10 @@ namespace Api.Tests
         {
             _client = new RestClient(baseUrl);
             _request = new RestRequest("orderconfirmation", Method.POST) { RequestFormat = DataFormat.Json };
-            _request.AddJsonBody(user);
-            response = _client.Execute(_request);
-            output = deserialize.Deserialize<string>(response);
-            Assert.AreEqual(output, user.UserName + " has booked the following product " + user.ProductsBooked + " ");
+            _request.AddJsonBody(_user);
+            _response = _client.Execute(_request);
+            _output = deserialize.Deserialize<string>(_response);
+            Assert.AreEqual(_output, _user.UserName + " has booked the following product " + _user.ProductsBooked + " ");
 
         }
         [TestMethod]
@@ -61,10 +61,10 @@ namespace Api.Tests
         {
             _client = new RestClient(baseUrl);
             _request = new RestRequest("callback", Method.POST) { RequestFormat = DataFormat.Json };
-            _request.AddJsonBody(user);
-            response = _client.Execute(_request);
-            output = deserialize.Deserialize<string>(response);
-            Assert.AreEqual(output, "One of our Philips Personnel will reach you out soon..Thank You!!!");
+            _request.AddJsonBody(_user);
+            _response = _client.Execute(_request);
+            _output = deserialize.Deserialize<string>(_response);
+            Assert.AreEqual(_output, "One of our Philips Personnel will reach you out soon..Thank You!!!");
 
         }
     }
