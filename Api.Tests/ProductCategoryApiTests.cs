@@ -1,7 +1,6 @@
 ﻿using AssistPurchaseData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestSharp;
-using RestSharp.Serialization.Json;
 using System.Collections.Generic;
 
 namespace Api.Tests
@@ -13,7 +12,7 @@ namespace Api.Tests
         private  static RestClient _client;
         private  static RestRequest _request;
 
-        private static readonly JsonDeserializer Deserialize = new JsonDeserializer();
+        private static readonly RestSharp.Serialization.Json.JsonDeserializer Deserialize = new RestSharp.Serialization.Json.JsonDeserializer();
         private static readonly IRestResponse Response = _client.Execute(_request);
         private readonly List<MonitoringDevice> _resultList = Deserialize.Deserialize<List<MonitoringDevice>>(Response);
         [TestMethod]

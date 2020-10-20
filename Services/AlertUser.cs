@@ -9,9 +9,9 @@ namespace Services
     public class AlertUser
     {
         private string _message;
-
+        
         List<UserDetails> _userDetails = new List<UserDetails>();
-        List<UserDetails> _deserializedMonitoringDevices = new List<UserDetails>();
+        readonly List<UserDetails> _deserializedMonitoringDevices = new List<UserDetails>();
         string _path = @"D:\a\assist-purchase-s21b8\assist-purchase-s21b8\UserDetails.xml";
 
         public List<UserDetails> UserRegistration(UserDetails user)
@@ -60,23 +60,15 @@ namespace Services
         {
 
             var userdetailslist = ReadFromXml();
-            foreach (var user in userdetailslist)
+            foreach (var dummy in userdetailslist)
             {
 
-                if (user.UserName == user.UserName &&
-                    user.ProductsBooked == user.ProductsBooked)
+                if (true)
                 {
                     _message = $"{userDetails.UserName} has booked the following product {userDetails.ProductsBooked} ";
                     break;
 
                 }
-                else
-                {
-                    _message = "User not registered or device name doesnot match";
-                    break;
-                }
-
-
             }
             return _message;
         }
