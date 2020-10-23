@@ -9,7 +9,7 @@ namespace Api.Tests
     [TestClass]
     public class AlertUserApiTests
     {
-        string baseUrl = "http://localhost:5000/api/alertuser/";
+        string baseUrl = "http://localhost:52590/api/alertuser/";
         private static RestClient _client;
         private static RestRequest _request;
         private readonly UserDetails _user = new UserDetails() { UserName = "john", ProductsBooked = "IntelliVue", UserContactNo = 23432 };

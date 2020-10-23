@@ -8,7 +8,7 @@ namespace Api.Tests
     [TestClass]
     public class ProductCategoryApiTests
     {
-        string baseUrl = "http://localhost:5000/api/productcategory/";
+        string baseUrl = "http://localhost:52590/api/productcategory/";
         private  static RestClient _client;
         private  static RestRequest _request;
 
