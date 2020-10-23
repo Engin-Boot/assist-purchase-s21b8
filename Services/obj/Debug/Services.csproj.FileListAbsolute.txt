@@ -28,3 +28,13 @@ C:\Users\320087165\Documents\GitHub\assist-purchase-s21b8\Services\obj\Debug\Ser
 C:\Users\320087165\Documents\GitHub\assist-purchase-s21b8\Services\obj\Debug\Services.csproj.CopyComplete
 C:\Users\320087165\Documents\GitHub\assist-purchase-s21b8\Services\obj\Debug\Services.dll
 C:\Users\320087165\Documents\GitHub\assist-purchase-s21b8\Services\obj\Debug\Services.pdb
+D:\CaseStudy2\assist-purchase-s21b8\Services\bin\Debug\Services.dll
+D:\CaseStudy2\assist-purchase-s21b8\Services\bin\Debug\Services.pdb
+D:\CaseStudy2\assist-purchase-s21b8\Services\bin\Debug\AssistPurchaseData.exe
+D:\CaseStudy2\assist-purchase-s21b8\Services\bin\Debug\AssistPurchaseData.pdb
+D:\CaseStudy2\assist-purchase-s21b8\Services\bin\Debug\AssistPurchaseData.exe.config
+D:\CaseStudy2\assist-purchase-s21b8\Services\obj\Debug\Services.csprojAssemblyReference.cache
+D:\CaseStudy2\assist-purchase-s21b8\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+D:\CaseStudy2\assist-purchase-s21b8\Services\obj\Debug\Services.csproj.CopyComplete
+D:\CaseStudy2\assist-purchase-s21b8\Services\obj\Debug\Services.dll
+D:\CaseStudy2\assist-purchase-s21b8\Services\obj\Debug\Services.pdb
