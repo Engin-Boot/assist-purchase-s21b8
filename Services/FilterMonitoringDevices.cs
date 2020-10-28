@@ -114,7 +114,21 @@ namespace Services
         }
 
         #endregion
+        #region Return list of all devices
+        public List<MonitoringDevice> GetAllDevices()
+        {
 
+            _filteredList = new List<MonitoringDevice>();
+            _utilityFunctions = new UtilityFunctions();
+            _monitoringDevices = _utilityFunctions.GetList();
+
+            foreach (var device in _monitoringDevices)
+            {
+                    _filteredList.Add(device);
+            }
+            return _filteredList;
+        }
+        #endregion
         #region Returns devices based on whether they are Mobile or static
 
         public List<MonitoringDevice> GetMobileorStaticType(string value)

@@ -57,6 +57,11 @@ namespace AssistPurchaseBackend.Controllers
         {
             return _filter.GetAlaramingType();
         }
+        [HttpGet("GetDevices")]
+        public List<MonitoringDevice> GetAllMonitoringDevices()
+        {
+            return _filter.GetAllDevices();
+        }
 
 
     }

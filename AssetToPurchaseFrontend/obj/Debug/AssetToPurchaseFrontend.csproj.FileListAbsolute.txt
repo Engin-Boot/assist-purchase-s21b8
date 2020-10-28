@@ -46,3 +46,7 @@ D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\AssetToPur
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\AssetToPurchaseFrontend.csproj.CopyComplete
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\AssetToPurchaseFrontend.exe
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\AssetToPurchaseFrontend.pdb
+D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\Newtonsoft.Json.dll
+D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\System.Net.Http.Formatting.dll
+D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\Newtonsoft.Json.xml
+D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\System.Net.Http.Formatting.xml
