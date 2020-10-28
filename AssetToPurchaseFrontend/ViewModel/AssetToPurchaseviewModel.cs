@@ -39,8 +39,6 @@ namespace AssetToPurchaseFrontend.ViewModel
         bool clinicallock;
         int clinicalrequirementChoice = default;
        // string url;
-        string requirement;
-
         bool clinicalMenuDisplay, screenOrientationMenu, microbialGlassMenu, patientLocationMenu, alarmingMenu = true;
         bool batteryMenuDisplay, physicallock = false;
         int physicalrequirementChoice, batteryrequirementChoice, patientLocationrequirementChoice, alarmingMenurequirementChoice,
@@ -75,7 +73,27 @@ namespace AssetToPurchaseFrontend.ViewModel
                 MenuChoice1Method();
 
             }
-            else if (menuchoice == 2)
+            else
+                ChoiceTwoMethod2();
+            //if (menuchoice == 2)
+            //{
+            //    MenuchoiceTwoMehod();
+
+                //}
+                //else if (menuchoice == 3)
+                //{
+                //    Execute_API("api/productcategory/GetDevices");
+                //}
+                //else
+                //{
+                //    sb.AppendLine("ChatBot: Please Enter Valid Input");
+                //    ChatArea = sb.ToString();
+                //    YourMessage = "";
+                //}
+        }
+        private void ChoiceTwoMethod2()
+        {
+            if (menuchoice == 2)
             {
                 MenuchoiceTwoMehod();
 
@@ -84,8 +102,13 @@ namespace AssetToPurchaseFrontend.ViewModel
             {
                 Execute_API("api/productcategory/GetDevices");
             }
+            else
+            {
+                sb.AppendLine("ChatBot: Please Enter Valid Input");
+                ChatArea = sb.ToString();
+                YourMessage = "";
+            }
         }
-
         private void StartChat()
         {
             if (YourMessage.Equals("Hi") || YourMessage.Equals("hi"))
@@ -131,17 +154,32 @@ namespace AssetToPurchaseFrontend.ViewModel
                 ScreenOrientationMenuMethod();
 
             }
-            else if (physicalchoice == 3)
+            else
+                PhysicalChoiceMethodTwo();
+            //else if (physicalchoice == 4)
+            //{
+            //    PatientLocationrequirementChoiceMethod();
+
+            //}
+            //else if (physicalchoice == 5)
+            //{
+            //    PhysicalchoiceMethod();
+
+            //}
+        }
+        private void PhysicalChoiceMethodTwo()
+        {
+            if (physicalchoice == 3)
             {
                 MicrobialGlassrequirementChoiceMethod();
 
             }
-            else if (physicalchoice == 4)
+            if (physicalchoice == 4)
             {
                 PatientLocationrequirementChoiceMethod();
 
             }
-            else if (physicalchoice == 5)
+            if (physicalchoice == 5)
             {
                 PhysicalchoiceMethod();
 
@@ -163,7 +201,6 @@ namespace AssetToPurchaseFrontend.ViewModel
             else if (patientLocationrequirementChoice == 0)
             {
                 PatientLocationrequirementChoiceMethodTwo();
-               
             }
         }
 
@@ -376,46 +413,54 @@ namespace AssetToPurchaseFrontend.ViewModel
             }
 
         }
-
+        string url = "";
         private void ClinicalChoiceMethod()
         {
             try
             {
                 clinical = int.Parse(YourMessage);
                 YourMessage = "";
-                string url = "";
-                requirement = "";
-                switch (clinical)
+                //requirement = "";
+                if(clinical==1)
                 {
-                    case 1:
-                        requirement = "Cardiac";
-                        url = "api/productcategory/cardiac";
-                        break;
-                    case 2:
-                        requirement = "Pnemonia";
-                        url = "api/productcategory/Pneumonia";
-                        break;
-                    case 3:
-                        requirement = "Covid 19";
-                        url = "api/productcategory/Covid19";
-                        break;
-                    case 4:
-                        requirement = "High BP";
-                        url = "api/productcategory/HighBP";
-                        break;
-                    default:
-                        sb.AppendLine("Invalid Choice");
-                        ChatArea = sb.ToString();
-                        clinicallock = false;
-                        break;
+                    url = "api/productcategory/cardiac";
+                    sb.AppendLine("Chat Bot: You have selected Cardiac as your clinical requirement");
+                    Execute_API(url);
                 }
-                sb.AppendLine("Chat Bot: You have selected " + requirement + " as your clinical requirement");
-                Execute_API(url);
+                if (clinical == 2)
+                {
+                    url = "api/productcategory/Pneumonia";
+                    sb.AppendLine("Chat Bot: You have selected Pneumonia as your clinical requirement");
+                    Execute_API(url);
+                }
+                else
+                    ClinicalChoiceMethodTwo();
             }
             catch (Exception)
             {
                 sb.AppendLine("Empty String Entered: Please Input Proper Values");
                 ChatArea = sb.ToString();
+            }
+        }
+        private void ClinicalChoiceMethodTwo()
+        {
+            if (clinical == 3)
+            {
+                url = "api/productcategory/Covid19";
+                sb.AppendLine("Chat Bot: You have selected Covid19 as your clinical requirement");
+                Execute_API(url);
+            }
+            if (clinical == 4)
+            {
+                url = "api/productcategory/HighBP";
+                sb.AppendLine("Chat Bot: You have selected HighBP as your clinical requirement");
+                Execute_API(url);
+            }
+            else
+            {
+                sb.AppendLine("Invalid Choice");
+                ChatArea = sb.ToString();
+                clinicallock = false;
             }
         }
 
@@ -457,6 +502,7 @@ namespace AssetToPurchaseFrontend.ViewModel
 
         private void Execute_API(String url)
         {
+            devices.Clear();
             temp.AppendLine("\nThe following result's matches to your requirement's");
             devices = clientRequests.ProductGetRequest(url);
             foreach (var d in devices)
@@ -490,12 +536,22 @@ namespace AssetToPurchaseFrontend.ViewModel
                 ChatArea = sb.ToString();
             }
         }
-
+        List<string> modelName = new List<string>();
+        public void PopoulateModelNames()
+        {
+            var Models = clientRequests.ProductGetRequest("api/productcategory/GetDevices");
+            foreach (var Names in Models)
+            {
+                modelName.Add(Names.DeviceName);
+            }
+        }
         private void Execute_ClearCoomand(object obj)
         {
             sb = new StringBuilder();
             ChatArea = "Say 'Hi' to start the chat";
             choice = 1;
+            count = 0;
+            YourMessage = "";
             //throw new NotImplementedException();
         }
 
@@ -552,7 +608,13 @@ namespace AssetToPurchaseFrontend.ViewModel
         }
         public List<String> ModelType
         {
-            get { return new List<string>() { "Cardic", "Covid19", "Pnemonia","HighBp" ,"ContactToPhiliPsPerson"}; }
+            get 
+            {
+                PopoulateModelNames();
+                modelName.Add("Request to contact Philips person");
+                //return new List<string>() { "Cardic", "Covid19", "Pnemonia","HighBp" ,"ContactToPhiliPsPerson"}; 
+                return modelName;
+            }
             set
             {
                 modelType = value;

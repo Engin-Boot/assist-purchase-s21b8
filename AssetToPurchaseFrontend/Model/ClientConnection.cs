@@ -9,12 +9,12 @@ namespace AssetToPurchaseFrontend.Model
 {
     public class ClientConnection
     {
-        HttpClient client = new HttpClient();
+        HttpClient client;
         HttpResponseMessage response;
         public void Connect()
         {
+            client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:52590/");
-
         }
         public HttpResponseMessage ExecuteGetMethod(string requestUri)
         {

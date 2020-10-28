@@ -6,13 +6,14 @@ namespace AssetToPurchaseFrontend.Model
 {
     public class ClientRequests
     {
-        ClientConnection clientConnection = new ClientConnection();
+        ClientConnection clientConnection;
         HttpResponseMessage response;
         List<MonitoringDevice> _monitoringDeviceList = default;
         List<UserDetails> _userList = default;
         string result = default;
         public bool ExecuteGetRequest(string requestUri)
         {
+            clientConnection = new ClientConnection();
             clientConnection.Connect();
             response = clientConnection.ExecuteGetMethod(requestUri);
             if (response.IsSuccessStatusCode)
@@ -24,6 +25,7 @@ namespace AssetToPurchaseFrontend.Model
         }
         public bool ExecutePostRequest(string requestUri, MonitoringDevice monitoringDevice)
         {
+            clientConnection = new ClientConnection();
             clientConnection.Connect();
             response = clientConnection.ExecutePostMethod(requestUri, monitoringDevice);
             if (response.IsSuccessStatusCode)
@@ -35,6 +37,7 @@ namespace AssetToPurchaseFrontend.Model
         }
         public bool ExecutePostRequest(string requestUri, UserDetails userDetails)
         {
+            clientConnection = new ClientConnection();
             clientConnection.Connect();
             response = clientConnection.ExecutePostMethod(requestUri, userDetails);
             if (response.IsSuccessStatusCode)
@@ -46,6 +49,7 @@ namespace AssetToPurchaseFrontend.Model
         }
         public bool ExecutePutRequest(string requestUri)
         {
+            clientConnection = new ClientConnection();
             clientConnection.Connect();
             response = clientConnection.ExecutePutMethod(requestUri);
             if (response.IsSuccessStatusCode)
