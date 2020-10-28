@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows;
 using System.Windows.Input;
 
 namespace AssetToPurchaseFrontend.ViewModel
@@ -14,9 +15,9 @@ namespace AssetToPurchaseFrontend.ViewModel
         private string name;
         private string email;
         private List<String> modelType;
-        private string contactNumber;
+        private int contactNumber;
         private string yourMessage;
-        private string chatArea="Say 'Hi' to start the chat";
+        private string chatArea = "Say 'Hi' to start the chat";
         int count = 0;
         static StringBuilder sb = new StringBuilder();
         StringBuilder temp = new StringBuilder();
@@ -33,23 +34,26 @@ namespace AssetToPurchaseFrontend.ViewModel
             SendCommand = new DelegateCommand(Execute_SendCommand, CanExecute_Mehod);
         }
         #endregion
+
         int choice = 1;
         bool clinicallock;
-        bool firsttime = true;
         int clinicalrequirementChoice = default;
-        bool clinicalMenuDisplay, screenOrientationMenu, microbialGlassMenu, patientLocationMenu,alarmingMenu = true;
+       // string url;
+        string requirement;
+
+        bool clinicalMenuDisplay, screenOrientationMenu, microbialGlassMenu, patientLocationMenu, alarmingMenu = true;
         bool batteryMenuDisplay, physicallock = false;
         int physicalrequirementChoice, batteryrequirementChoice, patientLocationrequirementChoice, alarmingMenurequirementChoice,
             screenOrientationrequirementChoice, microbialGlassrequirementChoice, clinical, menuchoice, physicalchoice = default;
         #region ExecuteAndCanexecuteImplementation
         private void Execute_SendCommand(object obj)
         {
-            if (firsttime)
+            if (choice == 1)
             {
-                if (choice == 1)
+                if (YourMessage.Equals("Hi") || YourMessage.Equals("hi"))
                 {
                     sb.AppendLine("Chat Bot: Say 'Hi' to start the chat");
-                    sb.AppendLine("User: "+YourMessage);
+                    sb.AppendLine("User: " + YourMessage);
                     ChatArea = sb.ToString();
                     sb.AppendLine("Chat Bot: Hello User Please Chat With Me For Customized Requirements");
                     ChatArea = sb.ToString();
@@ -59,715 +63,352 @@ namespace AssetToPurchaseFrontend.ViewModel
                     choice = 2;
                     clinicallock = false;
                 }
-                else if (choice == 2)
+                else
                 {
-                    if (clinicallock == false)
+                    sb.AppendLine("Chat Bot: Invalid response \nSay 'Hi' to start the chat");
+                    ChatArea = sb.ToString();
+                }
+            }
+            else if (choice == 2)
+            {
+                if (clinicallock == false)
+                {
+                    clinicalrequirementChoice = -1;
+                    menuchoice = int.Parse(YourMessage);
+                    clinicallock = true;
+                    clinicalMenuDisplay = true;
+                }
+                if (menuchoice == 1)
+                {
+                    if (clinicalMenuDisplay == true)
                     {
-                        clinicalrequirementChoice = -1;
-                        menuchoice = int.Parse(YourMessage);
-                        clinicallock = true;
-                        clinicalMenuDisplay = true;
+                        sb.AppendLine("User: " + YourMessage);
+                        YourMessage = "";
+                        ChatArea = sb.ToString();
+                        sb.AppendLine("Chat Bot: Please choose one clinical requirements from below: \n 1.Cardiac " +
+                            "\n2.Pnemonia " +
+                            "\n3.Covid19 " +
+                            "\n4.High BP");
+                        ChatArea = sb.ToString();
+                        clinicalrequirementChoice = 0;
+                        clinicalMenuDisplay = false;
                     }
-                    if (menuchoice > 0 && menuchoice <= 3)
+                    else if (clinicalrequirementChoice == 0)
                     {
-                        if (menuchoice == 1)
+                        sb.AppendLine(YourMessage);
+                        chatArea = sb.ToString();
+                        try
                         {
-                            if (clinicalMenuDisplay == true)
+                            clinical = int.Parse(YourMessage);
+                            YourMessage = "";
+                            string url = "";
+                            requirement = "";
+                            switch (clinical)
                             {
-                                sb.AppendLine("User: "+YourMessage);
+                                case 1:
+                                    requirement = "Cardiac";
+                                    url = "api/productcategory/cardiac";
+                                    break;
+                                case 2:
+                                    requirement = "Pnemonia";
+                                    url = "api/productcategory/Pneumonia";
+                                    break;
+                                case 3:
+                                    requirement = "Covid 19";
+                                    url = "api/productcategory/Covid19";
+                                    break;
+                                case 4:
+                                    requirement = "High BP";
+                                    url = "api/productcategory/HighBP";
+                                    break;
+                                default:
+                                    sb.AppendLine("Invalid Choice");
+                                    ChatArea = sb.ToString();
+                                    clinicallock = false;
+                                    break;
+                            }
+                            sb.AppendLine("Chat Bot: You have selected " + requirement + " as your clinical requirement");
+                            Execute_API(url);
+                        }
+                        catch (Exception)
+                        {
+                            //sb.AppendLine("Empty String Entered: Please Input Proper Values");
+                            //ChatArea = sb.ToString();
+                        }
+
+                    }
+                }
+                else if (menuchoice == 2)
+                {
+                    if (physicallock == false)
+                    {
+                        sb.AppendLine("User: " + YourMessage);
+                        YourMessage = "";
+                        sb.AppendLine("Chat Bot: Please choose one Physical Feature from the below list : \n " +
+                            "1.Battery Life \n " +
+                            "2.Screen Orientation\n " +
+                            "3.Advanced Features (Anti Microbial Glass+ Patient Location)\n " +
+                            "4.Device Type(Mobile/Static)" +
+                            "5.Alarming Feature");
+                        ChatArea = sb.ToString();
+                        physicalrequirementChoice = 0;
+                        physicallock = true;
+                        batteryMenuDisplay = true;
+                        screenOrientationMenu = true;
+                        microbialGlassMenu = true;
+                        patientLocationMenu = true;
+                        alarmingMenu = true;
+                    }
+                    else if (physicalrequirementChoice == 0)
+                    {
+                        sb.AppendLine("User: " + YourMessage);
+                        ChatArea = sb.ToString();
+                        try
+                        {
+                            physicalchoice = int.Parse(YourMessage);
+                            YourMessage = "";
+                            physicalrequirementChoice = 1;
+                        }
+                        catch (Exception e)
+                        {
+                            sb.AppendLine(YourMessage);
+                            sb.AppendLine("Error: Invalid Data Entered \n Stack Trace: " + e.StackTrace);
+                        }
+                    }
+                    if (physicalrequirementChoice == 1)
+                    {
+                        if (physicalchoice == 1)
+                        {
+                            if (batteryMenuDisplay == true)
+                            {
+                                sb.AppendLine(string.Format("{0,-10} | {1,5}", YourMessage, 51));
                                 YourMessage = "";
                                 ChatArea = sb.ToString();
-                                sb.AppendLine("Chat Bot: Please choose one clinical requirements from below: \n 1.Cardiac " +
-                                    "\n2.Pnemonia " +
-                                    "\n3.Covid19 " +
-                                    "\n4.High BP");
+                                sb.AppendLine("Chat Bot: Please choose one Battery Life from the below list :");
+                                sb.AppendLine("1. Battery Life > 5 and < 10.\n 2.Battery Life > 10");
                                 ChatArea = sb.ToString();
-                                clinicalrequirementChoice = 0;
-                                clinicalMenuDisplay = false;
+                                batteryrequirementChoice = 0;
+                                batteryMenuDisplay = false;
                             }
-                            else if (clinicalrequirementChoice == 0)
+                            else if (batteryrequirementChoice == 0)
                             {
                                 sb.AppendLine(YourMessage);
-                                chatArea = sb.ToString();
-                                try
+                                if (int.Parse(YourMessage) == 1)
                                 {
-                                    clinical = int.Parse(YourMessage);
-                                    YourMessage = "";
-                                    if (clinical == 1)
-                                    {
-                                        sb.AppendLine("Chat Bot: You have selected Cardiac as your clinical requirement");
-                                        temp.AppendLine("\nThe following result's matches to your requirement's");
-                                        devices = clientRequests.ProductGetRequest("api/productcategory/cardiac");
-                                        foreach (var d in devices)
-                                        {
-                                            count++;
-                                            temp.AppendLine("\nDevice "+count+": "+
-                                                "\nDeviceName:"+d.DeviceName+
-                                                "\nECG: "+d.Ecg+
-                                                "\nSpo2: "+d.Spo2+
-                                                "\nRespiration: "+d.Respiration+
-                                                "\nHeart-Rate: "+d.Hr+
-                                                "\nPhyscological-Alarming: "+d.PhysiologicalAlarming+
-                                                "\nBlood-Pressure: "+d.BloodPressure+
-                                                "\nBattery-Life: "+d.BatteryLife+
-                                                "\nScreen-Orientation: "+d.SupportedScreenOrientations+
-                                                "\nSize: "+d.Size+
-                                                "\nMobile/Static: "+d.MobileOrStatic+
-                                                "\nAnti-Microbial Glass: "+d.AntiMicrobialGlass+
-                                                "\nPatient-Location: "+d.PatientLocation);
-                                        }
-                                        if (count > 0)
-                                        {
-                                            sb.AppendLine(temp.ToString());
-                                            temp.Clear();
-                                            ChatArea = sb.ToString();
-                                        }
-                                        else
-                                        {
-                                            sb.AppendLine("Could not find any devices of your preferences.\n" +
-                                                "Please register on our portal so that our Philips representative will contact you for more information!!");
-                                            ChatArea = sb.ToString();
-                                        }
-                                        // menuchoice = 2;
-                                    }
-                                    else if (clinical == 2)
-                                    {
-                                        sb.AppendLine("Chat Bot: You have selected Pnemonia as your clinical requirement");
-                                        temp.AppendLine("\nThe following result's matches to your requirement's");
-                                        devices = clientRequests.ProductGetRequest("api/productcategory/Pneumonia");
-                                        foreach (var d in devices)
-                                        {
-                                            count++;
-                                            temp.AppendLine("\nDevice " + count + ": " +
-                                                "\nDeviceName:" + d.DeviceName +
-                                                "\nECG: " + d.Ecg +
-                                                "\nSpo2: " + d.Spo2 +
-                                                "\nRespiration: " + d.Respiration +
-                                                "\nHeart-Rate: " + d.Hr +
-                                                "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                "\nBlood-Pressure: " + d.BloodPressure +
-                                                "\nBattery-Life: " + d.BatteryLife +
-                                                "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                "\nSize: " + d.Size +
-                                                "\nMobile/Static: " + d.MobileOrStatic +
-                                                "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                "\nPatient-Location: " + d.PatientLocation);
-                                        }
-                                        if (count > 0)
-                                        {
-                                            sb.AppendLine(temp.ToString());
-                                            temp.Clear();
-                                            ChatArea = sb.ToString();
-                                        }
-                                        else
-                                        {
-                                            sb.AppendLine("Could not find any devices of your preferences.\n" +
-                                                "Please register on our portal so that our Philips representative will contact you for more information!!");
-                                            ChatArea = sb.ToString();
-                                        }
-                                        // menuchoice = 2;
-                                    }
-                                    else if (clinical == 3)
-                                    {
-
-                                        sb.AppendLine("Chat Bot: You have selected Covid19 as your clinical requirement");
-                                        temp.AppendLine("\nThe following result's matches to your requirement's");
-                                        devices = clientRequests.ProductGetRequest("api/productcategory/Covid19");
-                                        foreach (var d in devices)
-                                        {
-                                            count++;
-                                            temp.AppendLine("\nDevice " + count + ": " +
-                                                "\nDeviceName:" + d.DeviceName +
-                                                "\nECG: " + d.Ecg +
-                                                "\nSpo2: " + d.Spo2 +
-                                                "\nRespiration: " + d.Respiration +
-                                                "\nHeart-Rate: " + d.Hr +
-                                                "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                "\nBlood-Pressure: " + d.BloodPressure +
-                                                "\nBattery-Life: " + d.BatteryLife +
-                                                "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                "\nSize: " + d.Size +
-                                                "\nMobile/Static: " + d.MobileOrStatic +
-                                                "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                "\nPatient-Location: " + d.PatientLocation);
-                                        }
-                                        if (count > 0)
-                                        {
-                                            sb.AppendLine(temp.ToString());
-                                            temp.Clear();
-                                            ChatArea = sb.ToString();
-                                        }
-                                        else
-                                        {
-                                            sb.AppendLine("Could not find any devices of your preferences.\n" +
-                                                "Please register on our portal so that our Philips representative will contact you for more information!!");
-                                            ChatArea = sb.ToString();
-                                        }
-                                        //menuchoice = 2;
-                                    }
-                                    else if(clinical==4)
-                                    {
-                                        sb.AppendLine("Chat Bot: You have selected High BP as your clinical requirement");
-                                        temp.AppendLine("\nThe following result's matches to your requirement's");
-                                        devices = clientRequests.ProductGetRequest("api/productcategory/HighBP");
-                                        foreach (var d in devices)
-                                        {
-                                            count++;
-                                            temp.AppendLine("\nDevice " + count + ": " +
-                                                "\nDeviceName:" + d.DeviceName +
-                                                "\nECG: " + d.Ecg +
-                                                "\nSpo2: " + d.Spo2 +
-                                                "\nRespiration: " + d.Respiration +
-                                                "\nHeart-Rate: " + d.Hr +
-                                                "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                "\nBlood-Pressure: " + d.BloodPressure +
-                                                "\nBattery-Life: " + d.BatteryLife +
-                                                "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                "\nSize: " + d.Size +
-                                                "\nMobile/Static: " + d.MobileOrStatic +
-                                                "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                "\nPatient-Location: " + d.PatientLocation);
-                                        }
-                                        if(count>0)
-                                        {
-                                            sb.AppendLine(temp.ToString());
-                                            temp.Clear();
-                                            ChatArea = sb.ToString();
-                                        }
-                                        else
-                                        {
-                                            sb.AppendLine("Could not find any devices of your preferences.\n" +
-                                                "Please register on our portal so that our Philips representative will contact you for more information!!");
-                                            ChatArea = sb.ToString();
-                                        }
-                                        //menuchoice = 2;
-                                    }
-                                    else
-                                    {
-                                        sb.AppendLine("Invalid Choice");
-                                        ChatArea = sb.ToString();
-                                        clinicallock = false;
-                                    }
+                                    sb.AppendLine("Chat Bot:You have selected requirement of battery life of > 5 years and < 10 years");
+                                    Execute_API("api/productcategory/BatteryLife/5");
                                 }
-                                catch (Exception)
+                                else if (int.Parse(YourMessage) == 2)
                                 {
-                                    //sb.AppendLine("Empty String Entered: Please Input Proper Values");
-                                    //ChatArea = sb.ToString();
+                                    sb.AppendLine("Chat Bot:You have selected requirement of battery life of more than 10 years");
+                                    Execute_API("api/productcategory/BatteryLife/10");
                                 }
-
+                                else
+                                {
+                                    sb.AppendLine("Chat Bot:Invalid Input: Please Input Correct  Value");
+                                    ChatArea = sb.ToString();
+                                    batteryMenuDisplay = true;
+                                }
                             }
                         }
-                         else if(menuchoice==2)
-                         {
-                            if (physicallock == false)
+                        else if (physicalchoice == 2)
+                        {
+                            if (screenOrientationMenu == true)
+                            {
+                                sb.AppendLine(string.Format("{0,-10} | {1,5}", YourMessage, 51));
+                                YourMessage = "";
+                                ChatArea = sb.ToString();
+                                sb.AppendLine("Chat Bot: Please choose one option for Screen Orientation from the below list :");
+                                sb.AppendLine("1. Required.\n 2.Not-Required");
+                                ChatArea = sb.ToString();
+                                screenOrientationrequirementChoice = 0;
+                                screenOrientationMenu = false;
+                            }
+                            else if (screenOrientationrequirementChoice == 0)
+                            {
+                                sb.AppendLine(YourMessage);
+                                if (int.Parse(YourMessage) == 1)
+                                {
+                                    sb.AppendLine("Chat Bot:You have opted for screen orientation feature");
+                                    Execute_API("api/productcategory/Display/YES");
+                                }
+                                else if (int.Parse(YourMessage) == 2)
+                                {
+                                    sb.AppendLine("Chat Bot:You have not opted for screen orientation feature");
+                                    Execute_API("api/productcategory/Display/NO");
+                                }
+                                else
+                                {
+                                    sb.AppendLine("Chat Bot:Invalid Input: Please Input Correct Value");
+                                    ChatArea = sb.ToString();
+                                    screenOrientationMenu = true;
+                                }
+                            }
+                        }
+                        else if (physicalchoice == 3)
+                        {
+                            if (microbialGlassMenu == true)
+                            {
+                                sb.AppendLine(string.Format("{0,-10} | {1,5}", "", YourMessage));
+                                YourMessage = "";
+                                ChatArea = sb.ToString();
+                                sb.AppendLine("Chat Bot: Please choose one option for Advanced Features(Microbial Glass + Patient Location) from the below list :");
+                                sb.AppendLine("1. Required.\n 2.Not- Required");
+                                ChatArea = sb.ToString();
+                                microbialGlassrequirementChoice = 0;
+                                microbialGlassMenu = false;
+                            }
+                            else if (microbialGlassrequirementChoice == 0)
+                            {
+                                sb.AppendLine(YourMessage);
+                                if (int.Parse(YourMessage) == 1)
+                                {
+                                    sb.AppendLine("Chat Bot:You have opted for Advanced Features(Microbial Glass + Patient Location)");
+                                    Execute_API("api/productcategory/AdvancedFeatures/YES");
+                                }
+                                else if (int.Parse(YourMessage) == 2)
+                                {
+                                    sb.AppendLine("Chat Bot:You have not opted for Advanced Features(Microbial Glass + Patient Location)");
+                                    Execute_API("api/productcategory/AdvancedFeatures/NO");
+                                }
+                                else
+                                {
+                                    sb.AppendLine("Chat Bot:Invalid Input: Please Input Correct Value");
+                                    ChatArea = sb.ToString();
+                                    screenOrientationMenu = true;
+                                }
+                            }
+                        }
+                        else if (physicalchoice == 4)
+                        {
+                            if (patientLocationMenu == true)
+                            {
+                                sb.AppendLine(string.Format("{0,-10} | {1,5}", "", YourMessage));
+                                YourMessage = "";
+                                ChatArea = sb.ToString();
+                                sb.AppendLine("Chat Bot: Please choose one option for Device Type from the below list :");
+                                sb.AppendLine("1. Mobile.\n 2.Static");
+                                ChatArea = sb.ToString();
+                                patientLocationrequirementChoice = 0;
+                                patientLocationMenu = false;
+                            }
+                            else if (patientLocationrequirementChoice == 0)
+                            {
+                                sb.AppendLine(YourMessage);
+                                if (int.Parse(YourMessage) == 1)
+                                {
+                                    sb.AppendLine("Chat Bot:You have opted for Mobile Type of Device");
+                                    Execute_API("api/productcategory/MobileorStatic/MOBILE");
+                                }
+                                else if (int.Parse(YourMessage) == 2)
+                                {
+                                    sb.AppendLine("Chat Bot:You have opted for Static Type of Device");
+                                    Execute_API("api/productcategory/MobileorStatic/STATIC");
+                                }
+                                else
+                                {
+                                    sb.AppendLine("Chat Bot:Invalid Input: Please Input Correct Value");
+                                    ChatArea = sb.ToString();
+                                    screenOrientationMenu = true;
+                                }
+                            }
+                        }
+                        else if (physicalchoice == 5)
+                        {
+                            if (alarmingMenu == true)
                             {
                                 sb.AppendLine("User: " + YourMessage);
                                 YourMessage = "";
-                                sb.AppendLine("Chat Bot: Please choose one Physical Feature from the below list : \n " +
-                                    "1.Battery Life \n " +
-                                    "2.Screen Orientation\n " +
-                                    "3.Advanced Features (Anti Microbial Glass+ Patient Location)\n " +
-                                    "4.Device Type(Mobile/Static)"+
-                                    "5.Alarming Feature");
                                 ChatArea = sb.ToString();
-                                physicalrequirementChoice = 0;
-                                physicallock = true;
-                                batteryMenuDisplay = true;
-                                screenOrientationMenu = true;
-                                microbialGlassMenu = true;
-                                patientLocationMenu = true;
-                                alarmingMenu = true;
-                            }
-                            else if (physicalrequirementChoice == 0)
-                            {
-                                sb.AppendLine("User: " + YourMessage);
+                                sb.AppendLine("Chat Bot: Please choose one option for Alarming Feature from the below list :");
+                                sb.AppendLine("1. YES.\n 2.NO");
                                 ChatArea = sb.ToString();
-                                try
-                                {
-                                    physicalchoice = int.Parse(YourMessage);
-                                    YourMessage = "";
-                                    physicalrequirementChoice = 1;
-                                }
-                                catch (Exception e)
-                                {
-                                    sb.AppendLine(YourMessage);
-                                    sb.AppendLine("Error: Invalid Data Entered \n Stack Trace: " + e.StackTrace);
-                                }
+                                alarmingMenurequirementChoice = 0;
+                                alarmingMenu = false;
                             }
-                            if (physicalrequirementChoice == 1)
+                            else if (alarmingMenurequirementChoice == 0)
                             {
-                                if (physicalchoice == 1)
+                                sb.AppendLine(YourMessage);
+                                if (int.Parse(YourMessage) == 1)
                                 {
-                                    if (batteryMenuDisplay == true)
-                                    {
-                                        sb.AppendLine(string.Format("{0,-10} | {1,5}", YourMessage, 51));
-                                        YourMessage = "";
-                                        ChatArea = sb.ToString();
-                                        sb.AppendLine("Chat Bot: Please choose one Battery Life from the below list :");
-                                        sb.AppendLine("1. Battery Life > 5 and < 10.\n 2.Battery Life > 10");
-                                        ChatArea = sb.ToString();
-                                        batteryrequirementChoice = 0;
-                                        batteryMenuDisplay = false;
-                                    }
-                                    else if (batteryrequirementChoice == 0)
-                                    {
-                                        sb.AppendLine(YourMessage);
-                                        if (int.Parse(YourMessage) == 1)
-                                        {
-                                            sb.AppendLine("Chat Bot:You have selected requirement of battery life of > 5 years and < 10 years");
-                                            temp.AppendLine("\nThe following result's matches to your requirement's");
-                                            devices = clientRequests.ProductGetRequest("api/productcategory/BatteryLife/5");
-                                            foreach (var d in devices)
-                                            {
-                                                count++;
-                                                temp.AppendLine("\nDevice " + count + ": " +
-                                                    "\nDeviceName:" + d.DeviceName +
-                                                    "\nECG: " + d.Ecg +
-                                                    "\nSpo2: " + d.Spo2 +
-                                                    "\nRespiration: " + d.Respiration +
-                                                    "\nHeart-Rate: " + d.Hr +
-                                                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                    "\nBlood-Pressure: " + d.BloodPressure +
-                                                    "\nBattery-Life: " + d.BatteryLife +
-                                                    "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                    "\nSize: " + d.Size +
-                                                    "\nMobile/Static: " + d.MobileOrStatic +
-                                                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                    "\nPatient-Location: " + d.PatientLocation);
-                                            }
-                                            if (count > 0)
-                                            {
-                                                sb.AppendLine(temp.ToString());
-                                                temp.Clear();
-                                                ChatArea = sb.ToString();
-                                            }
-                                            else
-                                            {
-                                                sb.AppendLine("Could not find any devices of your preferences.\n" +
-                                                    "Please register on our portal so that our Philips representative will contact you for more information!!");
-                                                ChatArea = sb.ToString();
-                                            }
-                                            //menuchoice = 4;
-                                        }
-                                        else if (int.Parse(YourMessage) == 2)
-                                        {
-                                            sb.AppendLine("Chat Bot:You have selected requirement of battery life of more than 10 years");
-                                            sb.AppendLine("\nThe following result's matches to your requirement's");
-                                            devices = clientRequests.ProductGetRequest("api/productcategory/BatteryLife/10");
-                                            foreach (var d in devices)
-                                            {
-                                                count++;
-                                                sb.AppendLine("\nDevice " + count + ": " +
-                                                    "\nDeviceName:" + d.DeviceName +
-                                                    "\nECG: " + d.Ecg +
-                                                    "\nSpo2: " + d.Spo2 +
-                                                    "\nRespiration: " + d.Respiration +
-                                                    "\nHeart-Rate: " + d.Hr +
-                                                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                    "\nBlood-Pressure: " + d.BloodPressure +
-                                                    "\nBattery-Life: " + d.BatteryLife +
-                                                    "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                    "\nSize: " + d.Size +
-                                                    "\nMobile/Static: " + d.MobileOrStatic +
-                                                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                    "\nPatient-Location: " + d.PatientLocation);
-                                            }
-                                            ChatArea = sb.ToString();
-                                            //menuchoice = 4;
-                                        }
-                                        else
-                                        {
-                                            sb.AppendLine("Chat Bot:Invalid Input: Please Input Correct  Value");
-                                            ChatArea = sb.ToString();
-                                            batteryMenuDisplay = true;
-                                        }
-                                    }
+                                    sb.AppendLine("Chat Bot:You have opted for Alarming Feature");
+                                    Execute_API("api/productcategory/Alaraming/YES");
                                 }
-                                else if (physicalchoice == 2)
+                                else if (int.Parse(YourMessage) == 2)
                                 {
-                                    if (screenOrientationMenu == true)
-                                    {
-                                        sb.AppendLine(string.Format("{0,-10} | {1,5}", YourMessage, 51));
-                                        YourMessage = "";
-                                        ChatArea = sb.ToString();
-                                        sb.AppendLine("Chat Bot: Please choose one option for Screen Orientation from the below list :");
-                                        sb.AppendLine("1. Required.\n 2.Not-Required");
-                                        ChatArea = sb.ToString();
-                                        screenOrientationrequirementChoice = 0;
-                                        screenOrientationMenu = false;
-                                    }
-                                    else if (screenOrientationrequirementChoice == 0)
-                                    {
-                                        sb.AppendLine(YourMessage);
-                                        if (int.Parse(YourMessage) == 1)
-                                        {
-                                            sb.AppendLine("Chat Bot:You have opted for screen orientation feature");
-                                            temp.AppendLine("\nThe following result's matches to your requirement's");
-                                            devices = clientRequests.ProductGetRequest("api/productcategory/Display/YES");
-                                            foreach (var d in devices)
-                                            {
-                                                count++;
-                                                temp.AppendLine("\nDevice " + count + ": " +
-                                                    "\nDeviceName:" + d.DeviceName +
-                                                    "\nECG: " + d.Ecg +
-                                                    "\nSpo2: " + d.Spo2 +
-                                                    "\nRespiration: " + d.Respiration +
-                                                    "\nHeart-Rate: " + d.Hr +
-                                                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                    "\nBlood-Pressure: " + d.BloodPressure +
-                                                    "\nBattery-Life: " + d.BatteryLife +
-                                                    "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                    "\nSize: " + d.Size +
-                                                    "\nMobile/Static: " + d.MobileOrStatic +
-                                                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                    "\nPatient-Location: " + d.PatientLocation);
-                                            }
-                                            if (count > 0)
-                                            {
-                                                sb.AppendLine(temp.ToString());
-                                                temp.Clear();
-                                                ChatArea = sb.ToString();
-                                            }
-                                            else
-                                            {
-                                                sb.AppendLine("Could not find any devices of your preferences.\n" +
-                                                    "Please register on our portal so that our Philips representative will contact you for more information!!");
-                                                ChatArea = sb.ToString();
-                                            }
-                                            //menuchoice = 4;
-                                        }
-                                        else if (int.Parse(YourMessage) == 2)
-                                        {
-                                            sb.AppendLine("Chat Bot:You have not opted for screen orientation feature");
-                                            sb.AppendLine("\nThe following result's matches to your requirement's");
-                                            devices = clientRequests.ProductGetRequest("api/productcategory/Display/NO");
-                                            foreach (var d in devices)
-                                            {
-                                                count++;
-                                                sb.AppendLine("\nDevice " + count + ": " +
-                                                    "\nDeviceName:" + d.DeviceName +
-                                                    "\nECG: " + d.Ecg +
-                                                    "\nSpo2: " + d.Spo2 +
-                                                    "\nRespiration: " + d.Respiration +
-                                                    "\nHeart-Rate: " + d.Hr +
-                                                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                    "\nBlood-Pressure: " + d.BloodPressure +
-                                                    "\nBattery-Life: " + d.BatteryLife +
-                                                    "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                    "\nSize: " + d.Size +
-                                                    "\nMobile/Static: " + d.MobileOrStatic +
-                                                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                    "\nPatient-Location: " + d.PatientLocation);
-                                            }
-                                            ChatArea = sb.ToString();
-                                            //menuchoice = 4;
-                                        }
-                                        else
-                                        {
-                                            sb.AppendLine("Chat Bot:Invalid Input: Please Input Correct Value");
-                                            ChatArea = sb.ToString();
-                                            screenOrientationMenu = true;
-                                        }
-                                    }
+                                    sb.AppendLine("Chat Bot:You have not opted for Alarming Feature");
+                                    Execute_API("api/productcategory/Alaraming/NO");
                                 }
-                                else if (physicalchoice == 3)
-                                {
-                                    if (microbialGlassMenu == true)
-                                    {
-                                        sb.AppendLine(string.Format("{0,-10} | {1,5}", "", YourMessage));
-                                        YourMessage = "";
-                                        ChatArea = sb.ToString();
-                                        sb.AppendLine("Chat Bot: Please choose one option for Advanced Features(Microbial Glass + Patient Location) from the below list :");
-                                        sb.AppendLine("1. Required.\n 2.Not- Required");
-                                        ChatArea = sb.ToString();
-                                        microbialGlassrequirementChoice = 0;
-                                        microbialGlassMenu = false;
-                                    }
-                                    else if (microbialGlassrequirementChoice == 0)
-                                    {
-                                        sb.AppendLine(YourMessage);
-                                        if (int.Parse(YourMessage) == 1)
-                                        {
-                                            sb.AppendLine("Chat Bot:You have opted for Advanced Features(Microbial Glass + Patient Location)");
-                                            temp.AppendLine("\nThe following result's matches to your requirement's");
-                                            devices = clientRequests.ProductGetRequest("api/productcategory/AdvancedFeatures/YES");
-                                            foreach (var d in devices)
-                                            {
-                                                count++;
-                                                temp.AppendLine("\nDevice " + count + ": " +
-                                                    "\nDeviceName:" + d.DeviceName +
-                                                    "\nECG: " + d.Ecg +
-                                                    "\nSpo2: " + d.Spo2 +
-                                                    "\nRespiration: " + d.Respiration +
-                                                    "\nHeart-Rate: " + d.Hr +
-                                                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                    "\nBlood-Pressure: " + d.BloodPressure +
-                                                    "\nBattery-Life: " + d.BatteryLife +
-                                                    "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                    "\nSize: " + d.Size +
-                                                    "\nMobile/Static: " + d.MobileOrStatic +
-                                                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                    "\nPatient-Location: " + d.PatientLocation);
-                                            }
-                                            if (count > 0)
-                                            {
-                                                sb.AppendLine(temp.ToString());
-                                                temp.Clear();
-                                                ChatArea = sb.ToString();
-                                            }
-                                            else
-                                            {
-                                                sb.AppendLine("Could not find any devices of your preferences.\n" +
-                                                    "Please register on our portal so that our Philips representative will contact you for more information!!");
-                                                ChatArea = sb.ToString();
-                                            }
-                                            //menuchoice = 4;
-                                        }
-                                        else if (int.Parse(YourMessage) == 2)
-                                        {
-                                            sb.AppendLine("Chat Bot:You have not opted for Advanced Features(Microbial Glass + Patient Location)");
-                                            sb.AppendLine("\nThe following result's matches to your requirement's");
-                                            devices = clientRequests.ProductGetRequest("api/productcategory/AdvancedFeatures/NO");
-                                            foreach (var d in devices)
-                                            {
-                                                count++;
-                                                sb.AppendLine("\nDevice " + count + ": " +
-                                                    "\nDeviceName:" + d.DeviceName +
-                                                    "\nECG: " + d.Ecg +
-                                                    "\nSpo2: " + d.Spo2 +
-                                                    "\nRespiration: " + d.Respiration +
-                                                    "\nHeart-Rate: " + d.Hr +
-                                                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                    "\nBlood-Pressure: " + d.BloodPressure +
-                                                    "\nBattery-Life: " + d.BatteryLife +
-                                                    "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                    "\nSize: " + d.Size +
-                                                    "\nMobile/Static: " + d.MobileOrStatic +
-                                                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                    "\nPatient-Location: " + d.PatientLocation);
-                                            }
-                                            ChatArea = sb.ToString();
-                                            //menuchoice = 4;
-                                        }
-                                        else
-                                        {
-                                            sb.AppendLine("Chat Bot:Invalid Input: Please Input Correct Value");
-                                            ChatArea = sb.ToString();
-                                            screenOrientationMenu = true;
-                                        }
-                                    }
-                                }
-                                else if (physicalchoice == 4)
-                                {
-                                    if (patientLocationMenu == true)
-                                    {
-                                        sb.AppendLine(string.Format("{0,-10} | {1,5}", "", YourMessage));
-                                        YourMessage = "";
-                                        ChatArea = sb.ToString();
-                                        sb.AppendLine("Chat Bot: Please choose one option for Device Type from the below list :");
-                                        sb.AppendLine("1. Mobile.\n 2.Static");
-                                        ChatArea = sb.ToString();
-                                        patientLocationrequirementChoice = 0;
-                                        patientLocationMenu = false;
-                                    }
-                                    else if (patientLocationrequirementChoice == 0)
-                                    {
-                                        sb.AppendLine(YourMessage);
-                                        if (int.Parse(YourMessage) == 1)
-                                        {
-                                            sb.AppendLine("Chat Bot:You have opted for Mobile Type of Device");
-                                            temp.AppendLine("\nThe following result's matches to your requirement's");
-                                            devices = clientRequests.ProductGetRequest("api/productcategory/MobileorStatic/MOBILE");
-                                            foreach (var d in devices)
-                                            {
-                                                count++;
-                                                temp.AppendLine("\nDevice " + count + ": " +
-                                                    "\nDeviceName:" + d.DeviceName +
-                                                    "\nECG: " + d.Ecg +
-                                                    "\nSpo2: " + d.Spo2 +
-                                                    "\nRespiration: " + d.Respiration +
-                                                    "\nHeart-Rate: " + d.Hr +
-                                                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                    "\nBlood-Pressure: " + d.BloodPressure +
-                                                    "\nBattery-Life: " + d.BatteryLife +
-                                                    "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                    "\nSize: " + d.Size +
-                                                    "\nMobile/Static: " + d.MobileOrStatic +
-                                                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                    "\nPatient-Location: " + d.PatientLocation);
-                                            }
-                                            if (count > 0)
-                                            {
-                                                sb.AppendLine(temp.ToString());
-                                                temp.Clear();
-                                                ChatArea = sb.ToString();
-                                            }
-                                            else
-                                            {
-                                                sb.AppendLine("Could not find any devices of your preferences.\n" +
-                                                    "Please register on our portal so that our Philips representative will contact you for more information!!");
-                                                ChatArea = sb.ToString();
-                                            }
-                                            //menuchoice = 4;
-                                        }
-                                        else if (int.Parse(YourMessage) == 2)
-                                        {
-                                            sb.AppendLine("Chat Bot:You have not opted for Static Type of Device");
-                                            sb.AppendLine("\nThe following result's matches to your requirement's");
-                                            devices = clientRequests.ProductGetRequest("api/productcategory/MobileorStatic/STATIC");
-                                            foreach (var d in devices)
-                                            {
-                                                count++;
-                                                sb.AppendLine("\nDevice " + count + ": " +
-                                                    "\nDeviceName:" + d.DeviceName +
-                                                    "\nECG: " + d.Ecg +
-                                                    "\nSpo2: " + d.Spo2 +
-                                                    "\nRespiration: " + d.Respiration +
-                                                    "\nHeart-Rate: " + d.Hr +
-                                                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                    "\nBlood-Pressure: " + d.BloodPressure +
-                                                    "\nBattery-Life: " + d.BatteryLife +
-                                                    "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                    "\nSize: " + d.Size +
-                                                    "\nMobile/Static: " + d.MobileOrStatic +
-                                                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                    "\nPatient-Location: " + d.PatientLocation);
-                                            }
-                                            ChatArea = sb.ToString();
-                                            //menuchoice = 4;
-                                        }
-                                        //---------dddddjddd j ckd ckc//////
-                                        else
-                                        {
-                                            sb.AppendLine("Chat Bot:Invalid Input: Please Input Correct Value");
-                                            ChatArea = sb.ToString();
-                                            screenOrientationMenu = true;
-                                        }
-                                    }
-                                }
-                                else if (physicalchoice == 5)
-                                {
-                                    if (alarmingMenu == true)
-                                    {
-                                        sb.AppendLine("User: "+YourMessage);
-                                        YourMessage = "";
-                                        ChatArea = sb.ToString();
-                                        sb.AppendLine("Chat Bot: Please choose one option for Alarming Feature from the below list :");
-                                        sb.AppendLine("1. YES.\n 2.NO");
-                                        ChatArea = sb.ToString();
-                                        alarmingMenurequirementChoice = 0;
-                                        alarmingMenu = false;
-                                    }
-                                    else if (alarmingMenurequirementChoice == 0)
-                                    {
-                                        sb.AppendLine(YourMessage);
-                                        if (int.Parse(YourMessage) == 1)
-                                        {
-                                            sb.AppendLine("Chat Bot:You have opted for Alarming Feature");
-                                            sb.AppendLine("\nThe following result's matches to your requirement's");
-                                            devices = clientRequests.ProductGetRequest("api/productcategory/Alaraming/YES");
-                                            foreach (var d in devices)
-                                            {
-                                                count++;
-                                                sb.AppendLine("\nDevice " + count + ": " +
-                                                    "\nDeviceName:" + d.DeviceName +
-                                                    "\nECG: " + d.Ecg +
-                                                    "\nSpo2: " + d.Spo2 +
-                                                    "\nRespiration: " + d.Respiration +
-                                                    "\nHeart-Rate: " + d.Hr +
-                                                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                    "\nBlood-Pressure: " + d.BloodPressure +
-                                                    "\nBattery-Life: " + d.BatteryLife +
-                                                    "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                    "\nSize: " + d.Size +
-                                                    "\nMobile/Static: " + d.MobileOrStatic +
-                                                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                    "\nPatient-Location: " + d.PatientLocation);
-                                            }
-                                            ChatArea = sb.ToString();
-                                            //menuchoice = 4;
-                                        }
-                                        else if (int.Parse(YourMessage) == 2)
-                                        {
-                                            sb.AppendLine("Chat Bot:You have not opted for Alarming Feature");
-                                            temp.AppendLine("\nThe following result's matches to your requirement's");
-                                            devices = clientRequests.ProductGetRequest("api/productcategory/Alaraming/NO");
-                                            foreach (var d in devices)
-                                            {
-                                                count++;
-                                                temp.AppendLine("\nDevice " + count + ": " +
-                                                    "\nDeviceName:" + d.DeviceName +
-                                                    "\nECG: " + d.Ecg +
-                                                    "\nSpo2: " + d.Spo2 +
-                                                    "\nRespiration: " + d.Respiration +
-                                                    "\nHeart-Rate: " + d.Hr +
-                                                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                    "\nBlood-Pressure: " + d.BloodPressure +
-                                                    "\nBattery-Life: " + d.BatteryLife +
-                                                    "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                    "\nSize: " + d.Size +
-                                                    "\nMobile/Static: " + d.MobileOrStatic +
-                                                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                    "\nPatient-Location: " + d.PatientLocation);
-                                            }
-                                            if (count > 0)
-                                            {
-                                                sb.AppendLine(temp.ToString());
-                                                temp.Clear();
-                                                ChatArea = sb.ToString();
-                                            }
-                                            else
-                                            {
-                                                sb.AppendLine("Could not find any devices of your preferences.\n" +
-                                                    "Please register on our portal so that our Philips representative will contact you for more information!!");
-                                                ChatArea = sb.ToString();
-                                            }
-                                            //menuchoice = 4;
-                                        }
-                                    }
-                                }   
                             }
-                         }
-                        else if (menuchoice==3)
-                        {
-                            devices = clientRequests.ProductGetRequest("api/productcategory/GetDevices");
-                            foreach (var d in devices)
-                            {
-                                count++;
-                                sb.AppendLine("\nDevice " + count + ": " +
-                                                "\nDeviceName:" + d.DeviceName +
-                                                "\nECG: " + d.Ecg +
-                                                "\nSpo2: " + d.Spo2 +
-                                                "\nRespiration: " + d.Respiration +
-                                                "\nHeart-Rate: " + d.Hr +
-                                                "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                                                "\nBlood-Pressure: " + d.BloodPressure +
-                                                "\nBattery-Life: " + d.BatteryLife +
-                                                "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                                                "\nSize: " + d.Size +
-                                                "\nMobile/Static: " + d.MobileOrStatic +
-                                                "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                                                "\nPatient-Location: " + d.PatientLocation);
-                            }
-                            ChatArea = sb.ToString();
                         }
                     }
                 }
+                else if (menuchoice == 3)
+                {
+                    Execute_API("api/productcategory/GetDevices");
+                }
+
             }
         }
+
+        private void Execute_API(String url)
+        {
+            temp.AppendLine("\nThe following result's matches to your requirement's");
+            devices = clientRequests.ProductGetRequest(url);
+            foreach (var d in devices)
+            {
+                count++;
+                temp.AppendLine("\nDevice " + count + ": " +
+                    "\nDeviceName:" + d.DeviceName +
+                    "\nECG: " + d.Ecg +
+                    "\nSpo2: " + d.Spo2 +
+                    "\nRespiration: " + d.Respiration +
+                    "\nHeart-Rate: " + d.Hr +
+                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
+                    "\nBlood-Pressure: " + d.BloodPressure +
+                    "\nBattery-Life: " + d.BatteryLife +
+                    "\nScreen-Orientation: " + d.SupportedScreenOrientations +
+                    "\nSize: " + d.Size +
+                    "\nMobile/Static: " + d.MobileOrStatic +
+                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
+                    "\nPatient-Location: " + d.PatientLocation);
+            }
+            if (count > 0)
+            {
+                sb.AppendLine(temp.ToString());
+                temp.Clear();
+                ChatArea = sb.ToString();
+            }
+            else
+            {
+                sb.AppendLine("Could not find any devices of your preferences.\n" +
+                    "Please register on our portal so that our Philips representative will contact you for more information!!");
+                ChatArea = sb.ToString();
+            }
+        }
+
         private void Execute_ClearCoomand(object obj)
         {
             sb = new StringBuilder();
-            ChatArea="Say 'Hi' to start the chat";
+            ChatArea = "Say 'Hi' to start the chat";
+            choice = 1;
+            //throw new NotImplementedException();
         }
+
+
         private bool CanExecute_Mehod(object arg)
         {
             return true;
         }
-
+        UserDetails user = new UserDetails();
         private void Execute_RegisterAndOrdering(object obj)
         {
-            throw new NotImplementedException();
+            //userDetails.Add(new UserDetails { UserName = Name, ProductsBooked = modelTypeSelected, UserContactNo = ContactNumber });
+            user.UserName = Name;
+            user.UserContactNo = ContactNumber;
+            user.ProductsBooked = ModelTypeSelected;
+            clientRequests.UserPostRequest("api/AlertUser/Registration",user);
+            MessageBox.Show(Name + " Registered Successfuly");
         }
         #endregion
 
@@ -807,7 +448,7 @@ namespace AssetToPurchaseFrontend.ViewModel
         }
         public List<String> ModelType
         {
-            get { return new List<string>() { "Cardic", "Covid", "Alaram" }; }
+            get { return new List<string>() { "Cardic", "Covid19", "Pnemonia","HighBp" ,"ContactToPhiliPsPerson"}; }
             set
             {
                 modelType = value;
@@ -815,12 +456,24 @@ namespace AssetToPurchaseFrontend.ViewModel
 
             }
         }
-        public String ContactNumber
+
+        private String modelTypeSelected;
+        public String ModelTypeSelected
+        {
+            get { return this.modelTypeSelected; }
+            set
+            {
+                modelTypeSelected = value;
+                OnPropertyChanged("ModelTypeSelected");
+            }
+
+        }
+        public int ContactNumber
         {
             get { return contactNumber; }
             set
             {
-                contactNumber= value;
+                contactNumber = value;
                 OnPropertyChanged("ContactNumber");
 
             }
@@ -830,7 +483,7 @@ namespace AssetToPurchaseFrontend.ViewModel
             get { return yourMessage; }
             set
             {
-                yourMessage= value;
+                yourMessage = value;
                 OnPropertyChanged("YourMessage");
 
             }

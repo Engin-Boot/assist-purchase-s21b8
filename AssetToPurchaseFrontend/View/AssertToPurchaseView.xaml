@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-    <viewmodel:AssetToPurchaseviewModel x:Key="vm"/>
+        <viewmodel:AssetToPurchaseviewModel x:Key="vm"/>
     </UserControl.Resources>
     <DockPanel LastChildFill="True" Background="AliceBlue">
         <Border x:Name="header" BorderThickness="2"  Height="50"  DockPanel.Dock="Top">
@@ -37,32 +37,46 @@
                         <TextBlock Margin="2"  Width="100" Height="25"  Grid.Row="1" Grid.Column="0">Email</TextBlock>
                         <TextBlock Margin="2"  Width="100" Height="25" Grid.Row="2" Grid.Column="0">Model</TextBlock>
                         <TextBlock Margin="2" Width="100" Height="25" Grid.Row="3" Grid.Column="0">Contact Number</TextBlock>
-                        <TextBox  Margin="2" Width="100" Grid.Row="0" Grid.Column="1"></TextBox>
-                        <TextBox  Margin="2" Width="100" Grid.Row="1" Grid.Column="1"></TextBox>
-                        <ComboBox Name="ModelSelect" Width="100" Grid.Row="2" Grid.Column="1" ></ComboBox>
-                        <TextBox  Margin="2" Width="100" Grid.Row="3" Grid.Column="1"></TextBox>
-                        <Button Width="120"  Height="30" Grid.Row="4" Grid.Column="0" Content="Register/OrderConfirmed"></Button>
-                        <Button Width="100" Height="30" Grid.Row="4" Grid.Column="1" Content="Clear" Command="{Binding ClearCommand, Source={StaticResource vm}}"></Button>
+
+                        <TextBox Text="{Binding Name, Source={StaticResource vm}}" Margin="2" Width="100" Grid.Row="0" Grid.Column="1"></TextBox>
+                        <TextBox Text="{Binding Email, Source={StaticResource vm}}"   Margin="2" Width="100" Grid.Row="1" Grid.Column="1"></TextBox>
+                        <ComboBox SelectedValue="{Binding ModelTypeSelected, Source={StaticResource vm}}" ItemsSource="{Binding ModelType, Source={StaticResource vm}}" Name="ModelSelect" Width="100" Grid.Row="2" Grid.Column="1" ></ComboBox>
+                        <TextBox Text="{Binding ContactNumber, Source={StaticResource vm}}"  Margin="2" Width="100" Grid.Row="3" Grid.Column="1"></TextBox>
+
+                        <Button Command="{Binding  RegisterAndOrderingCommand, Source={StaticResource vm}}" Width="120"  Height="30" Grid.Row="4" Grid.Column="0" Content="Register/OrderConfirmed"></Button>
+                        <Button Command="{Binding ClearCommandRegistration, Source={StaticResource vm}}" Width="100" Height="30" Grid.Row="4" Grid.Column="1" Content="Clear" ></Button>
                     </Grid.Children>
                 </Grid>
             </StackPanel>
         </Border>
+
         <Border BorderThickness="2" BorderBrush="Beige"></Border>
-        <Grid>
+
+        <Grid Margin="0,0.8,0,-20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
+
             </Grid.RowDefinitions>
+
             <TextBox  ScrollViewer.HorizontalScrollBarVisibility="Auto"
                      ScrollViewer.VerticalScrollBarVisibility="Auto"
                      ScrollViewer.CanContentScroll="True" 
                      HorizontalAlignment="Stretch" 
-                     Margin="5,5,4.8,75.8" 
+                     Margin="5,5,5.2,95.4" 
                       Text="{Binding ChatArea,Source={StaticResource vm}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                       Name="chatArea" VerticalAlignment="Stretch" Width="Auto" IsReadOnly="True" Grid.Row="0" Grid.RowSpan="2" />
+            <!--Text="{Binding ChatArea,Source={StaticResource vm}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"-->
+
             <TextBlock HorizontalAlignment="Left" Width="84" Grid.Row="1" TextWrapping="Wrap" Text="Your message:" VerticalAlignment="Top" Margin="13,99.2,0,0"/>
             <TextBox Text="{Binding YourMessage, Source={StaticResource vm}}" Name="inputText"  VerticalAlignment="Stretch" Width="Auto" Grid.Row="1" Margin="25,118.8,96.2,10.4" />
-            <Button Command="{Binding SendCommand, Source={StaticResource vm}}" Content="Send" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top" Width="75" Margin="457,124.2,0,0" />
+            <!--Text="{Binding YourMessage, Source={StaticResource vm}}"-->
+            <Button Command="{Binding SendCommand, Source={StaticResource vm}}" Content="Send" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top" Width="75" Margin="457,114.8,0,0" Height="20" />
+            <Button Command="{Binding ClearCommand, Source={StaticResource vm}}" Content="Clear" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Top" Width="75" Margin="457,144.8,0,0" Height="20" />
+            <!--Command="{Binding SendCommand, Source={StaticResource vm}}"-->
+            <!--Click="Button_Click"-->
+
         </Grid>
+
     </DockPanel>
 </UserControl>

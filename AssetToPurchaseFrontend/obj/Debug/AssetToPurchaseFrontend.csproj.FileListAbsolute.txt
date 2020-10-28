@@ -50,3 +50,7 @@ D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\Newtonsoft
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\System.Net.Http.Formatting.dll
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\Newtonsoft.Json.xml
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\320087165\Documents\GitHub\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\Newtonsoft.Json.dll
+C:\Users\320087165\Documents\GitHub\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\320087165\Documents\GitHub\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\Newtonsoft.Json.xml
+C:\Users\320087165\Documents\GitHub\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\System.Net.Http.Formatting.xml

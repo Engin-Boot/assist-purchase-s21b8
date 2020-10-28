@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+
 namespace AssetToPurchaseFrontend.View
 {
     /// <summary>
@@ -6,9 +7,13 @@ namespace AssetToPurchaseFrontend.View
     /// </summary>
     public partial class AssertToPurchaseView : UserControl
     {
+
+
         public AssertToPurchaseView()
         {
             InitializeComponent();
+
+
         }
     }
 }
