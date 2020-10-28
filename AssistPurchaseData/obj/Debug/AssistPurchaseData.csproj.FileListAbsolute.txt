@@ -883,6 +883,7 @@ D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseData\bin\Debug\ru\Microsoft.Co
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseData\bin\Debug\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseData\bin\Debug\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseData\bin\Debug\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseData\obj\Debug\AssistPurchaseData.csprojAssemblyReference.cache
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseData\obj\Debug\AssistPurchaseData.exe.config
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseData\obj\Debug\AssistPurchaseData.csproj.CoreCompileInputs.cache
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseData\obj\Debug\AssistPurchaseData.csproj.CopyComplete

@@ -174,6 +174,11 @@ namespace AssetToPurchaseFrontend.ViewModel
                 MicrobialGlassrequirementChoiceMethod();
 
             }
+            else
+                PhysicalChoiceMethodThree();
+        }
+        private void PhysicalChoiceMethodThree()
+        {
             if (physicalchoice == 4)
             {
                 PatientLocationrequirementChoiceMethod();
@@ -374,20 +379,23 @@ namespace AssetToPurchaseFrontend.ViewModel
             {
                 sb.AppendLine("User: " + YourMessage);
                 ChatArea = sb.ToString();
-                try
-                {
-                    physicalchoice = int.Parse(YourMessage);
-                    YourMessage = "";
-                    physicalrequirementChoice = 1;
-                }
-                catch (Exception e)
-                {
-                    sb.AppendLine(YourMessage);
-                    sb.AppendLine("Error: Invalid Data Entered \n Stack Trace: " + e.StackTrace);
-                }
+                PhysicalrequirementChoiceTwo();
             }
         }
-
+        private void PhysicalrequirementChoiceTwo()
+        {
+            try
+            {
+                physicalchoice = int.Parse(YourMessage);
+                YourMessage = "";
+                physicalrequirementChoice = 1;
+            }
+            catch (Exception e)
+            {
+                sb.AppendLine(YourMessage);
+                sb.AppendLine("Error: Invalid Data Entered \n Stack Trace: " + e.StackTrace);
+            }
+        }
         private void MenuChoice1Method()
         {
             if (clinicalMenuDisplay == true)
@@ -427,12 +435,6 @@ namespace AssetToPurchaseFrontend.ViewModel
                     sb.AppendLine("Chat Bot: You have selected Cardiac as your clinical requirement");
                     Execute_API(url);
                 }
-                if (clinical == 2)
-                {
-                    url = "api/productcategory/Pneumonia";
-                    sb.AppendLine("Chat Bot: You have selected Pneumonia as your clinical requirement");
-                    Execute_API(url);
-                }
                 else
                     ClinicalChoiceMethodTwo();
             }
@@ -444,12 +446,23 @@ namespace AssetToPurchaseFrontend.ViewModel
         }
         private void ClinicalChoiceMethodTwo()
         {
+            if (clinical == 2)
+            {
+                url = "api/productcategory/Pneumonia";
+                sb.AppendLine("Chat Bot: You have selected Pneumonia as your clinical requirement");
+                Execute_API(url);
+            }
             if (clinical == 3)
             {
                 url = "api/productcategory/Covid19";
                 sb.AppendLine("Chat Bot: You have selected Covid19 as your clinical requirement");
                 Execute_API(url);
             }
+            else 
+                ClinicalChoiceMethodThree();
+        }
+        private void ClinicalChoiceMethodThree()
+        {
             if (clinical == 4)
             {
                 url = "api/productcategory/HighBP";
@@ -463,7 +476,6 @@ namespace AssetToPurchaseFrontend.ViewModel
                 clinicallock = false;
             }
         }
-
         private void PhysicalchoiceMethod()
         {
             if (alarmingMenu == true)
