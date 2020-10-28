@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="RemoveDevices.View.RemoveDeviceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vmr="clr-namespace:RemoveDevices.ViewModel"
+             xmlns:local="clr-namespace:RemoveDevices.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vmr:RemoveDeviceViewModel></vmr:RemoveDeviceViewModel>
+    </UserControl.DataContext>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="179.2,70,-163.8,18.4" Width="95" Grid.Column="1" Content="Delete Device" FontWeight="ExtraBold" Foreground="DeepSkyBlue" Height="30" />
+        <TextBlock   Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,12.4,-122.6,47.8">DeviceName</TextBlock>
+        <ComboBox SelectedValue="{Binding DeviceTypeSelected}" ItemsSource="{Binding DeviceType}" Grid.Column="1" Grid.Row="1" Margin="82,13,-289.4,59.8" />
+        <Button Command="{Binding DeleteCommand}" x:Name="adelete" Content="delete" Grid.Column="1" Grid.Row="1" Margin="99.2,72.4,-98.6,90.2" Grid.RowSpan="2"/>
+    </Grid>
+</UserControl>
