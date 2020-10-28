@@ -22,18 +22,25 @@ namespace AssistPurchaseData
             WriteToXml();
         }
 
-        //public void RemoveDevice(string deviceName)
-        //{
-        //    foreach (var device in MonitoringDevices)
-        //    {
-        //        if (device.DeviceName == deviceName)
-        //        {
-        //            //delete from list
-        //        }
-        //    }
+        public List<MonitoringDevice> RemoveDevice(string deviceName)
+        {
+            var monitoringDevicestemp = ReadFromXml();
 
-        //    WriteToXml();
-        //}
+
+            foreach (var device in monitoringDevicestemp)
+            {
+
+                if (device.DeviceName == deviceName)
+                {
+                    var check = monitoringDevicestemp.Remove(device);
+                    return monitoringDevicestemp;
+
+
+                }
+            }
+
+            return monitoringDevicestemp;
+        }
 
         public MonitoringDevice ReadDevice(string deviceName)
         {
