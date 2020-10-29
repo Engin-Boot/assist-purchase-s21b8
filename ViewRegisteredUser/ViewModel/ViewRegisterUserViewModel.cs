@@ -1,20 +1,17 @@
 ﻿using AssetToPurchaseFrontend.Commands;
+using AssetToPurchaseFrontend.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using AssetToPurchaseFrontend.Model;
 
 namespace ViewRegisteredUser.ViewModel
 {
-    public class ViewRegisterUserViewModel :INotifyPropertyChanged
+    public class ViewRegisterUserViewModel : INotifyPropertyChanged
     {
         ClientRequests clientRequests;
         List<UserDetails> userDetails = new List<UserDetails>();
-        public ICommand     ViewCommand { get; set; }
+        public ICommand ViewCommand { get; set; }
         public ViewRegisterUserViewModel()
         {
             ViewCommand = new DelegateCommand(Execute_ViewCommand, CanExecute_ViewCommand);
@@ -29,7 +26,7 @@ namespace ViewRegisteredUser.ViewModel
         {
             DisplayArea = "";
             string uri = "api/AlertUser/GetUserDetail/" + DeviceTypeSelected;
-            userDetails=clientRequests.UserGetRequest(uri);
+            userDetails = clientRequests.UserGetRequest(uri);
             foreach (var users in userDetails)
             {
                 DisplayArea += "\nUser Name:" + users.UserName + "\n User Requested/Booked Model:" + users.ProductsBooked + "\nUser Contact Number:" + users.UserContactNo;
@@ -49,11 +46,11 @@ namespace ViewRegisteredUser.ViewModel
         List<string> deviceType;
         public List<String> DeviceType
         {
-            get 
+            get
             {
                 PopoulateModelNames();
                 modelName.Add("Request to contact Philips person");
-                return modelName; 
+                return modelName;
             }
             set
             {
@@ -79,7 +76,7 @@ namespace ViewRegisteredUser.ViewModel
         public String DisplayArea
         {
             get { return this.displayArea; }
-            set 
+            set
             {
                 displayArea = value;
                 OnPropertyChanged("DisplayArea");

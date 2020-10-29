@@ -1,17 +1,14 @@
 ﻿using AssetToPurchaseFrontend.Commands;
+using AssetToPurchaseFrontend.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AssetToPurchaseFrontend.Model;
-using System.Windows.Input;
 using System.Windows;
+using System.Windows.Input;
 
 namespace RemoveDevices.ViewModel
 {
-    public class RemoveDeviceViewModel :INotifyPropertyChanged
+    public class RemoveDeviceViewModel : INotifyPropertyChanged
     {
         ClientRequests clientRequests;
         public ICommand DeleteCommand { get; set; }
@@ -28,7 +25,7 @@ namespace RemoveDevices.ViewModel
 
         private void Execute_DeleteCommand(object obj)
         {
-            string uri = "api/productcategory/"+DeviceTypeSelected;
+            string uri = "api/productcategory/" + DeviceTypeSelected;
             clientRequests = new ClientRequests();
             clientRequests.ProductDeleteRequest(uri);
             MessageBox.Show("Device Deleted Successfuly");
@@ -39,11 +36,11 @@ namespace RemoveDevices.ViewModel
         List<string> deviceType;
         public List<String> DeviceType
         {
-            get 
+            get
             {
                 PopoulateModelNames();
                 return modelName;
-               // return new List<string>() { "Cardic", "Pnemonia", "Covid19", "HighBp" }; 
+                // return new List<string>() { "Cardic", "Pnemonia", "Covid19", "HighBp" }; 
             }
             set
             {

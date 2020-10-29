@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Windows.Input;
 
 namespace AssetToPurchaseFrontend.Commands
 {
-   public  class DelegateCommand :ICommand
+    public class DelegateCommand : ICommand
     {
 
         Action<object> _executeMethodAddress;

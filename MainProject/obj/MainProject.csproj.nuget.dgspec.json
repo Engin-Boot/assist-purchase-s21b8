@@ -1,0 +1,333 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\MainProject\\MainProject.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AddDevice\\AddDevice.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AddDevice\\AddDevice.csproj",
+        "projectName": "AddDevice",
+        "projectPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AddDevice\\AddDevice.csproj",
+        "packagesPath": "C:\\Users\\320087165\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AddDevice\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\320087165\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AssetToPurchaseFrontend\\AssetToPurchaseFrontend.csproj": {
+                "projectPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AssetToPurchaseFrontend\\AssetToPurchaseFrontend.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AssetToPurchaseFrontend\\AssetToPurchaseFrontend.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AssetToPurchaseFrontend\\AssetToPurchaseFrontend.csproj",
+        "projectName": "AssetToPurchaseFrontend",
+        "projectPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AssetToPurchaseFrontend\\AssetToPurchaseFrontend.csproj",
+        "packagesPath": "C:\\Users\\320087165\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AssetToPurchaseFrontend\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\320087165\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\MainProject\\MainProject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\MainProject\\MainProject.csproj",
+        "projectName": "MainProject",
+        "projectPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\MainProject\\MainProject.csproj",
+        "packagesPath": "C:\\Users\\320087165\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\MainProject\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\320087165\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AddDevice\\AddDevice.csproj": {
+                "projectPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AddDevice\\AddDevice.csproj"
+              },
+              "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AssetToPurchaseFrontend\\AssetToPurchaseFrontend.csproj": {
+                "projectPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AssetToPurchaseFrontend\\AssetToPurchaseFrontend.csproj"
+              },
+              "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\RemoveDevices\\RemoveDevices.csproj": {
+                "projectPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\RemoveDevices\\RemoveDevices.csproj"
+              },
+              "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\ViewRegisteredUser\\ViewRegisteredUser.csproj": {
+                "projectPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\ViewRegisteredUser\\ViewRegisteredUser.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\RemoveDevices\\RemoveDevices.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\RemoveDevices\\RemoveDevices.csproj",
+        "projectName": "RemoveDevices",
+        "projectPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\RemoveDevices\\RemoveDevices.csproj",
+        "packagesPath": "C:\\Users\\320087165\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\RemoveDevices\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\320087165\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AssetToPurchaseFrontend\\AssetToPurchaseFrontend.csproj": {
+                "projectPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AssetToPurchaseFrontend\\AssetToPurchaseFrontend.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\ViewRegisteredUser\\ViewRegisteredUser.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\ViewRegisteredUser\\ViewRegisteredUser.csproj",
+        "projectName": "ViewRegisteredUser",
+        "projectPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\ViewRegisteredUser\\ViewRegisteredUser.csproj",
+        "packagesPath": "C:\\Users\\320087165\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\ViewRegisteredUser\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\320087165\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AssetToPurchaseFrontend\\AssetToPurchaseFrontend.csproj": {
+                "projectPath": "C:\\Users\\320087165\\Documents\\GitHub\\assist-purchase-s21b8\\AssetToPurchaseFrontend\\AssetToPurchaseFrontend.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

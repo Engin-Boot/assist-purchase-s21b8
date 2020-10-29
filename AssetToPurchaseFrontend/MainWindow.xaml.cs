@@ -23,7 +23,6 @@ namespace AssetToPurchaseFrontend
         public MainWindow()
         {
             InitializeComponent();
-            this.Title = "\u263aChatBot";
         }
     }
 }

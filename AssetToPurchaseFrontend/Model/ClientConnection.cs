@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AssetToPurchaseFrontend.Model
 {
@@ -28,7 +24,7 @@ namespace AssetToPurchaseFrontend.Model
         }
         public HttpResponseMessage ExecuteDeleteMethod(string requestUri)
         {
-            response= client.DeleteAsync(requestUri).Result;
+            response = client.DeleteAsync(requestUri).Result;
             return response;
         }
         public HttpResponseMessage ExecutePostMethod(string requestUri, MonitoringDevice monitoringDevice)

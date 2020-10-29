@@ -3,9 +3,6 @@ using AssetToPurchaseFrontend.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
@@ -34,9 +31,9 @@ namespace AddDevice.ViewModel
         }
         private void Execute_Clear(object obj)
         {
-            ProductName="";
-            EcgSelected=default;
-            Spo2Selected=default;
+            ProductName = "";
+            EcgSelected = default;
+            Spo2Selected = default;
             RespSelected = default;
             HrSelected = default;
             PhysiologicalAlarmingSelected = default;

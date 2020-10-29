@@ -4,12 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainProject"
-      xmlns:viewc="clr-namespace:AssetToPurchaseFrontend.View;assembly=AssetToPurchaseFrontend"
-       xmlns:viewa="clr-namespace:AddDevice.View;assembly=AddDevice"
+        xmlns:viewc="clr-namespace:AssetToPurchaseFrontend.View;assembly=AssetToPurchaseFrontend"
+        xmlns:viewa="clr-namespace:AddDevice.View;assembly=AddDevice"
         xmlns:viewr="clr-namespace:RemoveDevices.View;assembly=RemoveDevices"
         xmlns:viewv="clr-namespace:ViewRegisteredUser.View;assembly=ViewRegisteredUser"
         mc:Ignorable="d"
-        Title="MainWindow" Height="470" Width="800">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TabControl>
             <TabControl.BindingGroup>
