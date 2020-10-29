@@ -143,9 +143,50 @@ namespace Api.Tests
             {
                 Assert.IsTrue(device.PhysiologicalAlarming == "YES");
             }
-
         }
-
-
+        [TestMethod]
+        public void Test_GetAllDevices()
+        {
+            _client = new RestClient(baseUrl);
+            _request = new RestRequest("GetDevices", Method.GET) { RequestFormat = DataFormat.Json };
+            Response = _client.Execute(_request);
+            _resultList = Deserialize.Deserialize<List<MonitoringDevice>>(Response);
+            Assert.IsNotNull(_resultList);
+        }
+        [TestMethod]
+        public void Test_DeleteDevice()
+        {
+            _client = new RestClient();
+            _request = new RestRequest(baseUrl + "devicename", Method.DELETE) { RequestFormat = DataFormat.Json };
+            Response = _client.Execute(_request);
+            //_resultList = Deserialize.Deserialize<List<MonitoringDevice>>(Response);
+            Assert.IsTrue(Response.StatusCode.ToString() == "OK");
+        }
+        [TestMethod]
+        public void Test_AddNewDevice()
+        {
+            MonitoringDevice _dummDevice = new MonitoringDevice()
+            {
+                DeviceName = "IntelliVue v3",
+                Ecg = "YES",
+                Spo2 = "YES",
+                Respiration = "YES",
+                Hr = "YES",
+                PhysiologicalAlarming = "NO",
+                BloodPressure = "NO",
+                BatteryLife = "5 in",
+                SupportedScreenOrientations = "0° / 90° / 180°",
+                Size = "249 x 97 x 111 mm",
+                MobileOrStatic = "STATIC",
+                AntiMicrobialGlass = "YES",
+                PatientLocation = "NO"
+            };
+            _client = new RestClient();
+            _request = new RestRequest(baseUrl + "PostDevice", Method.POST) { RequestFormat = DataFormat.Json };
+            _request.AddJsonBody(_dummDevice);
+            Response = _client.Execute(_request);
+            //_resultList = Deserialize.Deserialize<List<MonitoringDevice>>(Response);
+            Assert.IsTrue(Response.StatusCode.ToString() == "OK");
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace ViewRegisteredUser.ViewModel
 {
     public class ViewRegisterUserViewModel : INotifyPropertyChanged
     {
-        ClientRequests clientRequests;
+        ClientRequests clientRequest;
         List<UserDetails> userDetails = new List<UserDetails>();
         public ICommand ViewCommand { get; set; }
         public ViewRegisterUserViewModel()
@@ -26,21 +26,21 @@ namespace ViewRegisteredUser.ViewModel
         {
             DisplayArea = "";
             string uri = "api/AlertUser/GetUserDetail/" + DeviceTypeSelected;
-            userDetails = clientRequests.UserGetRequest(uri);
+            userDetails = clientRequest.UserGetRequest(uri);
             foreach (var users in userDetails)
             {
-                DisplayArea += "\nUser Name:" + users.UserName + "\n User Requested/Booked Model:" + users.ProductsBooked + "\nUser Contact Number:" + users.UserContactNo;
+                DisplayArea += "\nUser Name:" + users.UserName1 + "\n User Requested/Booked Model:" + users.ProductsBooked1 + "\nUser Contact Number:" + users.UserContactNo1;
             }
             //throw new NotImplementedException();
         }
-        List<string> modelName = new List<string>();
-        public void PopoulateModelNames()
+        List<string> modelNames = new List<string>();
+        public void PopoulateModelName()
         {
-            clientRequests = new ClientRequests();
-            var Models = clientRequests.ProductGetRequest("api/productcategory/GetDevices");
-            foreach (var Names in Models)
+            clientRequest = new ClientRequests();
+            var Model = clientRequest.ProductGetRequest("api/productcategory/GetDevices");
+            foreach (var Name in Model)
             {
-                modelName.Add(Names.DeviceName);
+                modelNames.Add(Name.DeviceName1);
             }
         }
         List<string> deviceType;
@@ -48,9 +48,9 @@ namespace ViewRegisteredUser.ViewModel
         {
             get
             {
-                PopoulateModelNames();
-                modelName.Add("Request to contact Philips person");
-                return modelName;
+                PopoulateModelName();
+                modelNames.Add("Request to contact Philips person");
+                return modelNames;
             }
             set
             {

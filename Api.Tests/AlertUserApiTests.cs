@@ -67,5 +67,14 @@ namespace Api.Tests
             Assert.AreEqual(_output, "One of our Philips Personnel will reach you out soon..Thank You!!!");
 
         }
+        [TestMethod]
+        public void Test_GetUserDetails()
+        {
+            _client = new RestClient(baseUrl);
+            _request = new RestRequest("GetUserDetail/IntelliVue X3", Method.GET) { RequestFormat = DataFormat.Json };
+            _response = _client.Execute(_request);
+            var output = _deserialize.Deserialize<string>(_response);
+            Assert.IsNotNull(output);
+        }
     }
 }

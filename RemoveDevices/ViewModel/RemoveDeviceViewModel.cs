@@ -68,7 +68,7 @@ namespace RemoveDevices.ViewModel
             var Models = clientRequests.ProductGetRequest("api/productcategory/GetDevices");
             foreach (var Names in Models)
             {
-                modelName.Add(Names.DeviceName);
+                modelName.Add(Names.DeviceName1);
             }
         }
 

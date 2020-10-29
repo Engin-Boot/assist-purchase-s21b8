@@ -530,19 +530,19 @@ namespace AssetToPurchaseFrontend.ViewModel
             {
                 count++;
                 temp.AppendLine("\nDevice " + count + ": " +
-                    "\nDeviceName:" + d.DeviceName +
-                    "\nECG: " + d.Ecg +
-                    "\nSpo2: " + d.Spo2 +
-                    "\nRespiration: " + d.Respiration +
-                    "\nHeart-Rate: " + d.Hr +
-                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming +
-                    "\nBlood-Pressure: " + d.BloodPressure +
-                    "\nBattery-Life: " + d.BatteryLife +
-                    "\nScreen-Orientation: " + d.SupportedScreenOrientations +
-                    "\nSize: " + d.Size +
-                    "\nMobile/Static: " + d.MobileOrStatic +
-                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass +
-                    "\nPatient-Location: " + d.PatientLocation);
+                    "\nDeviceName:" + d.DeviceName1 +
+                    "\nECG: " + d.Ecg1 +
+                    "\nSpo2: " + d.Spo21 +
+                    "\nRespiration: " + d.Respiration1 +
+                    "\nHeart-Rate: " + d.Hr1 +
+                    "\nPhyscological-Alarming: " + d.PhysiologicalAlarming1 +
+                    "\nBlood-Pressure: " + d.BloodPressure1 +
+                    "\nBattery-Life: " + d.BatteryLife1 +
+                    "\nScreen-Orientation: " + d.SupportedScreenOrientations1 +
+                    "\nSize: " + d.Size1 +
+                    "\nMobile/Static: " + d.MobileOrStatic1 +
+                    "\nAnti-Microbial Glass: " + d.AntiMicrobialGlass1 +
+                    "\nPatient-Location: " + d.PatientLocation1);
             }
             if (count > 0)
             {
@@ -563,7 +563,7 @@ namespace AssetToPurchaseFrontend.ViewModel
             var Models = clientRequests.ProductGetRequest("api/productcategory/GetDevices");
             foreach (var Names in Models)
             {
-                modelName.Add(Names.DeviceName);
+                modelName.Add(Names.DeviceName1);
             }
         }
         private void Execute_ClearCoomand(object obj)
@@ -583,9 +583,9 @@ namespace AssetToPurchaseFrontend.ViewModel
         private void Execute_RegisterAndOrdering(object obj)
         {
             //userDetails.Add(new UserDetails { UserName = Name, ProductsBooked = modelTypeSelected, UserContactNo = ContactNumber });
-            user.UserName = Name;
-            user.UserContactNo = ContactNumber;
-            user.ProductsBooked = ModelTypeSelected;
+            user.UserName1 = Name;
+            user.UserContactNo1 = ContactNumber;
+            user.ProductsBooked1 = ModelTypeSelected;
             clientRequests.UserPostRequest("api/AlertUser/Registration", user);
             MessageBox.Show(Name + " Registered Successfuly" + "\n Philips person will conatct you personally");
         }

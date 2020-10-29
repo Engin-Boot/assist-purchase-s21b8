@@ -174,7 +174,7 @@ namespace AddDevice.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AddDevice;V1.0.0.0;component/view/adddeviceview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AddDevice;component/view/adddeviceview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\AddDeviceView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
