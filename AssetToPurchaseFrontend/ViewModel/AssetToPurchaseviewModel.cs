@@ -575,8 +575,6 @@ namespace AssetToPurchaseFrontend.ViewModel
             YourMessage = "";
             //throw new NotImplementedException();
         }
-
-
         private bool CanExecute_Mehod(object arg)
         {
             return true;

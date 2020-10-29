@@ -31,5 +31,11 @@ namespace AssistPurchaseBackend.Controllers
         {
             return Ok(_user.UserCallBackRequest(userDetails));
         }
+        [HttpGet("GetUserDetail/{deviceName}")]
+        public IActionResult GetRegisterdUsersOfDevice(string deviceName)
+        {
+            var details = _user.GetUserDetails(deviceName);
+            return Ok(details);
+        }
     }
 }

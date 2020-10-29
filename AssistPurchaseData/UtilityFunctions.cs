@@ -12,7 +12,7 @@ namespace AssistPurchaseData
 
         //Give path of data.xml
         //private readonly string _path = @"C:\Users\320087992\source\repos\assist-purchase-s21b8\data.xml";
-        private readonly string _path = @"D:\a\assist-purchase-s21b8\assist-purchase-s21b8\data.xml";
+        private readonly string _path = @"D:\CaseStudy2\assist-purchase-s21b8\data.xml";
 
         public void AddDevice(MonitoringDevice newMonitoringDevice)
         {

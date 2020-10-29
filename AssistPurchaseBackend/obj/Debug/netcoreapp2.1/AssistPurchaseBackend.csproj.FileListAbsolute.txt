@@ -80,9 +80,6 @@ C:\Users\320087165\Documents\GitHub\assist-purchase-s21b8\AssistPurchaseBackend\
 C:\Users\320087165\Documents\GitHub\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.dll
 C:\Users\320087165\Documents\GitHub\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.pdb
 C:\Users\320087165\Documents\GitHub\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.genruntimeconfig.cache
-D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\appsettings.Development.json
-D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\appsettings.json
-D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\AssistPurchaseBackend.deps.json
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\AssistPurchaseBackend.runtimeconfig.json
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\Debug\netcoreapp2.1\AssistPurchaseBackend.runtimeconfig.dev.json
@@ -103,4 +100,3 @@ D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.csproj.CopyComplete
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.dll
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.pdb
-D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\Debug\netcoreapp2.1\AssistPurchaseBackend.genruntimeconfig.cache

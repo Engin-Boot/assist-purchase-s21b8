@@ -1,3 +1,10 @@
+D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\AssetToPurchaseFrontend.csprojAssemblyReference.cache
+D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\MainWindow.g.cs
+D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\View\AssertToPurchaseView.g.cs
+D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\App.g.cs
+D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
+D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\AssetToPurchaseFrontend_MarkupCompile.cache
+D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\AssetToPurchaseFrontend_MarkupCompile.lref
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\x64\Debug\AssetToPurchaseFrontend.exe.config
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\x64\Debug\AssetToPurchaseFrontend.exe
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\x64\Debug\AssetToPurchaseFrontend.pdb
@@ -10,13 +17,6 @@ D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\x64\Debug\Assist
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\x64\Debug\Services.pdb
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\x64\Debug\Newtonsoft.Json.xml
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\x64\Debug\System.Net.Http.Formatting.xml
-D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\AssetToPurchaseFrontend.csprojAssemblyReference.cache
-D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\MainWindow.g.cs
-D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\View\AssertToPurchaseView.g.cs
-D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\App.g.cs
-D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
-D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\AssetToPurchaseFrontend_MarkupCompile.cache
-D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\AssetToPurchaseFrontend_MarkupCompile.lref
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\MainWindow.baml
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\View\AssertToPurchaseView.baml
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\x64\Debug\AssetToPurchaseFrontend.g.resources

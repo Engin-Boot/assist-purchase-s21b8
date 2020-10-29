@@ -1,7 +1,13 @@
+D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.deps.json
+D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.csprojAssemblyReference.cache
+D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.AssemblyInfoInputs.cache
+D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.AssemblyInfo.cs
+D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.csproj.CoreCompileInputs.cache
+D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.RazorAssemblyInfo.cache
+D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.RazorAssemblyInfo.cs
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\x64\Debug\netcoreapp2.1\appsettings.Development.json
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\x64\Debug\netcoreapp2.1\appsettings.json
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\x64\Debug\netcoreapp2.1\Properties\launchSettings.json
-D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.deps.json
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.runtimeconfig.json
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.runtimeconfig.dev.json
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.dll
@@ -11,12 +17,6 @@ D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\x64\Debug\netcorea
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\x64\Debug\netcoreapp2.1\AssistPurchaseData.pdb
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\x64\Debug\netcoreapp2.1\AssistPurchaseData.exe.config
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\bin\x64\Debug\netcoreapp2.1\Services.pdb
-D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.csprojAssemblyReference.cache
-D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.AssemblyInfoInputs.cache
-D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.AssemblyInfo.cs
-D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.csproj.CoreCompileInputs.cache
-D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.RazorAssemblyInfo.cache
-D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.RazorAssemblyInfo.cs
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.RazorTargetAssemblyInfo.cache
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.csproj.CopyComplete
 D:\CaseStudy2\assist-purchase-s21b8\AssistPurchaseBackend\obj\x64\Debug\netcoreapp2.1\AssistPurchaseBackend.dll

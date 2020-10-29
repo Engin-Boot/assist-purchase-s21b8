@@ -1,3 +1,6 @@
+D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\obj\x64\Debug\Api.Tests.csprojAssemblyReference.cache
+D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\obj\x64\Debug\Api.Tests.dll.config
+D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\obj\x64\Debug\Api.Tests.csproj.CoreCompileInputs.cache
 D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\bin\x64\Debug\xunit.abstractions.dll
 D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\bin\x64\Debug\xunit.runner.visualstudio.testadapter.dll
 D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\bin\x64\Debug\xunit.runner.reporters.net452.dll
@@ -164,9 +167,6 @@ D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\bin\x64\Debug\System.Reflection.Me
 D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\bin\x64\Debug\xunit.assert.xml
 D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\bin\x64\Debug\xunit.core.xml
 D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\bin\x64\Debug\xunit.execution.desktop.xml
-D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\obj\x64\Debug\Api.Tests.csprojAssemblyReference.cache
-D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\obj\x64\Debug\Api.Tests.dll.config
-D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\obj\x64\Debug\Api.Tests.csproj.CoreCompileInputs.cache
 D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\obj\x64\Debug\Api.Tests.csproj.CopyComplete
 D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\obj\x64\Debug\Api.Tests.dll
 D:\CaseStudy2\assist-purchase-s21b8\Api.Tests\obj\x64\Debug\Api.Tests.pdb
