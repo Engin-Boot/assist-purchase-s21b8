@@ -17,7 +17,6 @@ namespace Api.Tests
         private static IRestResponse _response;
 
         private List<UserDetails> _userDetails;
-        
         private string _output;
         
 

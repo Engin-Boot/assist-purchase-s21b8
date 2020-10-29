@@ -23,8 +23,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewRegisteredUser", "ViewR
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MainProject", "MainProject\MainProject.csproj", "{28D59509-5811-467D-BCDA-36DEAF3C1E3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asset_To_Purchase_FrontEnd.Tests", "Asset_To_Purchase_FrontEnd.Tests\Asset_To_Purchase_FrontEnd.Tests.csproj", "{C2D469E2-ABE2-4A89-BFF3-1ACA1BB2D6D8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,14 +111,6 @@ Global
 		{28D59509-5811-467D-BCDA-36DEAF3C1E3F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{28D59509-5811-467D-BCDA-36DEAF3C1E3F}.Release|x64.ActiveCfg = Release|Any CPU
 		{28D59509-5811-467D-BCDA-36DEAF3C1E3F}.Release|x64.Build.0 = Release|Any CPU
-		{C2D469E2-ABE2-4A89-BFF3-1ACA1BB2D6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2D469E2-ABE2-4A89-BFF3-1ACA1BB2D6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2D469E2-ABE2-4A89-BFF3-1ACA1BB2D6D8}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{C2D469E2-ABE2-4A89-BFF3-1ACA1BB2D6D8}.Debug|x64.Build.0 = Debug|Any CPU
-		{C2D469E2-ABE2-4A89-BFF3-1ACA1BB2D6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2D469E2-ABE2-4A89-BFF3-1ACA1BB2D6D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C2D469E2-ABE2-4A89-BFF3-1ACA1BB2D6D8}.Release|x64.ActiveCfg = Release|Any CPU
-		{C2D469E2-ABE2-4A89-BFF3-1ACA1BB2D6D8}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
