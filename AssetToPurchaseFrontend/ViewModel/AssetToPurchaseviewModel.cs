@@ -25,13 +25,22 @@ namespace AssetToPurchaseFrontend.ViewModel
         List<MonitoringDevice> devices = new List<MonitoringDevice>();
         List<UserDetails> userDetails = new List<UserDetails>();
         #endregion
-
+        public ICommand ClearCommandRegistration { get; set; }
         #region Constructor
         public AssetToPurchaseviewModel()
         {
             RegisterAndOrderingCommand = new DelegateCommand(Execute_RegisterAndOrdering, CanExecute_Mehod);
             ClearCommand = new DelegateCommand(Execute_ClearCoomand, CanExecute_Mehod);
             SendCommand = new DelegateCommand(Execute_SendCommand, CanExecute_Mehod);
+            ClearCommandRegistration = new DelegateCommand(Execute_ClearCommandRegistration,CanExecute_Mehod);
+        }
+
+        private void Execute_ClearCommandRegistration(object obj)
+        {
+            Name = "";
+            Email = "";
+            ContactNumber = default;
+            ModelType = default;
         }
         #endregion
 
@@ -580,7 +589,7 @@ namespace AssetToPurchaseFrontend.ViewModel
             user.UserContactNo = ContactNumber;
             user.ProductsBooked = ModelTypeSelected;
             clientRequests.UserPostRequest("api/AlertUser/Registration",user);
-            MessageBox.Show(Name + " Registered Successfuly");
+            MessageBox.Show(Name + " Registered Successfuly"+"\n Philips person will conatct you personally");
         }
         #endregion
 

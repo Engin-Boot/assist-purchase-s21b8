@@ -6,11 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using AssetToPurchaseFrontend.Model;
 
 namespace ViewRegisteredUser.ViewModel
 {
     public class ViewRegisterUserViewModel :INotifyPropertyChanged
     {
+        ClientRequests clientRequests;
+        List<UserDetails> userDetails = new List<UserDetails>();
         public ICommand     ViewCommand { get; set; }
         public ViewRegisterUserViewModel()
         {
@@ -24,13 +27,34 @@ namespace ViewRegisteredUser.ViewModel
 
         private void Execute_ViewCommand(object obj)
         {
-            throw new NotImplementedException();
+            DisplayArea = "";
+            string uri = "api/AlertUser/GetUserDetail/" + DeviceTypeSelected;
+            userDetails=clientRequests.UserGetRequest(uri);
+            foreach (var users in userDetails)
+            {
+                DisplayArea += "\nUser Name:" + users.UserName + "\n User Requested/Booked Model:" + users.ProductsBooked + "\nUser Contact Number:" + users.UserContactNo;
+            }
+            //throw new NotImplementedException();
         }
-
+        List<string> modelName = new List<string>();
+        public void PopoulateModelNames()
+        {
+            clientRequests = new ClientRequests();
+            var Models = clientRequests.ProductGetRequest("api/productcategory/GetDevices");
+            foreach (var Names in Models)
+            {
+                modelName.Add(Names.DeviceName);
+            }
+        }
         List<string> deviceType;
         public List<String> DeviceType
         {
-            get { return new List<string>() { "Cardic", "Pnemonia", "Covid19", "HighBp" }; }
+            get 
+            {
+                PopoulateModelNames();
+                modelName.Add("Request to contact Philips person");
+                return modelName; 
+            }
             set
             {
                 deviceType = value;
@@ -51,6 +75,16 @@ namespace ViewRegisteredUser.ViewModel
 
         }
 
+        private String displayArea;
+        public String DisplayArea
+        {
+            get { return this.displayArea; }
+            set 
+            {
+                displayArea = value;
+                OnPropertyChanged("DisplayArea");
+            }
+        }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

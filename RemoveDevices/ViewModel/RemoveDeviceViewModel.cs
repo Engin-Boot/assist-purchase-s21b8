@@ -5,16 +5,20 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AssetToPurchaseFrontend.Model;
 using System.Windows.Input;
+using System.Windows;
 
 namespace RemoveDevices.ViewModel
 {
     public class RemoveDeviceViewModel :INotifyPropertyChanged
     {
+        ClientRequests clientRequests;
         public ICommand DeleteCommand { get; set; }
         public RemoveDeviceViewModel()
         {
             DeleteCommand = new DelegateCommand(Execute_DeleteCommand, CanExecute_DeleteCommand);
+            //PopoulateModelNames();
         }
 
         private bool CanExecute_DeleteCommand(object arg)
@@ -24,13 +28,23 @@ namespace RemoveDevices.ViewModel
 
         private void Execute_DeleteCommand(object obj)
         {
-            throw new NotImplementedException();
+            string uri = "api/productcategory/"+DeviceTypeSelected;
+            clientRequests = new ClientRequests();
+            clientRequests.ProductDeleteRequest(uri);
+            MessageBox.Show("Device Deleted Successfuly");
+            //clientRequests
+            //throw new NotImplementedException();
         }
 
         List<string> deviceType;
         public List<String> DeviceType
         {
-            get { return new List<string>() { "Cardic", "Pnemonia", "Covid19", "HighBp" }; }
+            get 
+            {
+                PopoulateModelNames();
+                return modelName;
+               // return new List<string>() { "Cardic", "Pnemonia", "Covid19", "HighBp" }; 
+            }
             set
             {
                 deviceType = value;
@@ -50,8 +64,16 @@ namespace RemoveDevices.ViewModel
             }
 
         }
-
-       
+        List<string> modelName = new List<string>();
+        public void PopoulateModelNames()
+        {
+            clientRequests = new ClientRequests();
+            var Models = clientRequests.ProductGetRequest("api/productcategory/GetDevices");
+            foreach (var Names in Models)
+            {
+                modelName.Add(Names.DeviceName);
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyName)

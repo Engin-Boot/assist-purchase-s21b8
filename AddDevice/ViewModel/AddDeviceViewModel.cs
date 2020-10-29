@@ -1,33 +1,73 @@
 ﻿using AssetToPurchaseFrontend.Commands;
+using AssetToPurchaseFrontend.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace AddDevice.ViewModel
 {
     public class AddDeviceViewModel : INotifyPropertyChanged
     {
+        ClientRequests clientRequests;
         public ICommand addCommand
+        {
+            get; set;
+        }
+        public ICommand clearCommand
         {
             get; set;
         }
         public AddDeviceViewModel()
         {
-            addCommand = new DelegateCommand(Execute_Add, CanExecute_Add);
+            addCommand = new DelegateCommand(Execute_Add, CanExecute);
+            clearCommand = new DelegateCommand(Execute_Clear, CanExecute);
         }
 
-        private bool CanExecute_Add(object arg)
+        private bool CanExecute(object arg)
         {
             return true;
         }
-
+        private void Execute_Clear(object obj)
+        {
+            ProductName="";
+            EcgSelected=default;
+            Spo2Selected=default;
+            RespSelected = default;
+            HrSelected = default;
+            PhysiologicalAlarmingSelected = default;
+            BloodPressureSelected = default;
+            BatteryLife = default;
+            ScreenOrientationTypeSelected = default;
+            SizeSelected = default;
+            MobileOrStaticSelected = default;
+            AntiMicrobalGlassSelected = default;
+            PatientLocationSelected = default;
+        }
         private void Execute_Add(object obj)
         {
-            throw new NotImplementedException();
+            clientRequests = new ClientRequests();
+            MonitoringDevice newDevice = new MonitoringDevice();
+            newDevice.DeviceName = ProductName;
+            newDevice.Ecg = EcgSelected;
+            newDevice.Spo2 = Spo2Selected;
+            newDevice.Respiration = RespSelected;
+            newDevice.Hr = HrSelected;
+            newDevice.PhysiologicalAlarming = PhysiologicalAlarmingSelected;
+            newDevice.BloodPressure = BloodPressureSelected;
+            newDevice.BatteryLife = BatteryLife;
+            newDevice.SupportedScreenOrientations = ScreenOrientationTypeSelected;
+            newDevice.Size = SizeSelected;
+            newDevice.MobileOrStatic = MobileOrStaticSelected;
+            newDevice.AntiMicrobialGlass = AntiMicrobalGlassSelected;
+            newDevice.PatientLocation = PatientLocationSelected;
+            clientRequests.ProductPostRequest("api/productcategory/PostDevice", newDevice);
+            MessageBox.Show(newDevice.ToString());
+            //throw new NotImplementedException();
         }
 
         //List<string> productType;
@@ -42,22 +82,22 @@ namespace AddDevice.ViewModel
         //    }
         //}
 
-        //private String productTypeSelected;
-        //public String ProductTypeSelected
-        //{
-        //    get { return this.productTypeSelected; }
-        //    set
-        //    {
-        //        productTypeSelected = value;
-        //        OnPropertyChanged("ModelTypeSelected");
-        //    }
-
-        //}
-
-        List<string> batteryLife;
-        public List<String> BatteryLife
+        private String productName;
+        public String ProductName
         {
-            get { return new List<string>() { ">5 and <10", ">10" }; }
+            get { return this.productName; }
+            set
+            {
+                productName = value;
+                OnPropertyChanged("ProductName");
+            }
+
+        }
+
+        string batteryLife;
+        public string BatteryLife
+        {
+            get { return this.batteryLife; }
             set
             {
                 batteryLife = value;

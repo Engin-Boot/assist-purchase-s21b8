@@ -26,14 +26,14 @@
         <Label Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="179.2,40,-166.2,9.8" Width="95" Grid.Column="1" Content="Register User" FontWeight="ExtraBold" Foreground="DeepSkyBlue" Height="39" />
         <TextBlock   Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,12.4,-122.6,47.8">DeviceName</TextBlock>
         <ComboBox SelectedValue="{Binding DeviceTypeSelected}" ItemsSource="{Binding DeviceType}" Grid.Column="1" Grid.Row="1" Margin="82,13,-289.4,59.8" />
-        <Button Command="{Binding ViewCommand}" x:Name="adelete" Content="delete" Grid.Column="1" Grid.Row="1" Margin="99.2,51.2,-98.2,9"/>
+        <Button Command="{Binding ViewCommand}" x:Name="adelete" Content="Get Details" Grid.Column="1" Grid.Row="1" Margin="99.2,51.2,-98.2,9"/>
         <TextBox  ScrollViewer.HorizontalScrollBarVisibility="Auto"
                      ScrollViewer.VerticalScrollBarVisibility="Auto"
                      ScrollViewer.CanContentScroll="True" 
                      HorizontalAlignment="Stretch" 
                      Margin="19.2,16,-499.2,31.6" 
                       IsReadOnly="True"
-                 
+                        Text="{Binding DisplayArea}"
                       Name="chatArea" VerticalAlignment="Stretch"  Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" />
     </Grid>
 </UserControl>

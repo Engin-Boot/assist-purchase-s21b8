@@ -47,6 +47,18 @@ namespace AssetToPurchaseFrontend.Model
             }
             return false;
         }
+        public bool ExecuteDeleteRequest(string requestUri)
+        {
+            clientConnection = new ClientConnection();
+            clientConnection.Connect();
+            response = clientConnection.ExecuteDeleteMethod(requestUri);
+            if (response.IsSuccessStatusCode)
+            {
+                result = response.Content.ReadAsStringAsync().Result;
+                return true;
+            }
+            return false;
+        }
         public bool ExecutePutRequest(string requestUri)
         {
             clientConnection = new ClientConnection();
@@ -83,14 +95,23 @@ namespace AssetToPurchaseFrontend.Model
                 return _userList;
             }
         }
-        public List<MonitoringDevice> ProductPostRequest(string requestUri, MonitoringDevice monitoringDevice)
+        public bool ProductPostRequest(string requestUri, MonitoringDevice monitoringDevice)
         {
             if (ExecutePostRequest(requestUri, monitoringDevice))
             {
                 _monitoringDeviceList = JsonConvert.DeserializeObject<List<MonitoringDevice>>(result);
-                return _monitoringDeviceList;
+                return true;
             }
-            return _monitoringDeviceList;
+            return false;
+        }
+        public bool ProductDeleteRequest(string requestUri)
+        {
+            if (ExecuteDeleteRequest(requestUri))
+            {
+                _monitoringDeviceList = JsonConvert.DeserializeObject<List<MonitoringDevice>>(result);
+                return true;
+            }
+            return false;
         }
         public List<UserDetails> UserPostRequest(string requestUri, UserDetails userDetails)
         {

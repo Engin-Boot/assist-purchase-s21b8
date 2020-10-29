@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="179.2,70,-163.8,18.4" Width="95" Grid.Column="1" Content="Delete Device" FontWeight="ExtraBold" Foreground="DeepSkyBlue" Height="30" />
         <TextBlock   Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,12.4,-122.6,47.8">DeviceName</TextBlock>
-        <ComboBox SelectedValue="{Binding DeviceTypeSelected}" ItemsSource="{Binding DeviceType}" Grid.Column="1" Grid.Row="1" Margin="82,13,-289.4,59.8" />
+        <ComboBox SelectedValue="{Binding DeviceTypeSelected}" ItemsSource="{Binding DeviceType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1" Margin="82,13,-289.4,59.8" />
         <Button Command="{Binding DeleteCommand}" x:Name="adelete" Content="delete" Grid.Column="1" Grid.Row="1" Margin="99.2,72.4,-98.6,90.2" Grid.RowSpan="2"/>
     </Grid>
 </UserControl>

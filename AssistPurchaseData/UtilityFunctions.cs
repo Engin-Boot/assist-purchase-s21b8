@@ -17,7 +17,6 @@ namespace AssistPurchaseData
         public void AddDevice(MonitoringDevice newMonitoringDevice)
         {
             /* When a new device is to be added, it is first appended to the list and then the list is written to data.XML*/
-
             MonitoringDevices.Add(newMonitoringDevice);
             WriteToXml();
         }
@@ -66,13 +65,13 @@ namespace AssistPurchaseData
 
         public void WriteToXml()
         {
-
+            List<MonitoringDevice> devices = new List<MonitoringDevice>();
+            devices = ReadFromXml();
+            devices.AddRange(MonitoringDevices);
             var serializer = new XmlSerializer(MonitoringDevices.GetType(), new XmlRootAttribute("DeviceList"));
-
             var writer = new StreamWriter(_path);
-            serializer.Serialize(writer.BaseStream, MonitoringDevices);
+            serializer.Serialize(writer.BaseStream,devices);
             writer.Close();
-
         }
 
         public List<MonitoringDevice> ReadFromXml()

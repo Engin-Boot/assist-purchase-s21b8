@@ -69,7 +69,11 @@ namespace AssistPurchaseBackend.Controllers
         {
             return this.utility.RemoveDevice(deviceName);
         }
-
+        [HttpPost("PostDevice")]
+        public void AddMonitoringDevice(MonitoringDevice device)
+        {
+            utility.AddDevice(device);
+        }
 
 
     }

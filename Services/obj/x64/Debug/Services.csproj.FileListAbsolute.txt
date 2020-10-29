@@ -1,0 +1,10 @@
+D:\CaseStudy2\assist-purchase-s21b8\Services\bin\x64\Debug\Services.dll
+D:\CaseStudy2\assist-purchase-s21b8\Services\bin\x64\Debug\Services.pdb
+D:\CaseStudy2\assist-purchase-s21b8\Services\bin\x64\Debug\AssistPurchaseData.exe
+D:\CaseStudy2\assist-purchase-s21b8\Services\bin\x64\Debug\AssistPurchaseData.pdb
+D:\CaseStudy2\assist-purchase-s21b8\Services\bin\x64\Debug\AssistPurchaseData.exe.config
+D:\CaseStudy2\assist-purchase-s21b8\Services\obj\x64\Debug\Services.csprojAssemblyReference.cache
+D:\CaseStudy2\assist-purchase-s21b8\Services\obj\x64\Debug\Services.csproj.CoreCompileInputs.cache
+D:\CaseStudy2\assist-purchase-s21b8\Services\obj\x64\Debug\Services.csproj.CopyComplete
+D:\CaseStudy2\assist-purchase-s21b8\Services\obj\x64\Debug\Services.dll
+D:\CaseStudy2\assist-purchase-s21b8\Services\obj\x64\Debug\Services.pdb

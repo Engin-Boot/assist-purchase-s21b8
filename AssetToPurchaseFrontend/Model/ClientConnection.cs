@@ -26,6 +26,11 @@ namespace AssetToPurchaseFrontend.Model
             response = client.PostAsJsonAsync(requestUri, userDetails).Result;
             return response;
         }
+        public HttpResponseMessage ExecuteDeleteMethod(string requestUri)
+        {
+            response= client.DeleteAsync(requestUri).Result;
+            return response;
+        }
         public HttpResponseMessage ExecutePostMethod(string requestUri, MonitoringDevice monitoringDevice)
         {
             response = client.PostAsJsonAsync(requestUri, monitoringDevice).Result;
