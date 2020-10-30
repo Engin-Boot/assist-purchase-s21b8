@@ -9,15 +9,34 @@ namespace ViewRegisteredUser.ViewModel
 {
     public class ViewRegisterUserViewModel : INotifyPropertyChanged
     {
-        ClientRequests clientRequest;
-        List<UserDetails> userDetails = new List<UserDetails>();
+        ClientRequests _clientRequest;
+       List<UserDetails> _userDetails = new List<UserDetails>();
         public ICommand ViewCommand { get; set; }
+        public ICommand SendEmailCommand { get; set; }
+        public ICommand ClearEmailCommand { get; set; }
         public ViewRegisterUserViewModel()
         {
-            ViewCommand = new DelegateCommand(Execute_ViewCommand, CanExecute_ViewCommand);
+            ViewCommand = new DelegateCommand(Execute_ViewCommand, CanExecute_Command);
+            SendEmailCommand = new DelegateCommand(Execute_SendEmailCommand, CanExecute_Command);
+            ClearEmailCommand = new DelegateCommand(Execute_ClerEmailCommand, CanExecute_Command);
+
         }
 
-        private bool CanExecute_ViewCommand(object arg)
+        private void Execute_ClerEmailCommand(object obj)
+        {
+            _emailType = default;
+            EmailType = default;
+            EmailTypeSelected = default;
+            EmailBody = default;
+            _emailBody = default;
+        }
+
+        private void Execute_SendEmailCommand(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool CanExecute_Command(object arg)
         {
             return true;
         }
@@ -26,24 +45,27 @@ namespace ViewRegisteredUser.ViewModel
         {
             DisplayArea = "";
             string uri = "api/AlertUser/GetUserDetail/" + DeviceTypeSelected;
-            userDetails = clientRequest.UserGetRequest(uri);
-            foreach (var users in userDetails)
+            _userDetails = _clientRequest.UserGetRequest(uri);
+            foreach (var users in _userDetails)
             {
-                DisplayArea += "\nUser Name:" + users.UserName1 + "\n User Requested/Booked Model:" + users.ProductsBooked1 + "\nUser Contact Number:" + users.UserContactNo1;
+                DisplayArea += "\nUser Name:" + users.UserName + "\n User Requested/Booked Model:" + users.Email + "\n User Requested/Booked Model:" + users.ProductsBooked + "\nUser Contact Number:" + users.UserContactNo;
             }
             //throw new NotImplementedException();
         }
-        List<string> modelNames = new List<string>();
-        public void PopoulateModelName()
+        readonly List<string> modelNames = new List<string>();
+        private void PopoulateModelName()
         {
-            clientRequest = new ClientRequests();
-            var Model = clientRequest.ProductGetRequest("api/productcategory/GetDevices");
-            foreach (var Name in Model)
+            _clientRequest = new ClientRequests();
+            var model = _clientRequest.ProductGetRequest("api/productcategory/GetDevices");
+            foreach (var name in model)
             {
-                modelNames.Add(Name.DeviceName1);
+                modelNames.Add(name.DeviceName);
             }
         }
-        List<string> deviceType;
+
+
+       
+        List<string> _deviceType;
         public List<String> DeviceType
         {
             get
@@ -54,32 +76,81 @@ namespace ViewRegisteredUser.ViewModel
             }
             set
             {
-                deviceType = value;
+                _deviceType = value;
                 OnPropertyChanged("DeviceType");
 
             }
         }
 
-        private String deviceTypeSelected;
+        private String _deviceTypeSelected;
         public String DeviceTypeSelected
         {
-            get { return this.deviceTypeSelected; }
+            get
+            {
+                return this._deviceTypeSelected;
+            }
             set
             {
-                deviceTypeSelected = value;
+                _deviceTypeSelected = value;
                 OnPropertyChanged("DeviceTypeSelected");
             }
 
         }
 
-        private String displayArea;
+        private String _displayArea;
         public String DisplayArea
         {
-            get { return this.displayArea; }
+            get
+            {
+                return this._displayArea;
+            }
             set
             {
-                displayArea = value;
+                _displayArea = value;
                 OnPropertyChanged("DisplayArea");
+            }
+        }
+
+       private List<string> _emailType;
+        public List<String> EmailType
+        {
+            get
+            { 
+                return _emailType; ;
+            }
+            set
+            {
+                _emailType = value;
+                OnPropertyChanged("EmailType");
+
+            }
+        }
+
+        private String _emailTypeSelected;
+        public String EmailTypeSelected
+        {
+            get
+            {
+                return this._emailTypeSelected;
+            }
+            set
+            {
+                _emailTypeSelected = value;
+                OnPropertyChanged("EmailTypeSelected");
+            }
+
+        }
+        private String _emailBody;
+        public String EmailBody
+        {
+            get
+            {
+                return this._emailBody;
+            }
+            set
+            {
+                _emailBody = value;
+                OnPropertyChanged("EmailBody");
             }
         }
 

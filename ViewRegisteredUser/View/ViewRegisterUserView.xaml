@@ -10,30 +10,72 @@
     <UserControl.DataContext>
         <vmv:ViewRegisterUserViewModel></vmv:ViewRegisterUserViewModel>
     </UserControl.DataContext>
-    <Grid Background="White">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+    <DockPanel LastChildFill="True" Background="AliceBlue">
 
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="179.2,40,-166.2,9.8" Width="95" Grid.Column="1" Content="Register User" FontWeight="ExtraBold" Foreground="DeepSkyBlue" Height="39" />
-        <TextBlock   Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,12.4,-122.6,47.8">DeviceName</TextBlock>
-        <ComboBox SelectedValue="{Binding DeviceTypeSelected}" ItemsSource="{Binding DeviceType}" Grid.Column="1" Grid.Row="1" Margin="82,13,-289.4,59.8" />
-        <Button Command="{Binding ViewCommand}" x:Name="adelete" Content="Get Details" Grid.Column="1" Grid.Row="1" Margin="99.2,51.2,-98.2,9"/>
-        <TextBox  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+        <Border BorderThickness="2"  Height="350" Width="400" DockPanel.Dock="Left">
+            <StackPanel>
+                <TextBlock FontSize="20" Foreground="DeepSkyBlue"><Run Text="UserDetail"/></TextBlock>
+                <Grid Background="White">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Children>
+                        <TextBlock   Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,12.4,-122.6,47.8"><Run Text="DeviceName"/></TextBlock>
+                        <ComboBox SelectedValue="{Binding DeviceTypeSelected}" ItemsSource="{Binding DeviceType}" Grid.Column="1" Grid.Row="1" Margin="82,13,-289.4,59.8" />
+                        <Button Command="{Binding ViewCommand}"  Content="Get Details" Grid.Column="1" Grid.Row="1" Margin="99.2,51.2,-98.2,9"/>
+                        <TextBox  ScrollViewer.HorizontalScrollBarVisibility="Auto"
                      ScrollViewer.VerticalScrollBarVisibility="Auto"
                      ScrollViewer.CanContentScroll="True" 
-                     HorizontalAlignment="Stretch" 
-                     Margin="19.2,16,-499.2,31.6" 
+                     Margin="19,16,-265,-191" 
                       IsReadOnly="True"
-                        Text="{Binding DisplayArea}"
-                      Name="chatArea" VerticalAlignment="Stretch"  Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" />
-    </Grid>
+                        Text="{Binding DisplayArea}"  Grid.Row="2" Grid.RowSpan="3" Grid.Column="1" />
+                    </Grid.Children>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <Border BorderThickness="2"  Height="400" Width="350" DockPanel.Dock="Right">
+            <StackPanel>
+                <Grid Background="White" Height="393">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label  Width="100" Height="150" FontWeight="ExtraBold" Foreground="DeepSkyBlue" Grid.Column="1" Margin="153,13,-221,82" Grid.RowSpan="2">Email</Label>
+                    <TextBlock   Grid.Column="0" Grid.ColumnSpan="2" Margin="18,48,-140,67">Email</TextBlock>
+                    <ComboBox SelectedValue="{Binding EmailSelected}" ItemsSource="{Binding EmailType}" Grid.Column="1" Margin="88,53,-201,159" />
+                    <Button Command="{Binding SendEmailCommand}"  Content="Send" Grid.Column="1" Grid.Row="3" Margin="223,51,-266,74"/>
+                    <Button Command="{Binding ClearEmailCommand}"  Content="Clear" Grid.Column="1" Grid.Row="3" Margin="138,53,-172,74"/>
+                    <TextBox  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     ScrollViewer.CanContentScroll="True" 
+                     Margin="19,113,-291,117" 
+                      IsReadOnly="True"
+                        Text="{Binding EmailBody}" Grid.RowSpan="4" Grid.Column="1" />
+
+
+                </Grid>
+            </StackPanel>
+        </Border>
+
+    </DockPanel>
 </UserControl>

@@ -6,23 +6,23 @@ namespace AssetToPurchaseFrontend.Model
 {
     public class MonitoringDevice
     {
-        public string DeviceName1 { get; set; }
+        public string DeviceName{ get; set; }
         // Clinical Requirements
-        public string Ecg1 { get; set; }
-        public string Spo21 { get; set; }
-        public string Respiration1 { get; set; }
+        public string Ecg { get; set; }
+        public string Spo2 { get; set; }
+        public string Respiration { get; set; }
         //public string NumberOfMeasurementWaves { get; set; }
-        public string Hr1 { get; set; }
-        public string PhysiologicalAlarming1 { get; set; }
-        public string BloodPressure1 { get; set; }
+        public string Hr { get; set; }
+        public string PhysiologicalAlarming { get; set; }
+        public string BloodPressure { get; set; }
 
         // Physical Requirements
-        public string BatteryLife1 { get; set; }
-        public string SupportedScreenOrientations1 { get; set; }
-        public string Size1 { get; set; }
-        public string MobileOrStatic1 { get; set; }
-        public string AntiMicrobialGlass1 { get; set; }
-        public string PatientLocation1 { get; set; }
+        public string BatteryLife { get; set; }
+        public string SupportedScreenOrientations { get; set; }
+        public string Size { get; set; }
+        public string MobileOrStatic { get; set; }
+        public string AntiMicrobialGlass { get; set; }
+        public string PatientLocation { get; set; }
 
     }
 }

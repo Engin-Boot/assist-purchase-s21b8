@@ -9,7 +9,7 @@
         xmlns:viewr="clr-namespace:RemoveDevices.View;assembly=RemoveDevices"
         xmlns:viewv="clr-namespace:ViewRegisteredUser.View;assembly=ViewRegisteredUser"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="475" Width="800">
     <Grid>
         <TabControl>
             <TabControl.BindingGroup>
