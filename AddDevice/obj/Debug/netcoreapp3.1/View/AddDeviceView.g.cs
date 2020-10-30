@@ -198,45 +198,45 @@ namespace AddDevice.View {
             case 2:
             this.batterylife = ((System.Windows.Controls.TextBlock)(target));
             return;
-            case 3:
-            this.cbatterylife = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 4:
-            this.screenorientation = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 5:
-            this.cscreenorientaton = ((System.Windows.Controls.ComboBox)(target));
-            return;
-            case 6:
-            this.size = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 7:
-            this.csize = ((System.Windows.Controls.ComboBox)(target));
-            return;
-            case 8:
-            this.mors = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 9:
-            this.cmors = ((System.Windows.Controls.ComboBox)(target));
-            return;
-            case 10:
-            this.glass = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 11:
-            this.cglass = ((System.Windows.Controls.ComboBox)(target));
-            return;
-            case 12:
-            this.patientLocation = ((System.Windows.Controls.TextBlock)(target));
-            return;
-            case 13:
-            this.cpatientLocation = ((System.Windows.Controls.ComboBox)(target));
-            return;
-            case 14:
-            this.add = ((System.Windows.Controls.Button)(target));
-            return;
-            case 15:
-            this.clear = ((System.Windows.Controls.Button)(target));
-            return;
+            //case 3:
+            //this.cbatterylife = ((System.Windows.Controls.TextBox)(target));
+            //return;
+            //case 4:
+            //this.screenorientation = ((System.Windows.Controls.TextBlock)(target));
+            //return;
+            //case 5:
+            //this.cscreenorientaton = ((System.Windows.Controls.ComboBox)(target));
+            //return;
+            //case 6:
+            //this.size = ((System.Windows.Controls.TextBlock)(target));
+            //return;
+            //case 7:
+            //this.csize = ((System.Windows.Controls.ComboBox)(target));
+            //return;
+            //case 8:
+            //this.mors = ((System.Windows.Controls.TextBlock)(target));
+            //return;
+            //case 9:
+            //this.cmors = ((System.Windows.Controls.ComboBox)(target));
+            //return;
+            //case 10:
+            //this.glass = ((System.Windows.Controls.TextBlock)(target));
+            //return;
+            //case 11:
+            //this.cglass = ((System.Windows.Controls.ComboBox)(target));
+            //return;
+            //case 12:
+            //this.patientLocation = ((System.Windows.Controls.TextBlock)(target));
+            //return;
+            //case 13:
+            //this.cpatientLocation = ((System.Windows.Controls.ComboBox)(target));
+            //return;
+            //case 14:
+            //this.add = ((System.Windows.Controls.Button)(target));
+            //return;
+            //case 15:
+            //this.clear = ((System.Windows.Controls.Button)(target));
+            //return;
             }
             this._contentLoaded = true;
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 
 namespace AssetToPurchaseFrontend.Model
@@ -35,6 +36,11 @@ namespace AssetToPurchaseFrontend.Model
         public HttpResponseMessage ExecutePutMethod(string requestUri)
         {
             response = client.PutAsJsonAsync(requestUri, "").Result;
+            return response;
+        }
+        public HttpResponseMessage ExecutePostMethod(string requestUri,EmailDetails emailDetails)
+        {
+            response = client.PostAsJsonAsync(requestUri, emailDetails).Result;
             return response;
         }
     }

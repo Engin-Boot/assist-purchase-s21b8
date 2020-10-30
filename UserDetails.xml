@@ -5,4 +5,48 @@
     <ProductsBooked>IntelliVue</ProductsBooked>
     <UserContactNo>23432</UserContactNo>
   </UserDetails>
+  <UserDetails>
+    <UserName>hary</UserName>
+    <ProductsBooked>IntelliVue MP5</ProductsBooked>
+    <UserContactNo>741</UserContactNo>
+  </UserDetails>
+  <UserDetails>
+    <UserName>xyz</UserName>
+    <ProductsBooked>IntelliVue MP2</ProductsBooked>
+    <UserContactNo>147</UserContactNo>
+  </UserDetails>
+  <UserDetails>
+    <UserName>hi</UserName>
+    <Email>hi@gmail</Email>
+    <ProductsBooked>IntelliVue X3</ProductsBooked>
+    <UserContactNo>1452</UserContactNo>
+  </UserDetails>
+  <UserDetails>
+    <UserName>fruti</UserName>
+    <ProductsBooked>IntelliVue MX450</ProductsBooked>
+    <UserContactNo>65478</UserContactNo>
+  </UserDetails>
+  <UserDetails>
+    <UserName>hello</UserName>
+    <Email>helo@hm</Email>
+    <ProductsBooked>IntelliVue X3</ProductsBooked>
+    <UserContactNo>456</UserContactNo>
+  </UserDetails>
+  <UserDetails>
+    <UserName>rahul</UserName>
+    <Email>rahul@gmail.com</Email>
+    <ProductsBooked>Goldway G40E G40E</ProductsBooked>
+    <UserContactNo>7550</UserContactNo>
+  </UserDetails>
+  <UserDetails>
+    <UserName>Rahul</UserName>
+    <Email>casestudyb217@gmail.com</Email>
+    <ProductsBooked>IntelliVue X3</ProductsBooked>
+    <UserContactNo>789</UserContactNo>
+  </UserDetails>
+  <UserDetails>
+    <UserName>john</UserName>
+    <ProductsBooked>IntelliVue</ProductsBooked>
+    <UserContactNo>23432</UserContactNo>
+  </UserDetails>
 </UserDetailsList>

@@ -118,15 +118,15 @@ namespace AssetToPurchaseFrontend.View {
             case 2:
             this.footer = ((System.Windows.Controls.Border)(target));
             return;
-            case 3:
-            this.ModelSelect = ((System.Windows.Controls.ComboBox)(target));
-            return;
-            case 4:
-            this.chatArea = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 5:
-            this.inputText = ((System.Windows.Controls.TextBox)(target));
-            return;
+            //case 3:
+            //this.ModelSelect = ((System.Windows.Controls.ComboBox)(target));
+            //return;
+            //case 4:
+            //this.chatArea = ((System.Windows.Controls.TextBox)(target));
+            //return;
+            //case 5:
+            //this.inputText = ((System.Windows.Controls.TextBox)(target));
+            //return;
             }
             this._contentLoaded = true;
         }

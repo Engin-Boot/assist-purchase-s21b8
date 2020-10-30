@@ -12,10 +12,14 @@
     </UserControl.DataContext>
     <DockPanel LastChildFill="True" Background="AliceBlue">
 
+
+
         <Border BorderThickness="2"  Height="350" Width="400" DockPanel.Dock="Left">
             <StackPanel>
                 <TextBlock FontSize="20" Foreground="DeepSkyBlue"><Run Text="UserDetail"/></TextBlock>
                 <Grid Background="White">
+
+
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -23,6 +27,8 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+
+
 
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -44,9 +50,13 @@
             </StackPanel>
         </Border>
 
+
+
         <Border BorderThickness="2"  Height="400" Width="350" DockPanel.Dock="Right">
             <StackPanel>
                 <Grid Background="White" Height="393">
+
+
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"></RowDefinition>
@@ -60,22 +70,30 @@
                         <ColumnDefinition Width="auto"></ColumnDefinition>
                         <ColumnDefinition Width="auto"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Label  Width="100" Height="150" FontWeight="ExtraBold" Foreground="DeepSkyBlue" Grid.Column="1" Margin="153,13,-221,82" Grid.RowSpan="2">Email</Label>
-                    <TextBlock   Grid.Column="0" Grid.ColumnSpan="2" Margin="18,48,-140,67">Email</TextBlock>
-                    <ComboBox SelectedValue="{Binding EmailSelected}" ItemsSource="{Binding EmailType}" Grid.Column="1" Margin="88,53,-201,159" />
-                    <Button Command="{Binding SendEmailCommand}"  Content="Send" Grid.Column="1" Grid.Row="3" Margin="223,51,-266,74"/>
-                    <Button Command="{Binding ClearEmailCommand}"  Content="Clear" Grid.Column="1" Grid.Row="3" Margin="138,53,-172,74"/>
+                    <Label  Grid.Row="0" Width="100" Height="150" FontWeight="ExtraBold" Foreground="DeepSkyBlue" Grid.Column="1" Margin="153,13,-221,82" Grid.RowSpan="2">Email</Label>
+                    <TextBlock   Grid.Column="1" Margin="36,58,-56,161">Model:</TextBlock>
+                    <ComboBox SelectedValue="{Binding EmailDeviceTypeSelected}" ItemsSource="{Binding EmailDeviceType}" Grid.Column="1" Margin="88,53,-201,159" />
+
+                    <TextBlock   Grid.Column="0" Grid.ColumnSpan="2" Margin="33,108,-61,112" RenderTransformOrigin="0.5,0.5">Email:</TextBlock>
+                    <ComboBox SelectedValue="{Binding EmailTypeSelected}" Text="User Details" ItemsSource="{Binding EmailType,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Grid.Column="1" Margin="88,100,-200,112" />
+                    <Button Command="{Binding SendEmailCommand}"  Content="Send" Grid.Column="1" Grid.Row="3" Margin="223,77,-266,40"/>
+                    <Button Command="{Binding ClearEmailCommand}"  Content="Clear" Grid.Column="1" Grid.Row="3" Margin="138,77,-172,40"/>
+                    <TextBlock  Grid.Row="0" Width="100" Height="150" Grid.Column="1" Margin="01,151,-61,86" Grid.RowSpan="4">Message Body:</TextBlock>
                     <TextBox  ScrollViewer.HorizontalScrollBarVisibility="Auto"
                      ScrollViewer.VerticalScrollBarVisibility="Auto"
                      ScrollViewer.CanContentScroll="True" 
-                     Margin="19,113,-291,117" 
-                      IsReadOnly="True"
-                        Text="{Binding EmailBody}" Grid.RowSpan="4" Grid.Column="1" />
+                     Margin="88,148,-285,82" 
+                     Text="{Binding EmailBody}" Grid.RowSpan="4" Grid.Column="1" 
+                    />
+
+
 
 
                 </Grid>
             </StackPanel>
         </Border>
+
+
 
     </DockPanel>
 </UserControl>

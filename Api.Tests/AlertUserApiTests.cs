@@ -15,10 +15,9 @@ namespace Api.Tests
         private readonly UserDetails _user = new UserDetails() { UserName = "john", ProductsBooked = "IntelliVue", UserContactNo = 23432 };
         private readonly JsonDeserializer _deserialize = new JsonDeserializer();
         private static IRestResponse _response;
-
+        private readonly EmailDetails _emailDetails = new EmailDetails() { EmailId = "casestudyb217@gmail.com", Message = "API Tests Mail" };
         private List<UserDetails> _userDetails;
         private string _output;
-        
 
         [TestMethod]
         public void Test_UserRegistration()
@@ -49,11 +48,10 @@ namespace Api.Tests
         {
             _client = new RestClient(baseUrl);
             _request = new RestRequest("orderconfirmation", Method.POST) { RequestFormat = DataFormat.Json };
-            _request.AddJsonBody(_user);
+            _request.AddJsonBody(_emailDetails);
             _response = _client.Execute(_request);
-            _output = _deserialize.Deserialize<string>(_response);
-            Assert.AreEqual(_output, _user.UserName + " has booked the following product " + _user.ProductsBooked + " ");
-
+            //Assert.AreEqual(_output, _user.UserName + " has booked the following product " + _user.ProductsBooked + " ");
+            Assert.IsTrue(_response.IsSuccessful);
         }
         [TestMethod]
         public void Test_CallBack()

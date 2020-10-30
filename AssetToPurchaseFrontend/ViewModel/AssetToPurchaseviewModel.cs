@@ -2,6 +2,7 @@
 using AssetToPurchaseFrontend.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using System.Windows;
@@ -14,7 +15,7 @@ namespace AssetToPurchaseFrontend.ViewModel
         #region data member
         private string name;
         private string email;
-        private List<String> modelType;
+        private ObservableCollection<String> modelType;
         private int contactNumber;
         private string yourMessage;
         private string chatArea = "Say 'Hi' to start the chat";
@@ -33,6 +34,7 @@ namespace AssetToPurchaseFrontend.ViewModel
             ClearCommand = new DelegateCommand(Execute_ClearCoomand, CanExecute_Mehod);
             SendCommand = new DelegateCommand(Execute_SendCommand, CanExecute_Mehod);
             ClearCommandRegistration = new DelegateCommand(Execute_ClearCommandRegistration, CanExecute_Mehod);
+            PopoulateModelNames();
         }
 
         private void Execute_ClearCommandRegistration(object obj)
@@ -557,14 +559,18 @@ namespace AssetToPurchaseFrontend.ViewModel
                 ChatArea = sb.ToString();
             }
         }
-        List<string> modelName = new List<string>();
+        //ObservableCollection<string> modelName = new ObservableCollection<string>();
         public void PopoulateModelNames()
         {
+            clientRequests = new ClientRequests();
+            ModelType = new ObservableCollection<string>();
             var Models = clientRequests.ProductGetRequest("api/productcategory/GetDevices");
             foreach (var Names in Models)
             {
-                modelName.Add(Names.DeviceName);
+                ModelType.Add(Names.DeviceName);
             }
+            modelType.Add("Request to contact Philips person");
+            //ModelType = modelName;
         }
 
         private void Execute_ClearCoomand(object obj)
@@ -624,23 +630,20 @@ namespace AssetToPurchaseFrontend.ViewModel
             {
                 email = value;
                 OnPropertyChanged("Email");
-
             }
         }
-        public List<String> ModelType
+        public ObservableCollection<String> ModelType
         {
             get
             {
-                PopoulateModelNames();
-                modelName.Add("Request to contact Philips person");
+                //PopoulateModelNames();
                 //return new List<string>() { "Cardic", "Covid19", "Pnemonia","HighBp" ,"ContactToPhiliPsPerson"}; 
-                return modelName;
+                return modelType;
             }
             set
             {
                 modelType = value;
                 OnPropertyChanged("ModelType");
-
             }
         }
 

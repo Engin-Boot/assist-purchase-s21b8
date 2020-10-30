@@ -2,6 +2,7 @@
 using AssetToPurchaseFrontend.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
@@ -15,7 +16,7 @@ namespace RemoveDevices.ViewModel
         public RemoveDeviceViewModel()
         {
             DeleteCommand = new DelegateCommand(Execute_DeleteCommand, CanExecute_DeleteCommand);
-            //PopoulateModelNames();
+            PopoulateModelNames();
         }
 
         private bool CanExecute_DeleteCommand(object arg)
@@ -33,13 +34,12 @@ namespace RemoveDevices.ViewModel
             //throw new NotImplementedException();
         }
 
-        List<string> deviceType;
-        public List<String> DeviceType
+        private ObservableCollection<string> deviceType;
+        public ObservableCollection<string> DeviceType
         {
             get
             {
-                PopoulateModelNames();
-                return modelName;
+                return deviceType;
                 // return new List<string>() { "Cardic", "Pnemonia", "Covid19", "HighBp" }; 
             }
             set
@@ -61,14 +61,15 @@ namespace RemoveDevices.ViewModel
             }
 
         }
-        List<string> modelName = new List<string>();
+       // List<string> modelName = new List<string>();
         public void PopoulateModelNames()
         {
             clientRequests = new ClientRequests();
+            DeviceType = new ObservableCollection<string>();
             var Models = clientRequests.ProductGetRequest("api/productcategory/GetDevices");
             foreach (var Names in Models)
             {
-                modelName.Add(Names.DeviceName);
+                DeviceType.Add(Names.DeviceName);
             }
         }
 

@@ -49,6 +49,18 @@ namespace AssetToPurchaseFrontend.Model
             }
             return false;
         }
+        public bool ExecutePostRequest(string requestUri, EmailDetails emailDetails)
+        {
+            clientConnection = new ClientConnection();
+            clientConnection.Connect();
+            response = clientConnection.ExecutePostMethod(requestUri, emailDetails);
+            if (response.IsSuccessStatusCode)
+            {
+                result = response.Content.ReadAsStringAsync().Result;
+                return true;
+            }
+            return false;
+        }
         public bool ExecuteDeleteRequest(string requestUri)
         {
             clientConnection = new ClientConnection();
@@ -135,6 +147,14 @@ namespace AssetToPurchaseFrontend.Model
         public string UserPostRequestAndStringResponce(string requestUri)
         {
             if (ExecutePutRequest(requestUri))
+            {
+                return result;
+            }
+            return result;
+        }
+        public string EmailAlert(string requestUri,EmailDetails emailDetails)
+        {
+            if (ExecutePostRequest(requestUri,emailDetails))
             {
                 return result;
             }
