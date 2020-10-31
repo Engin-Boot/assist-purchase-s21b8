@@ -22,15 +22,17 @@ namespace AssistPurchaseBackend.Controllers
             return Ok(_user.NewModelEmailAlert());
         }
         [HttpPost("OrderConfirmation")]
-        public IActionResult OrderConfirmationEmailAlerttoRegisteredUsers(UserDetails userDetails)
+        public IActionResult OrderConfirmationEmailAlerttoRegisteredUsers(EmailDetails emailDetails)
         {
-            return Ok(_user.OrderConfirmationEmailAlert(userDetails));
+            return Ok(_user.OrderConfirmationEmailAlert(emailDetails));
+            //return Ok();
         }
         [HttpPost("{CallBack}")]
         public IActionResult CallBackRequestFromRegisteredUser(UserDetails userDetails)
         {
             return Ok(_user.UserCallBackRequest(userDetails));
         }
+        //[HttpGet("AdvancedFeatures/{value}")]
         [HttpGet("GetUserDetail/{deviceName}")]
         public IActionResult GetRegisterdUsersOfDevice(string deviceName)
         {

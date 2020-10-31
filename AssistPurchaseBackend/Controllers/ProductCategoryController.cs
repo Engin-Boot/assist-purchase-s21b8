@@ -10,8 +10,8 @@ namespace AssistPurchaseBackend.Controllers
     public class ProductCategoryController : ControllerBase
     {
         readonly FilterMonitoringDevices _filter=new FilterMonitoringDevices();
-        readonly UtilityFunctions utility = new UtilityFunctions();
-
+         readonly UtilityFunctions utility = new UtilityFunctions();
+       
         [HttpGet("Cardiac")]
         public List<MonitoringDevice> GetCategoryCardiacTypeDevices()
         {
@@ -63,7 +63,6 @@ namespace AssistPurchaseBackend.Controllers
         {
             return _filter.GetAllDevices();
         }
-
         [HttpDelete("{devicename}")]
         public List<MonitoringDevice> Delete(string deviceName)
         {

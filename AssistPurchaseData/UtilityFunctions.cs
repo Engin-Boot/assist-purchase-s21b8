@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
@@ -11,12 +12,13 @@ namespace AssistPurchaseData
         private readonly List<MonitoringDevice> _deserializedMonitoringDevices = new List<MonitoringDevice>();
 
         //Give path of data.xml
-        //private readonly string _path = @"C:\Users\320087992\source\repos\assist-purchase-s21b8\data.xml";
+        //private readonly string _path = @"C:\Users\320087992\source\repos\assist-latest\assist-purchase-s21b8\data.xml";
         private readonly string _path = @"D:\data.xml";
 
         public void AddDevice(MonitoringDevice newMonitoringDevice)
         {
             /* When a new device is to be added, it is first appended to the list and then the list is written to data.XML*/
+
             MonitoringDevices.Add(newMonitoringDevice);
             WriteToXml();
         }
@@ -24,17 +26,19 @@ namespace AssistPurchaseData
         public List<MonitoringDevice> RemoveDevice(string deviceName)
         {
             var monitoringDevicestemp = ReadFromXml();
-
-
             foreach (var device in monitoringDevicestemp)
             {
-
                 if (device.DeviceName == deviceName)
                 {
+                    int count=monitoringDevicestemp.Count;
                     var check = monitoringDevicestemp.Remove(device);
+                    int count2= monitoringDevicestemp.Count;
+                    //WriteToXml();
+                    var serializer = new XmlSerializer(MonitoringDevices.GetType(), new XmlRootAttribute("DeviceList"));
+                    var writer = new StreamWriter(_path);
+                    serializer.Serialize(writer.BaseStream, monitoringDevicestemp);
+                    writer.Close();
                     return monitoringDevicestemp;
-
-
                 }
             }
 
@@ -62,7 +66,7 @@ namespace AssistPurchaseData
         {
             return ReadFromXml();
         }
-
+        
         public void WriteToXml()
         {
             List<MonitoringDevice> devices = new List<MonitoringDevice>();
@@ -70,7 +74,7 @@ namespace AssistPurchaseData
             devices.AddRange(MonitoringDevices);
             var serializer = new XmlSerializer(MonitoringDevices.GetType(), new XmlRootAttribute("DeviceList"));
             var writer = new StreamWriter(_path);
-            serializer.Serialize(writer.BaseStream,devices);
+            serializer.Serialize(writer.BaseStream, devices);
             writer.Close();
         }
 

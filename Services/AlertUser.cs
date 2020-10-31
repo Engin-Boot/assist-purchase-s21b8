@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace Services
@@ -12,8 +13,7 @@ namespace Services
         
         List<UserDetails> _userDetails = new List<UserDetails>();
         readonly List<UserDetails> _deserializedMonitoringDevices = new List<UserDetails>();
-        string _path = @"D:\CaseStudy2\assist-purchase-s21b8\UserDetails.xml";
-        //string _path = @"C:\Users\320087992\Documents\Bootcamp\case-study-II\assist-purchase-s21b8\UserDetails.xml";
+        string _path = @"D:\UserDetails.xml";
 
         public List<UserDetails> UserRegistration(UserDetails user)
         {
@@ -38,43 +38,31 @@ namespace Services
                 if (userDetails.UserName == user.UserName && userDetails.UserContactNo == user.UserContactNo)
                 {
                     _message = "One of our Philips Personnel will reach you out soon..Thank You!!!";
-                    break;
-                }
-                else
-                {
-                    _message = "User not registered or registered phone no does not match";
-                    break;
+                    return _message;
                 }
             }
-
+            _message = "User not registered or registered phone no does not match";
             return _message;
         }
 
-        public string OrderConfirmationEmailAlert(UserDetails userDetails)
+        public string OrderConfirmationEmailAlert(EmailDetails emailDetails)
         {
-
-            var userdetailslist = ReadFromXml();
-            foreach (var dummy in userdetailslist)
-            {
-
-                if (true)
-                {
-                    _message = $"{userDetails.UserName} has booked the following product {userDetails.ProductsBooked} ";
-                    break;
-
-                }
-            }
-            return _message;
+            var message = emailDetails.Message;
+            var emailId = emailDetails.EmailId;
+            EmailService.IAlerter alerter = new EmailService.EmailAlert(emailId);
+            if (alerter.Alert(message))
+                return "Email Sent";
+            else return "Email Not Sent";
         }
         private void WriteToXml()
         {
-
-            var serializer = new XmlSerializer(_userDetails.GetType(), new XmlRootAttribute("UserDetailsList"));
-
+            List<UserDetails> users = new List<UserDetails>();
+            users = ReadFromXml();
+            users.AddRange(_userDetails);
+            var serializer = new XmlSerializer(users.GetType(), new XmlRootAttribute("UserDetailsList"));
             var writer = new StreamWriter(_path);
-            serializer.Serialize(writer.BaseStream, _userDetails);
+            serializer.Serialize(writer.BaseStream, users);
             writer.Close();
-
         }
         private List<UserDetails> ReadFromXml()
         {
@@ -104,7 +92,7 @@ namespace Services
             List<UserDetails> userDetails = new List<UserDetails>();
             List<UserDetails> matchingUserDetails = new List<UserDetails>();
             userDetails = ReadFromXml();
-            foreach (var user in userDetails)
+            foreach(var user in userDetails)
             {
                 if (user.ProductsBooked == deviceName)
                     matchingUserDetails.Add(user);

@@ -33,6 +33,7 @@ D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\netcoreapp
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\netcoreapp3.1\AssetToPurchaseFrontend.csprojAssemblyReference.cache
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\netcoreapp3.1\View\AssertToPurchaseView.g.cs
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\netcoreapp3.1\App.g.cs
@@ -49,4 +50,3 @@ D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\netcoreapp
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\netcoreapp3.1\AssetToPurchaseFrontend.dll
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\netcoreapp3.1\AssetToPurchaseFrontend.pdb
 D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\netcoreapp3.1\AssetToPurchaseFrontend.genruntimeconfig.cache
-D:\CaseStudy2\assist-purchase-s21b8\AssetToPurchaseFrontend\obj\Debug\netcoreapp3.1\AssetToPurchaseFrontend.csprojAssemblyReference.cache
