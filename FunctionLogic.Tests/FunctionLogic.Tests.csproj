@@ -189,7 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlertUserTests.cs" />
-    <Compile Include="UserDetails.cs" />
+    <Compile Include="DeviceUnitTest.cs" />
     <Compile Include="UtilityFunctionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

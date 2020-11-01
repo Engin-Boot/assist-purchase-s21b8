@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
@@ -8,7 +7,8 @@ namespace AssistPurchaseData
 {
     public class UtilityFunctions
     {
-        public readonly List<MonitoringDevice> MonitoringDevices = new List<MonitoringDevice>();
+        public  List<MonitoringDevice> MonitoringDevices = new List<MonitoringDevice>();
+       
         private readonly List<MonitoringDevice> _deserializedMonitoringDevices = new List<MonitoringDevice>();
 
         //Give path of data.xml
@@ -30,9 +30,9 @@ namespace AssistPurchaseData
             {
                 if (device.DeviceName == deviceName)
                 {
-                    int count=monitoringDevicestemp.Count;
-                    var check = monitoringDevicestemp.Remove(device);
-                    int count2= monitoringDevicestemp.Count;
+                    //int count=monitoringDevicestemp.Count;
+                    //var check = monitoringDevicestemp.Remove(device);
+                    //int count2= monitoringDevicestemp.Count;
                     //WriteToXml();
                     var serializer = new XmlSerializer(MonitoringDevices.GetType(), new XmlRootAttribute("DeviceList"));
                     var writer = new StreamWriter(_path);
@@ -67,14 +67,14 @@ namespace AssistPurchaseData
             return ReadFromXml();
         }
         
-        public void WriteToXml()
+        private void WriteToXml()
         {
-            List<MonitoringDevice> devices = new List<MonitoringDevice>();
-            devices = ReadFromXml();
-            devices.AddRange(MonitoringDevices);
+
+            MonitoringDevices = ReadFromXml();
+            MonitoringDevices.AddRange(MonitoringDevices);
             var serializer = new XmlSerializer(MonitoringDevices.GetType(), new XmlRootAttribute("DeviceList"));
             var writer = new StreamWriter(_path);
-            serializer.Serialize(writer.BaseStream, devices);
+            serializer.Serialize(writer.BaseStream, MonitoringDevices);
             writer.Close();
         }
 

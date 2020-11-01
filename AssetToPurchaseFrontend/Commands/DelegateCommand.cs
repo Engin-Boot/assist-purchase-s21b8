@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 
 namespace AssetToPurchaseFrontend.Commands
@@ -8,8 +6,8 @@ namespace AssetToPurchaseFrontend.Commands
     public class DelegateCommand : ICommand
     {
 
-        Action<object> _executeMethodAddress;
-        Func<object, bool> _canExecuteMethodAddress;
+         readonly Action<object> _executeMethodAddress;
+        readonly Func<object, bool> _canExecuteMethodAddress;
 
         public DelegateCommand(Action<object> executeMethodAddress, Func<object, bool> canExecuteMethodAddress)
         {

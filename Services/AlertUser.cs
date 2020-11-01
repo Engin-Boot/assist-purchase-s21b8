@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Xml;
 using System.Xml.Serialization;
 
 namespace Services
@@ -12,6 +11,7 @@ namespace Services
         private string _message;
         
         List<UserDetails> _userDetails = new List<UserDetails>();
+       // List<UserDetails> users = new List<UserDetails>();
         readonly List<UserDetails> _deserializedMonitoringDevices = new List<UserDetails>();
         string _path = @"D:\UserDetails.xml";
 
@@ -56,12 +56,12 @@ namespace Services
         }
         private void WriteToXml()
         {
-            List<UserDetails> users = new List<UserDetails>();
-            users = ReadFromXml();
-            users.AddRange(_userDetails);
-            var serializer = new XmlSerializer(users.GetType(), new XmlRootAttribute("UserDetailsList"));
+           // _userDetails = new List<UserDetails>();
+            _userDetails = ReadFromXml();
+            _userDetails.AddRange(_userDetails);
+            var serializer = new XmlSerializer(_userDetails.GetType(), new XmlRootAttribute("UserDetailsList"));
             var writer = new StreamWriter(_path);
-            serializer.Serialize(writer.BaseStream, users);
+            serializer.Serialize(writer.BaseStream, _userDetails);
             writer.Close();
         }
         private List<UserDetails> ReadFromXml()
@@ -89,10 +89,10 @@ namespace Services
         }
         public List<UserDetails> GetUserDetails(string deviceName)
         {
-            List<UserDetails> userDetails = new List<UserDetails>();
+           // _userDetails = new List<UserDetails>();
             List<UserDetails> matchingUserDetails = new List<UserDetails>();
-            userDetails = ReadFromXml();
-            foreach(var user in userDetails)
+            _userDetails = ReadFromXml();
+            foreach(var user in _userDetails)
             {
                 if (user.ProductsBooked == deviceName)
                     matchingUserDetails.Add(user);

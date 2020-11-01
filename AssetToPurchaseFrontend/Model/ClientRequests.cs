@@ -1,95 +1,93 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 
 namespace AssetToPurchaseFrontend.Model
 {
     public class ClientRequests
     {
-        ClientConnection clientConnection;
-        HttpResponseMessage response;
-        List<MonitoringDevice> _monitoringDeviceList = default;
-        List<UserDetails> _userList = default;
-        string result = default;
-        public bool ExecuteGetRequest(string requestUri)
+        ClientConnection _clientConnection;
+        HttpResponseMessage _response;
+        List<MonitoringDevice> _monitoringDeviceList ;
+        List<UserDetails> _userList ;
+        string _result ;
+        private bool ExecuteGetRequest(string requestUri)
         {
-            clientConnection = new ClientConnection();
-            clientConnection.Connect();
-            response = clientConnection.ExecuteGetMethod(requestUri);
-            if (response.IsSuccessStatusCode)
+            _clientConnection = new ClientConnection();
+            _clientConnection.Connect();
+            _response = _clientConnection.ExecuteGetMethod(requestUri);
+            if (_response.IsSuccessStatusCode)
             {
-                result = response.Content.ReadAsStringAsync().Result;
+                _result = _response.Content.ReadAsStringAsync().Result;
                 return true;
             }
             return false;
         }
-        public bool ExecutePostRequest(string requestUri, MonitoringDevice monitoringDevice)
+        private void ExecutePostRequest(string requestUri, MonitoringDevice monitoringDevice)
         {
-            clientConnection = new ClientConnection();
-            clientConnection.Connect();
-            response = clientConnection.ExecutePostMethod(requestUri, monitoringDevice);
-            if (response.IsSuccessStatusCode)
+            _clientConnection = new ClientConnection();
+            _clientConnection.Connect();
+            _response = _clientConnection.ExecutePostMethod(requestUri, monitoringDevice);
+            if (_response.IsSuccessStatusCode)
             {
-                result = response.Content.ReadAsStringAsync().Result;
-                return true;
+                _result = _response.Content.ReadAsStringAsync().Result;
+
             }
-            return false;
+
         }
-        public bool ExecutePostRequest(string requestUri, UserDetails userDetails)
+        private void ExecutePostRequest(string requestUri, UserDetails userDetails)
         {
-            clientConnection = new ClientConnection();
-            clientConnection.Connect();
-            response = clientConnection.ExecutePostMethod(requestUri, userDetails);
-            if (response.IsSuccessStatusCode)
+            _clientConnection = new ClientConnection();
+            _clientConnection.Connect();
+            _response = _clientConnection.ExecutePostMethod(requestUri, userDetails);
+            if (_response.IsSuccessStatusCode)
             {
-                result = response.Content.ReadAsStringAsync().Result;
-                return true;
+                _result = _response.Content.ReadAsStringAsync().Result;
+
             }
-            return false;
+
         }
-        public bool ExecutePostRequest(string requestUri, EmailDetails emailDetails)
+        private void ExecutePostRequest(string requestUri, EmailDetails emailDetails)
         {
-            clientConnection = new ClientConnection();
-            clientConnection.Connect();
-            response = clientConnection.ExecutePostMethod(requestUri, emailDetails);
-            if (response.IsSuccessStatusCode)
+            _clientConnection = new ClientConnection();
+            _clientConnection.Connect();
+            _response = _clientConnection.ExecutePostMethod(requestUri, emailDetails);
+            if (_response.IsSuccessStatusCode)
             {
-                result = response.Content.ReadAsStringAsync().Result;
-                return true;
+                _result = _response.Content.ReadAsStringAsync().Result;
+
             }
-            return false;
+
         }
-        public bool ExecuteDeleteRequest(string requestUri)
+        private void ExecuteDeleteRequest(string requestUri)
         {
-            clientConnection = new ClientConnection();
-            clientConnection.Connect();
-            response = clientConnection.ExecuteDeleteMethod(requestUri);
-            if (response.IsSuccessStatusCode)
+            _clientConnection = new ClientConnection();
+            _clientConnection.Connect();
+            _response = _clientConnection.ExecuteDeleteMethod(requestUri);
+            if (_response.IsSuccessStatusCode)
             {
-                result = response.Content.ReadAsStringAsync().Result;
-                return true;
+                _result = _response.Content.ReadAsStringAsync().Result;
+
             }
-            return false;
+
         }
-        public bool ExecutePutRequest(string requestUri)
-        {
-            clientConnection = new ClientConnection();
-            clientConnection.Connect();
-            response = clientConnection.ExecutePutMethod(requestUri);
-            if (response.IsSuccessStatusCode)
-            {
-                result = response.Content.ReadAsStringAsync().Result;
-                return true;
-            }
-            return false;
-        }
+        //private bool ExecutePutRequest(string requestUri)
+        //{
+        //    _clientConnection = new ClientConnection();
+        //    _clientConnection.Connect();
+        //    //_response = _clientConnection.ExecutePutMethod(requestUri);
+        //    if (_response.IsSuccessStatusCode)
+        //    {
+        //        _result = _response.Content.ReadAsStringAsync().Result;
+        //        return true;
+        //    }
+        //    return false;
+        //}
         public List<MonitoringDevice> ProductGetRequest(string requestUri)
         {
             if (ExecuteGetRequest(requestUri))
             {
-                _monitoringDeviceList = JsonConvert.DeserializeObject<List<MonitoringDevice>>(result);
+                _monitoringDeviceList = JsonConvert.DeserializeObject<List<MonitoringDevice>>(_result);
                 return _monitoringDeviceList;
             }
             else
@@ -101,7 +99,7 @@ namespace AssetToPurchaseFrontend.Model
         {
             if (ExecuteGetRequest(requestUri))
             {
-                _userList = JsonConvert.DeserializeObject<List<UserDetails>>(result);
+                _userList = JsonConvert.DeserializeObject<List<UserDetails>>(_result);
                 return _userList;
             }
             else
@@ -109,56 +107,41 @@ namespace AssetToPurchaseFrontend.Model
                 return _userList;
             }
         }
-        public bool ProductPostRequest(string requestUri, MonitoringDevice monitoringDevice)
+        public void ProductPostRequest(string requestUri, MonitoringDevice monitoringDevice)
         {
-            if (ExecutePostRequest(requestUri, monitoringDevice))
-            {
-                _monitoringDeviceList = JsonConvert.DeserializeObject<List<MonitoringDevice>>(result);
-                return true;
-            }
-            return false;
+            ExecutePostRequest(requestUri, monitoringDevice);
+
         }
-        public bool ProductDeleteRequest(string requestUri)
+        public void ProductDeleteRequest(string requestUri)
         {
-            if (ExecuteDeleteRequest(requestUri))
-            {
-                _monitoringDeviceList = JsonConvert.DeserializeObject<List<MonitoringDevice>>(result);
-                return true;
-            }
-            return false;
+            ExecuteDeleteRequest(requestUri);
+
         }
-        public List<UserDetails> UserPostRequest(string requestUri, UserDetails userDetails)
+        public void UserPostRequest(string requestUri, UserDetails userDetails)
         {
-            if (ExecutePostRequest(requestUri, userDetails))
-            {
-                _userList = JsonConvert.DeserializeObject<List<UserDetails>>(result);
-                return _userList;
-            }
-            return _userList;
+            ExecutePostRequest(requestUri, userDetails);
+           
         }
-        public string UserPostRequestAndStringResponse(string requestUri, UserDetails userDetails)
+        //private string UserPostRequestAndStringResponse(string requestUri, UserDetails userDetails)
+        //{
+        //    if (ExecutePostRequest(requestUri, userDetails))
+        //    {
+        //        return _result;
+        //    }
+        //    return _result;
+        //}
+        //private string UserPostRequestAndStringResponce(string requestUri)
+        //{
+        //    if (ExecutePutRequest(requestUri))
+        //    {
+        //        return _result;
+        //    }
+        //    return _result;
+        //}
+        public void EmailAlert(string requestUri, EmailDetails emailDetails)
         {
-            if (ExecutePostRequest(requestUri, userDetails))
-            {
-                return result;
-            }
-            return result;
-        }
-        public string UserPostRequestAndStringResponce(string requestUri)
-        {
-            if (ExecutePutRequest(requestUri))
-            {
-                return result;
-            }
-            return result;
-        }
-        public string EmailAlert(string requestUri,EmailDetails emailDetails)
-        {
-            if (ExecutePostRequest(requestUri,emailDetails))
-            {
-                return result;
-            }
-            return result;
+            ExecutePostRequest(requestUri, emailDetails);
+
         }
     }
 }

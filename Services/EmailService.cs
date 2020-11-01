@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services
 {
-    public class EmailService
+    public static class EmailService
     {
         public interface IAlerter
         {
@@ -16,10 +11,10 @@ namespace Services
         }
         public class EmailAlert : IAlerter
         {
-            string emailId;
+           readonly string  _emailId;
             public EmailAlert(string emailId)
             {
-                this.emailId = emailId;
+                this._emailId = emailId;
             }
         
             public bool Alert(string message)
@@ -30,7 +25,7 @@ namespace Services
                     Credentials = new NetworkCredential("casestudyb217@gmail.com", "Case@217"),
                     EnableSsl = true,
                 };
-                smtpClient.Send("casestudyb217@gmail.com", emailId, "Philips Purchase Assist", message);
+                smtpClient.Send("casestudyb217@gmail.com", _emailId, "Philips Purchase Assist", message);
 
                 return true;
             }

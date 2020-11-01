@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Windows.Input;
 
 namespace ViewRegisteredUser.ViewModel
@@ -13,6 +12,7 @@ namespace ViewRegisteredUser.ViewModel
     {
         ClientRequests _clientRequest;
         List<UserDetails> _userDetails = new List<UserDetails>();
+        readonly EmailDetails _emailDetails = new EmailDetails();
         public ICommand ViewCommand { get; set; }
         public ICommand SendEmailCommand { get; set; }
         public ICommand ClearEmailCommand { get; set; }
@@ -35,10 +35,10 @@ namespace ViewRegisteredUser.ViewModel
 
         private void Execute_SendEmailCommand(object obj)
         {
-            EmailDetails emailDetails = new EmailDetails();
-            emailDetails.EmailId = EmailTypeSelected;
-            emailDetails.Message = EmailBody;
-            _clientRequest.EmailAlert("api/AlertUser/OrderConfirmation", emailDetails);
+            
+            _emailDetails.EmailId = EmailTypeSelected;
+            _emailDetails.Message = EmailBody;
+            _clientRequest.EmailAlert("api/AlertUser/OrderConfirmation", _emailDetails);
             //throw new NotImplementedException();
         }
 
@@ -69,7 +69,7 @@ namespace ViewRegisteredUser.ViewModel
             }
             DeviceType.Add("Request to contact Philips person");
         }
-        List<string> devices = new List<string>();
+       readonly List<string> _devices = new List<string>();
         private void PopoulateModels()
         {
             string uri = "api/productcategory/GetDevices";
@@ -77,39 +77,34 @@ namespace ViewRegisteredUser.ViewModel
             var models = _clientRequest.ProductGetRequest(uri);
             foreach (var model in models)
             {
-                devices.Add(model.DeviceName);
+                _devices.Add(model.DeviceName);
             }
         }
         //List<string> emails = new List<string>();
 
-        private bool PopulateEmailIds()
+        private void PopulateEmailIds()
         {
             _clientRequest = new ClientRequests();
-           EmailType = new ObservableCollection<string>();
-            var users= _clientRequest.UserGetRequest("api/AlertUser/GetUserDetail/"+EmailDeviceTypeSelected);
-            if(users==null)
+            EmailType = new ObservableCollection<string>();
+            var users = _clientRequest.UserGetRequest("api/AlertUser/GetUserDetail/" + EmailDeviceTypeSelected);
+            if (users == null)
             {
-                return false;
             }
             else
             {
-            foreach (var details in users)
-            {
+                foreach (var details in users)
+                {
                     EmailType.Add(details.Email);
-            }
-                
-                return true;
+                }
+
+                // return true;
             }
         }
-       
+
         private ObservableCollection<string> _deviceType;
         public ObservableCollection<String> DeviceType
         {
-            get
-            {
-                //PopoulateModelName();
-                return _deviceType;
-            }
+            get { return _deviceType; }
             set
             {
                 _deviceType = value;
@@ -118,18 +113,19 @@ namespace ViewRegisteredUser.ViewModel
             }
         }
 
-        private List<string> emailDeviceType;
+        private List<string> _emailDeviceType;
         public List<string> EmailDeviceType
         {
             get
             {
                 PopoulateModels();
-                devices.Add("Request to contact Philips person");
-                return devices;
+                _devices.Add("Request to contact Philips person");
+                _emailDeviceType = _devices;
+                return _emailDeviceType;
             }
             set
             {
-                emailDeviceType = value;
+                _emailDeviceType = value;
                 OnPropertyChanged("EmailDeviceType");
 
             }
@@ -150,16 +146,14 @@ namespace ViewRegisteredUser.ViewModel
 
         }
 
-        private String emaildeviceTypeSelected;
+        private String _emaildeviceTypeSelected;
         public String EmailDeviceTypeSelected
         {
-            get
-            {
-                return this.emaildeviceTypeSelected;
-            }
+            get { return this._emaildeviceTypeSelected; }
+            
             set
             {
-                emaildeviceTypeSelected = value;
+                _emaildeviceTypeSelected = value;
                 OnPropertyChanged("EmailDeviceTypeSelected");
                 PopulateEmailIds();
             }
@@ -169,10 +163,8 @@ namespace ViewRegisteredUser.ViewModel
         private String _displayArea;
         public String DisplayArea
         {
-            get
-            {
-                return this._displayArea;
-            }
+            get { return this._displayArea; }
+            
             set
             {
                 _displayArea = value;
@@ -185,12 +177,8 @@ namespace ViewRegisteredUser.ViewModel
         private ObservableCollection<string> _emailType;
         public ObservableCollection<string> EmailType
         {
-            get
-            {
-
-                //PopulateEmailIds();
-                return _emailType;
-            }
+            get { return _emailType; }
+            
             set
             {
                 _emailType = value;
@@ -202,10 +190,8 @@ namespace ViewRegisteredUser.ViewModel
         private String _emailTypeSelected;
         public String EmailTypeSelected
         {
-            get
-            {
-                return this._emailTypeSelected;
-            }
+            get { return this._emailTypeSelected; }
+            
             set
             {
                 _emailTypeSelected = value;
@@ -216,10 +202,8 @@ namespace ViewRegisteredUser.ViewModel
         private String _emailBody;
         public String EmailBody
         {
-            get
-            {
-                return this._emailBody;
-            }
+            get { return this._emailBody; }
+           
             set
             {
                 _emailBody = value;

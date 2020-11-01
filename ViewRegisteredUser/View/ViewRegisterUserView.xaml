@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ViewRegisteredUser.View"
              xmlns:vmv="clr-namespace:ViewRegisteredUser.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -63,7 +62,7 @@
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="auto"></RowDefinition>
                         <RowDefinition Height="auto"></RowDefinition>
-                        <RowDefinition Height="auto"></RowDefinition>
+
 
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -71,19 +70,19 @@
                         <ColumnDefinition Width="auto"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Label  Grid.Row="0" Width="100" Height="150" FontWeight="ExtraBold" Foreground="DeepSkyBlue" Grid.Column="1" Margin="153,13,-221,82" Grid.RowSpan="2">Email</Label>
-                    <TextBlock   Grid.Column="1" Margin="36,58,-56,161">Model:</TextBlock>
-                    <ComboBox SelectedValue="{Binding EmailDeviceTypeSelected}" ItemsSource="{Binding EmailDeviceType}" Grid.Column="1" Margin="88,53,-201,159" />
+                    <TextBlock Grid.Row="0"  Grid.Column="1" Margin="36,58,-56,161">Model:</TextBlock>
+                    <ComboBox SelectedValue="{Binding EmailDeviceTypeSelected}" ItemsSource="{Binding EmailDeviceType}" Grid.Column="1" Grid.Row="0" Margin="88,53,-201,159" />
 
-                    <TextBlock   Grid.Column="0" Grid.ColumnSpan="2" Margin="33,108,-61,112" RenderTransformOrigin="0.5,0.5">Email:</TextBlock>
-                    <ComboBox SelectedValue="{Binding EmailTypeSelected}" Text="User Details" ItemsSource="{Binding EmailType,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Grid.Column="1" Margin="88,100,-200,112" />
-                    <Button Command="{Binding SendEmailCommand}"  Content="Send" Grid.Column="1" Grid.Row="3" Margin="223,77,-266,40"/>
-                    <Button Command="{Binding ClearEmailCommand}"  Content="Clear" Grid.Column="1" Grid.Row="3" Margin="138,77,-172,40"/>
+                    <TextBlock Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="2" Margin="33,108,-61,112" RenderTransformOrigin="0.5,0.5">Email:</TextBlock>
+                    <ComboBox Grid.Row="0" SelectedValue="{Binding EmailTypeSelected}" Text="User Details" ItemsSource="{Binding EmailType,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Grid.Column="1" Margin="88,100,-200,112" />
+                    <Button Command="{Binding SendEmailCommand}"  Content="Send" Grid.Column="1" Grid.Row="2" Margin="223,77,-266,40"/>
+                    <Button Command="{Binding ClearEmailCommand}"  Content="Clear" Grid.Column="1" Grid.Row="2" Margin="138,77,-172,40"/>
                     <TextBlock  Grid.Row="0" Width="100" Height="150" Grid.Column="1" Margin="01,151,-61,86" Grid.RowSpan="4">Message Body:</TextBlock>
                     <TextBox  ScrollViewer.HorizontalScrollBarVisibility="Auto"
                      ScrollViewer.VerticalScrollBarVisibility="Auto"
                      ScrollViewer.CanContentScroll="True" 
-                     Margin="88,148,-285,82" 
-                     Text="{Binding EmailBody}" Grid.RowSpan="4" Grid.Column="1" 
+                     Margin="88,148,-285,104" 
+                     Text="{Binding EmailBody}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" 
                     />
 
 

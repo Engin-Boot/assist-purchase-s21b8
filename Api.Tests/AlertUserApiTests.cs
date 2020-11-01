@@ -12,7 +12,7 @@ namespace Api.Tests
         string baseUrl = "http://localhost:52590/api/alertuser/";
         private static RestClient _client;
         private static RestRequest _request;
-        private readonly UserDetails _user = new UserDetails() { UserName = "john", ProductsBooked = "IntelliVue", UserContactNo = 23432 };
+        private readonly UserDetails _user = new UserDetails() { UserName = "john", Email="john@gmai.com" ,ProductsBooked = "IntelliVue", UserContactNo = 23432 };
         private readonly JsonDeserializer _deserialize = new JsonDeserializer();
         private static IRestResponse _response;
         private readonly EmailDetails _emailDetails = new EmailDetails() { EmailId = "casestudyb217@gmail.com", Message = "API Tests Mail" };

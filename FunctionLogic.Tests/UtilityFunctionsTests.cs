@@ -2,14 +2,14 @@
 using AssistPurchaseData;
 using Services;
 using Xunit;
-using Xunit.Sdk;
+
 
 namespace FunctionLogic.Tests
 {
     public class UtilityFunctionsTests
     {
         private readonly UtilityFunctions _utility = new UtilityFunctions();
-        private readonly EmailService _emailService = new EmailService();
+       // private readonly EmailService _emailService = new EmailService();
         private readonly MonitoringDevice _dummDevice = new MonitoringDevice()
         {
             DeviceName = "IntelliVue v3",

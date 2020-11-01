@@ -1,7 +1,6 @@
 ﻿using AssetToPurchaseFrontend.Commands;
 using AssetToPurchaseFrontend.Model;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
@@ -11,7 +10,7 @@ namespace RemoveDevices.ViewModel
 {
     public class RemoveDeviceViewModel : INotifyPropertyChanged
     {
-        ClientRequests clientRequests;
+        ClientRequests _clientRequests;
         public ICommand DeleteCommand { get; set; }
         public RemoveDeviceViewModel()
         {
@@ -27,49 +26,45 @@ namespace RemoveDevices.ViewModel
         private void Execute_DeleteCommand(object obj)
         {
             string uri = "api/productcategory/" + DeviceTypeSelected;
-            clientRequests = new ClientRequests();
-            clientRequests.ProductDeleteRequest(uri);
+            _clientRequests = new ClientRequests();
+            _clientRequests.ProductDeleteRequest(uri);
             MessageBox.Show("Device Deleted Successfuly");
             //clientRequests
             //throw new NotImplementedException();
         }
 
-        private ObservableCollection<string> deviceType;
+        private ObservableCollection<string> _deviceType;
         public ObservableCollection<string> DeviceType
         {
-            get
-            {
-                return deviceType;
-                // return new List<string>() { "Cardic", "Pnemonia", "Covid19", "HighBp" }; 
-            }
+            get { return _deviceType; }
             set
             {
-                deviceType = value;
+                _deviceType = value;
                 OnPropertyChanged("DeviceType");
 
             }
         }
 
-        private String deviceTypeSelected;
+        private String _deviceTypeSelected;
         public String DeviceTypeSelected
         {
-            get { return this.deviceTypeSelected; }
+            get { return this._deviceTypeSelected; }
             set
             {
-                deviceTypeSelected = value;
+                _deviceTypeSelected = value;
                 OnPropertyChanged("DeviceTypeSelected");
             }
 
         }
        // List<string> modelName = new List<string>();
-        public void PopoulateModelNames()
+        private void PopoulateModelNames()
         {
-            clientRequests = new ClientRequests();
+            _clientRequests = new ClientRequests();
             DeviceType = new ObservableCollection<string>();
-            var Models = clientRequests.ProductGetRequest("api/productcategory/GetDevices");
-            foreach (var Names in Models)
+            var models = _clientRequests.ProductGetRequest("api/productcategory/GetDevices");
+            foreach (var names in models)
             {
-                DeviceType.Add(Names.DeviceName);
+                DeviceType.Add(names.DeviceName);
             }
         }
 

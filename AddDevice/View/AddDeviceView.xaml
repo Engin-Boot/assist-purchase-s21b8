@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:AddDevice.View"
              xmlns:vm="clr-namespace:AddDevice.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <vm:AddDeviceViewModel x:Key="vm"></vm:AddDeviceViewModel>
+        <vm:AddDeviceViewModel x:Key="Vm"></vm:AddDeviceViewModel>
     </UserControl.Resources>
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -35,35 +34,35 @@
             <ColumnDefinition Width="auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="139,10,-141.6,9.6" Width="105" Grid.Column="1" FontWeight="ExtraBold" Foreground="DeepSkyBlue">Add Device</Label>
-        <TextBlock  x:Name="Pt" Grid.Column="0" Grid.Row="1">Device Name</TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding ProductName,Source={StaticResource vm}}"/>
+        <TextBlock   Grid.Column="0" Grid.Row="1">Device Name</TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding ProductName,Source={StaticResource Vm}}"/>
         <TextBlock   Grid.Column="0" Grid.Row="2">ECG</TextBlock>
-        <ComboBox SelectedValue="{Binding EcgSelected,Source={StaticResource vm}}" ItemsSource="{Binding Ecg,Source={StaticResource vm}}"  Width="100" Grid.Column="1" Grid.Row="2" ></ComboBox>
+        <ComboBox SelectedValue="{Binding EcgSelected,Source={StaticResource Vm}}" ItemsSource="{Binding Ecg,Source={StaticResource Vm}}"  Width="100" Grid.Column="1" Grid.Row="2" ></ComboBox>
         <TextBlock   Grid.Column="0" Grid.Row="3">Spo2</TextBlock>
-        <ComboBox SelectedValue="{Binding Spo2Selected,Source={StaticResource vm}}" ItemsSource="{Binding Spo2,Source={StaticResource vm}}"  Width="100" Grid.Column="1" Grid.Row="3" ></ComboBox>
+        <ComboBox SelectedValue="{Binding Spo2Selected,Source={StaticResource Vm}}" ItemsSource="{Binding Spo2,Source={StaticResource Vm}}"  Width="100" Grid.Column="1" Grid.Row="3" ></ComboBox>
         <TextBlock   Grid.Column="0" Grid.Row="4">Respiration</TextBlock>
-        <ComboBox SelectedValue="{Binding RespSelected,Source={StaticResource vm}}" ItemsSource="{Binding Resp,Source={StaticResource vm}}"  Width="100" Grid.Column="1" Grid.Row="4" ></ComboBox>
+        <ComboBox SelectedValue="{Binding RespSelected,Source={StaticResource Vm}}" ItemsSource="{Binding Resp,Source={StaticResource Vm}}"  Width="100" Grid.Column="1" Grid.Row="4" ></ComboBox>
         <TextBlock   Grid.Column="0" Grid.Row="5">Hr</TextBlock>
-        <ComboBox SelectedValue="{Binding HrSelected,Source={StaticResource vm}}" ItemsSource="{Binding Hr,Source={StaticResource vm}}"  Width="100" Grid.Column="1" Grid.Row="5" ></ComboBox>
+        <ComboBox SelectedValue="{Binding HrSelected,Source={StaticResource Vm}}" ItemsSource="{Binding Hr,Source={StaticResource Vm}}"  Width="100" Grid.Column="1" Grid.Row="5" ></ComboBox>
         <TextBlock   Grid.Column="0" Grid.Row="6">PhysiologicalAlarming</TextBlock>
-        <ComboBox SelectedValue="{Binding PhysiologicalAlarmingSelected,Source={StaticResource vm}}" ItemsSource="{Binding PhysiologicalAlarming,Source={StaticResource vm}}"  Width="100" Grid.Column="1" Grid.Row="6" ></ComboBox>
+        <ComboBox SelectedValue="{Binding PhysiologicalAlarmingSelected,Source={StaticResource Vm}}" ItemsSource="{Binding PhysiologicalAlarming,Source={StaticResource Vm}}"  Width="100" Grid.Column="1" Grid.Row="6" ></ComboBox>
         <TextBlock   Grid.Column="0" Grid.Row="7">BloodPressure</TextBlock>
-        <ComboBox SelectedValue="{Binding BloodPressureSelected,Source={StaticResource vm}}" ItemsSource="{Binding BloodPressure,Source={StaticResource vm}}"  Width="100" Grid.Column="1" Grid.Row="7" ></ComboBox>
+        <ComboBox SelectedValue="{Binding BloodPressureSelected,Source={StaticResource Vm}}" ItemsSource="{Binding BloodPressure,Source={StaticResource Vm}}"  Width="100" Grid.Column="1" Grid.Row="7" ></ComboBox>
 
-        <TextBlock x:Name="batterylife" Grid.Column="0" Grid.Row="8">BatteryLife</TextBlock>
-        <TextBox Name="cbatterylife" Width="100" Grid.Column="1" Grid.Row="8" Text="{Binding BatteryLife,Source={StaticResource vm}}"/>
+        <TextBlock  Grid.Column="0" Grid.Row="8">BatteryLife</TextBlock>
+        <TextBox  Width="100" Grid.Column="1" Grid.Row="8" Text="{Binding BatteryLife,Source={StaticResource Vm}}"/>
         <!--<ComboBox SelectedValue="{Binding BatteryLifeTypeSelected}" ItemsSource="{Binding BatteryLife}" Name="cbatterylife" Width="100" Grid.Column="1" Grid.Row="8" ></ComboBox>-->
-        <TextBlock x:Name="screenorientation" Grid.Column="0" Grid.Row="9">ScreenOrientation</TextBlock>
-        <ComboBox SelectedValue="{Binding ScreenOrientationTypeSelected,Source={StaticResource vm}}" ItemsSource="{Binding ScreenOrientation,Source={StaticResource vm}}" Name="cscreenorientaton" Width="100" Grid.Column="1" Grid.Row="9" ></ComboBox>
-        <TextBlock x:Name="size" Grid.Column="0" Grid.Row="10">Size</TextBlock>
-        <ComboBox SelectedValue="{Binding SizeSelected,Source={StaticResource vm}}" ItemsSource="{Binding Size,Source={StaticResource vm}}" Name="csize" Width="100" Grid.Column="1" Grid.Row="10" ></ComboBox>
-        <TextBlock x:Name="mors" Grid.Column="0" Grid.Row="11">MobileOrStatic</TextBlock>
-        <ComboBox SelectedValue="{Binding MobileOrStaticSelected,Source={StaticResource vm}}" ItemsSource="{Binding MobileOrStatic,Source={StaticResource vm}}" Name="cmors" Width="100" Grid.Column="1" Grid.Row="11" ></ComboBox>
-        <TextBlock x:Name="glass" Grid.Column="0" Grid.Row="12">AntiMicrobalGlass</TextBlock>
-        <ComboBox SelectedValue="{Binding AntiMicrobalGlassSelected,Source={StaticResource vm}}" ItemsSource="{Binding AntiMicrobalGlass,Source={StaticResource vm}}" Name="cglass" Width="100" Grid.Column="1" Grid.Row="12" ></ComboBox>
-        <TextBlock x:Name="patientLocation" Grid.Column="0" Grid.Row="13">PatientLocation</TextBlock>
-        <ComboBox SelectedValue="{Binding PatientLocationSelected,Source={StaticResource vm}}" ItemsSource="{Binding PatientLocation,Source={StaticResource vm}}" Name="cpatientLocation" Width="100" Grid.Column="1" Grid.Row="13" ></ComboBox>
-        <Button Command="{Binding addCommand,Source={StaticResource vm}}" x:Name="add" Content="Add" Grid.Column="1" Grid.Row="14" Margin="0,7.8,0.2,59.6"/>
-        <Button Command="{Binding clearCommand,Source={StaticResource vm}}" x:Name="clear" Content="Clear" Grid.Column="0" Grid.Row="14" Margin="0,7.8,0.2,59.6"/>
+        <TextBlock  Grid.Column="0" Grid.Row="9">ScreenOrientation</TextBlock>
+        <ComboBox SelectedValue="{Binding ScreenOrientationTypeSelected,Source={StaticResource Vm}}" ItemsSource="{Binding ScreenOrientation,Source={StaticResource Vm}}"  Width="100" Grid.Column="1" Grid.Row="9" ></ComboBox>
+        <TextBlock  Grid.Column="0" Grid.Row="10">Size</TextBlock>
+        <ComboBox SelectedValue="{Binding SizeSelected,Source={StaticResource Vm}}" ItemsSource="{Binding Size,Source={StaticResource Vm}}"  Width="100" Grid.Column="1" Grid.Row="10" ></ComboBox>
+        <TextBlock  Grid.Column="0" Grid.Row="11">MobileOrStatic</TextBlock>
+        <ComboBox SelectedValue="{Binding MobileOrStaticSelected,Source={StaticResource Vm}}" ItemsSource="{Binding MobileOrStatic,Source={StaticResource Vm}}"  Width="100" Grid.Column="1" Grid.Row="11" ></ComboBox>
+        <TextBlock  Grid.Column="0" Grid.Row="12">AntiMicrobalGlass</TextBlock>
+        <ComboBox SelectedValue="{Binding AntiMicrobalGlassSelected,Source={StaticResource Vm}}" ItemsSource="{Binding AntiMicrobalGlass,Source={StaticResource Vm}}"  Width="100" Grid.Column="1" Grid.Row="12" ></ComboBox>
+        <TextBlock  Grid.Column="0" Grid.Row="13">PatientLocation</TextBlock>
+        <ComboBox SelectedValue="{Binding PatientLocationSelected,Source={StaticResource Vm}}" ItemsSource="{Binding PatientLocation,Source={StaticResource Vm}}"  Width="100" Grid.Column="1" Grid.Row="13" ></ComboBox>
+        <Button Command="{Binding AddCommand,Source={StaticResource Vm}}"  Content="Add" Grid.Column="1" Grid.Row="14" Margin="0,7.8,0.2,59.6"/>
+        <Button Command="{Binding ClearCommand,Source={StaticResource Vm}}"  Content="Clear" Grid.Column="0" Grid.Row="14" Margin="0,7.8,0.2,59.6"/>
     </Grid>
 </UserControl>

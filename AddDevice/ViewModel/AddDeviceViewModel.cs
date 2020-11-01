@@ -10,19 +10,19 @@ namespace AddDevice.ViewModel
 {
     public class AddDeviceViewModel : INotifyPropertyChanged
     {
-        ClientRequests clientRequests;
-        public ICommand addCommand
+        ClientRequests _clientRequests;
+        public ICommand AddCommand
         {
             get; set;
         }
-        public ICommand clearCommand
+        public ICommand ClearCommand
         {
             get; set;
         }
         public AddDeviceViewModel()
         {
-            addCommand = new DelegateCommand(Execute_Add, CanExecute);
-            clearCommand = new DelegateCommand(Execute_Clear, CanExecute);
+            AddCommand = new DelegateCommand(Execute_Add, CanExecute);
+            ClearCommand = new DelegateCommand(Execute_Clear, CanExecute);
         }
 
         private bool CanExecute(object arg)
@@ -47,7 +47,7 @@ namespace AddDevice.ViewModel
         }
         private void Execute_Add(object obj)
         {
-            clientRequests = new ClientRequests();
+            _clientRequests = new ClientRequests();
             MonitoringDevice newDevice = new MonitoringDevice();
             newDevice.DeviceName = ProductName;
             newDevice.Ecg = EcgSelected;
@@ -62,7 +62,7 @@ namespace AddDevice.ViewModel
             newDevice.MobileOrStatic = MobileOrStaticSelected;
             newDevice.AntiMicrobialGlass = AntiMicrobalGlassSelected;
             newDevice.PatientLocation = PatientLocationSelected;
-            clientRequests.ProductPostRequest("api/productcategory/PostDevice", newDevice);
+            _clientRequests.ProductPostRequest("api/productcategory/PostDevice", newDevice);
             MessageBox.Show(newDevice.ToString());
             //throw new NotImplementedException();
         }
@@ -79,301 +79,359 @@ namespace AddDevice.ViewModel
         //    }
         //}
 
-        private String productName;
+        private String _productName;
         public String ProductName
         {
-            get { return this.productName; }
+            get { return this._productName; }
+           
             set
             {
-                productName = value;
+                _productName = value;
                 OnPropertyChanged("ProductName");
             }
 
         }
 
-        string batteryLife;
+        private string _batteryLife;
         public string BatteryLife
         {
-            get { return this.batteryLife; }
+            get { return this._batteryLife; }
+            
             set
             {
-                batteryLife = value;
+                _batteryLife = value;
                 OnPropertyChanged("BatteryLife");
 
             }
         }
 
-        private String batteryLifeTypeSelected;
-        public String BatteryLifeTypeSelected
-        {
-            get { return this.batteryLifeTypeSelected; }
-            set
-            {
-                batteryLifeTypeSelected = value;
-                OnPropertyChanged("BatteryLifeTypeSelected");
-            }
+       
 
-        }
-
-        List<string> screenOrientation;
+        private  List<string> _screenOrientation= new List<string>() { "YES", "NO", "NULL" };
         public List<String> ScreenOrientation
         {
-            get { return new List<string>() { "YES", "NO", "NULL" }; }
+            get
+            {
+                return _screenOrientation;
+            }
             set
             {
-                screenOrientation = value;
+                _screenOrientation = value;
                 OnPropertyChanged("ScreenOrientation");
 
             }
         }
 
-        private String screenOrientationTypeSelected;
+        private String _screenOrientationTypeSelected;
         public String ScreenOrientationTypeSelected
         {
-            get { return this.screenOrientationTypeSelected; }
+            get
+            { 
+                return this._screenOrientationTypeSelected;
+            }
             set
             {
-                screenOrientationTypeSelected = value;
+                _screenOrientationTypeSelected = value;
                 OnPropertyChanged("ScreenOrientationTypeSelected");
             }
 
         }
 
-        List<string> size;
+       private List<string> _size= new List<string>() { "Null", "249 x 97 x 111 mm", "12 in", "15 in", "12.1 in" };
         public List<String> Size
         {
-            get { return new List<string>() { "Null", "249 x 97 x 111 mm", "12 in", "15 in", "12.1 in" }; }
+            get 
+            {
+                return _size;
+            }
             set
             {
-                size = value;
+                _size = value;
                 OnPropertyChanged("Szie");
 
             }
         }
 
-        private String sizeSelected;
+        private  String _sizeSelected;
         public String SizeSelected
         {
-            get { return this.sizeSelected; }
+            get 
+            { 
+                return this._sizeSelected;
+            }
             set
             {
-                sizeSelected = value;
+                _sizeSelected = value;
                 OnPropertyChanged("SizeSelected");
             }
 
         }
 
-        List<string> mobileOrStatic;
+       private List<string> _mobileOrStatic= new List<string>() { "MOBILE", "STATIC" };
         public List<String> MobileOrStatic
         {
-            get { return new List<string>() { "MOBILE", "STATIC" }; }
+            get
+            {
+                return _mobileOrStatic;
+            }
             set
             {
-                mobileOrStatic = value;
+                _mobileOrStatic = value;
                 OnPropertyChanged("MobileOrStatic");
 
             }
         }
 
-        private String mobileOrStaticSelected;
+        private String _mobileOrStaticSelected;
         public String MobileOrStaticSelected
         {
-            get { return this.mobileOrStaticSelected; }
+            get
+            { 
+                return this._mobileOrStaticSelected;
+            }
             set
             {
-                mobileOrStaticSelected = value;
+                _mobileOrStaticSelected = value;
                 OnPropertyChanged("MobileOrStaticSelected");
             }
 
         }
 
-        List<string> antiMicrobalGlass;
+        List<string> _antiMicrobalGlass= new List<string>() { "YES", "NO", "NULL" };
         public List<String> AntiMicrobalGlass
         {
-            get { return new List<string>() { "YES", "NO", "NULL" }; }
+            get
+            {
+                return _antiMicrobalGlass;
+            }
             set
             {
-                antiMicrobalGlass = value;
+                _antiMicrobalGlass = value;
                 OnPropertyChanged(" AntiMicrobalGlass");
 
             }
         }
 
-        private String antiMicrobalGlassSelected;
+        private String _antiMicrobalGlassSelected;
         public String AntiMicrobalGlassSelected
         {
-            get { return this.antiMicrobalGlassSelected; }
+            get
+            { 
+                return this._antiMicrobalGlassSelected; 
+            }
             set
             {
-                antiMicrobalGlassSelected = value;
+                _antiMicrobalGlassSelected = value;
                 OnPropertyChanged("AntiMicrobalGlassSelected");
             }
 
         }
 
-        List<string> patientLocation;
+       private List<string> _patientLocation= new List<string>() { "YES", "NO" };
         public List<String> PatientLocation
         {
-            get { return new List<string>() { "YES", "NO" }; }
+            get
+            {
+                return _patientLocation;
+            }
             set
             {
-                patientLocation = value;
+                _patientLocation = value;
                 OnPropertyChanged(" PatientLocation");
 
             }
         }
 
-        private String patientLocationSelected;
+        private String _patientLocationSelected;
         public String PatientLocationSelected
         {
-            get { return this.patientLocationSelected; }
+            get 
+            {
+                return this._patientLocationSelected;
+            }
             set
             {
-                patientLocationSelected = value;
+                _patientLocationSelected = value;
                 OnPropertyChanged(" PatientLocationSelected");
             }
 
         }
 
-        List<string> ecg;
+       private List<string> _ecg= new List<string>() { "YES", "NO" }; 
         public List<String> Ecg
         {
-            get { return new List<string>() { "YES", "NO" }; }
+            get 
+            {
+                return _ecg;
+            }
             set
             {
-                ecg = value;
+                _ecg = value;
                 OnPropertyChanged(" Ecg");
 
             }
         }
 
-        private String ecgSelected;
+        private String _ecgSelected;
         public String EcgSelected
         {
-            get { return this.ecgSelected; }
+            get
+            { 
+                return this._ecgSelected;
+            }
             set
             {
-                ecgSelected = value;
+                _ecgSelected = value;
                 OnPropertyChanged(" EcgSelected");
             }
 
         }
 
 
-        List<string> spo2;
+        List<string> _spo2= new List<string>() { "YES", "NO" };
         public List<String> Spo2
         {
-            get { return new List<string>() { "YES", "NO" }; }
+            get
+            {
+                return _spo2;
+            }
             set
             {
-                spo2 = value;
+                _spo2 = value;
                 OnPropertyChanged("Spo2");
 
             }
         }
 
-        private String spo2Selected;
+        private String _spo2Selected;
         public String Spo2Selected
         {
-            get { return this.spo2Selected; }
+            get
+            { 
+                return this._spo2Selected; 
+            }
             set
             {
-                spo2Selected = value;
+                _spo2Selected = value;
                 OnPropertyChanged(" spo2Selected");
             }
 
         }
-        List<string> resp;
+        List<string> _resp= new List<string>() { "YES", "NO" }; 
         public List<String> Resp
         {
-            get { return new List<string>() { "YES", "NO" }; }
+            get
+            {
+                return _resp;
+            }
             set
             {
-                resp = value;
+                _resp = value;
                 OnPropertyChanged("Resp");
 
             }
         }
 
-        private String respSelected;
+        private String _respSelected;
         public String RespSelected
         {
-            get { return this.respSelected; }
+            get 
+            {
+                return this._respSelected;
+            }
             set
             {
-                respSelected = value;
+                _respSelected = value;
                 OnPropertyChanged(" RespSelected");
             }
 
         }
 
-        List<string> hr;
+        private List<string> _hr= new List<string>() { "YES", "NO" };
         public List<String> Hr
         {
-            get { return new List<string>() { "YES", "NO" }; }
+            get
+            {
+                return _hr;
+            }
             set
             {
-                hr = value;
+                _hr = value;
                 OnPropertyChanged("Hr");
 
             }
         }
 
-        private String hrSelected;
+        private String _hrSelected;
         public String HrSelected
         {
-            get { return this.hrSelected; }
+            get
+            { 
+                return this._hrSelected;
+            }
             set
             {
-                hrSelected = value;
+                _hrSelected = value;
                 OnPropertyChanged(" HrSelected");
             }
 
         }
 
-        List<string> physiologicalAlarming;
+        List<string> _physiologicalAlarming= new List<string>() { "YES", "NO" };
         public List<String> PhysiologicalAlarming
         {
-            get { return new List<string>() { "YES", "NO" }; }
+            get
+            {
+                return _physiologicalAlarming;
+            }
             set
             {
-                physiologicalAlarming = value;
+                _physiologicalAlarming = value;
                 OnPropertyChanged(" PhysiologicalAlarming");
 
             }
         }
 
-        private String physiologicalAlarmingSelected;
+        private String _physiologicalAlarmingSelected;
         public String PhysiologicalAlarmingSelected
         {
-            get { return this.physiologicalAlarmingSelected; }
+            get
+            { 
+                return this._physiologicalAlarmingSelected; 
+            }
             set
             {
-                physiologicalAlarmingSelected = value;
+                _physiologicalAlarmingSelected = value;
                 OnPropertyChanged("  physiologicalAlarmingSelected");
             }
 
         }
 
-        List<string> bloodPressure;
+        List<string> _bloodPressure= new List<string>() { "YES", "NO" };
         public List<String> BloodPressure
         {
-            get { return new List<string>() { "YES", "NO" }; }
+            get
+            {
+                return _bloodPressure;
+            }
             set
             {
-                bloodPressure = value;
+                _bloodPressure = value;
                 OnPropertyChanged(" BloodPressure");
 
             }
         }
 
-        private String bloodPressureSelected;
+        private String _bloodPressureSelected;
         public String BloodPressureSelected
         {
-            get { return this.bloodPressureSelected; }
+            get
+            {
+                return this._bloodPressureSelected;
+            }
             set
             {
-                bloodPressureSelected = value;
+                _bloodPressureSelected = value;
                 OnPropertyChanged("  BloodPressureSelected");
             }
 

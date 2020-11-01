@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AssetToPurchaseFrontend.Model
+﻿namespace AssetToPurchaseFrontend.Model
 {
     public class EmailDetails
     {
