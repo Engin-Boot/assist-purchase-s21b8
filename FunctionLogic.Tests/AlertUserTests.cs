@@ -22,7 +22,7 @@ namespace FunctionLogic.Tests
         [Fact]
         public void NewModelEmailAlert_Unit_Test()
         {
-            Assert.True(alertUser.NewModelEmailAlert() == "A new Model has arrived!!!!!");
+            Assert.True(_alertUser.NewModelEmailAlert() == "A new Model has arrived!!!!!");
         }
         [Fact]
         public void UserCallBackRequest_Unit_Test()
