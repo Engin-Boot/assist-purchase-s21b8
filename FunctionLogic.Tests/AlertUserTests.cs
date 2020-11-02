@@ -14,7 +14,7 @@ namespace FunctionLogic.Tests
         public void UserRegistration_Unit_Test()
         {
             _actual = _alertUser.UserRegistration(_user);
-            _expected = new List<UserDetails>();
+           // _expected = new List<UserDetails>();
             _expected.Add(new UserDetails { UserName = "Unit_Test", Email = "Unit@Test.com", ProductsBooked = "Unit_Test", UserContactNo = 2343 });
             if (_expected == _actual)
                 Assert.True(true);
@@ -59,7 +59,7 @@ namespace FunctionLogic.Tests
             _actual = new List<UserDetails>();
             var deviceName = "Unit_Test";
             _actual = _alertUser.GetUserDetails(deviceName);
-            _expected = new List<UserDetails>();
+            //_expected = new List<UserDetails>();
             _expected.Add(new UserDetails { UserName = "Unit_Test", Email = "Unit@Test.com", ProductsBooked = "Unit_Test", UserContactNo = 2343 });
             if (_actual == _expected)
                 Assert.True(true);
