@@ -13,7 +13,7 @@ namespace Services
         List<UserDetails> _userDetails = new List<UserDetails>();
        // List<UserDetails> users = new List<UserDetails>();
         readonly List<UserDetails> _deserializedMonitoringDevices = new List<UserDetails>();
-        string _path = @"D:\UserDetails.xml";
+        string _path = @"D:\a\assist-purchase-s21b8\assist-purchase-s21b8\UserDetails.xml";
 
         public List<UserDetails> UserRegistration(UserDetails user)
         {
