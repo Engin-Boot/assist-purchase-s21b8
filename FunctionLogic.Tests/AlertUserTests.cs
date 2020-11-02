@@ -1,4 +1,4 @@
-﻿using AssistPurchaseData;
+using AssistPurchaseData;
 using System.Collections.Generic;
 using Xunit;
 using Services;
@@ -27,6 +27,7 @@ namespace FunctionLogic.Tests
         [Fact]
         public void UserCallBackRequest_Unit_Test()
         {
+             _alertUser.UserRegistration(_user);
             var actual = _alertUser.UserCallBackRequest(_user);
             var expected = "One of our Philips Personnel will reach you out soon..Thank You!!!";
             Assert.True(expected == actual);
