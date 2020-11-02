@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DuplicatesReport ToolsVersion="202.0.20200928.101108">
   <Statistics>
-    <CodebaseCost>24730</CodebaseCost>
-    <TotalDuplicatesCost>454</TotalDuplicatesCost>
-    <TotalFragmentsCost>908</TotalFragmentsCost>
+    <CodebaseCost>24521</CodebaseCost>
+    <TotalDuplicatesCost>202</TotalDuplicatesCost>
+    <TotalFragmentsCost>404</TotalFragmentsCost>
   </Statistics>
   <Duplicates>
     <Duplicate Cost="202">
@@ -16,42 +16,6 @@
         <FileName>AssistPurchaseData\MonitoringDevice.cs</FileName>
         <OffsetRange Start="30" End="878"></OffsetRange>
         <LineRange Start="2" End="26"></LineRange>
-      </Fragment>
-    </Duplicate>
-    <Duplicate Cost="89">
-      <Fragment>
-        <FileName>Api.Tests\ProductCategoryApiTests.cs</FileName>
-        <OffsetRange Start="7108" End="7700"></OffsetRange>
-        <LineRange Start="168" End="183"></LineRange>
-      </Fragment>
-      <Fragment>
-        <FileName>FunctionLogic.Tests\UtilityFunctionsTests.cs</FileName>
-        <OffsetRange Start="389" End="921"></OffsetRange>
-        <LineRange Start="13" End="28"></LineRange>
-      </Fragment>
-    </Duplicate>
-    <Duplicate Cost="87">
-      <Fragment>
-        <FileName>FunctionLogic.Tests\AlertUserTests.cs</FileName>
-        <OffsetRange Start="631" End="891"></OffsetRange>
-        <LineRange Start="17" End="20"></LineRange>
-      </Fragment>
-      <Fragment>
-        <FileName>FunctionLogic.Tests\AlertUserTests.cs</FileName>
-        <OffsetRange Start="2583" End="2843"></OffsetRange>
-        <LineRange Start="62" End="65"></LineRange>
-      </Fragment>
-    </Duplicate>
-    <Duplicate Cost="76">
-      <Fragment>
-        <FileName>AssetToPurchaseFrontend\Model\UserDetails.cs</FileName>
-        <OffsetRange Start="0" End="278"></OffsetRange>
-        <LineRange Start="1" End="11"></LineRange>
-      </Fragment>
-      <Fragment>
-        <FileName>FunctionLogic.Tests\UserDetails.cs</FileName>
-        <OffsetRange Start="0" End="278"></OffsetRange>
-        <LineRange Start="1" End="11"></LineRange>
       </Fragment>
     </Duplicate>
   </Duplicates>
