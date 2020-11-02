@@ -19,11 +19,11 @@ namespace FunctionLogic.Tests
             if (_expected == _actual)
                 Assert.True(true);
         }
-        ////[Fact]
-        ////public void NewModelEmailAlert_Unit_Test()
-        ////{
-        ////    Assert.True(alertUser.NewModelEmailAlert() == "A new Model has arrived!!!!!");
-        ////}
+        [Fact]
+        public void NewModelEmailAlert_Unit_Test()
+        {
+            Assert.True(alertUser.NewModelEmailAlert() == "A new Model has arrived!!!!!");
+        }
         [Fact]
         public void UserCallBackRequest_Unit_Test()
         {
